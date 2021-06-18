@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,14 +47,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\Barrio.cs" />
+    <Compile Include="Entidades\Cargo.cs" />
+    <Compile Include="Entidades\Ciudad.cs" />
+    <Compile Include="Entidades\Departamento.cs" />
+    <Compile Include="Entidades\Empleado.cs" />
+    <Compile Include="Entidades\Escuela.cs" />
+    <Compile Include="Entidades\Exposicion.cs" />
+    <Compile Include="Entidades\ExposicionXObra.cs" />
+    <Compile Include="Entidades\ExposicionXReserva.cs" />
+    <Compile Include="Entidades\Genero.cs" />
+    <Compile Include="Entidades\HoraEmpleado.cs" />
+    <Compile Include="Entidades\Obra.cs" />
+    <Compile Include="Entidades\Provincia.cs" />
+    <Compile Include="Entidades\Reserva.cs" />
+    <Compile Include="Entidades\Sede.cs" />
+    <Compile Include="Entidades\Sesion.cs" />
+    <Compile Include="Entidades\TipoDocumento.cs" />
+    <Compile Include="Entidades\TipoExposicion.cs" />
+    <Compile Include="Entidades\TipoVisita.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Pantallas\AltaTipoDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\AltaTipoDocumento.Designer.cs">
+      <DependentUpon>AltaTipoDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\AltaTipoExposicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\AltaTipoExposicion.Designer.cs">
+      <DependentUpon>AltaTipoExposicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\AltaTipoVisita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\AltaTipoVisita.Designer.cs">
+      <DependentUpon>AltaTipoVisita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\AltaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\AltaUsuario.Designer.cs">
+      <DependentUpon>AltaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantallas\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pantallas\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pantallas\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pantallas\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +119,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -75,6 +133,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AccesoADatos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo 1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
