@@ -45,10 +45,10 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.hora_fin_real = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cant_alumnos_confirm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btm_buscar = new System.Windows.Forms.Button();
-            this.Txt_Escuela = new DSI_3K2_PPAI.Clases.TextBox001();
-            this.Txt_ID = new DSI_3K2_PPAI.Clases.TextBox001();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Txt_Escuela = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.Txt_ID = new DSI_3K2_PPAI.Clases.TextBox001();
             this.gbx_reserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Reserva)).BeginInit();
             this.SuspendLayout();
@@ -187,6 +187,26 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.btm_buscar.Text = "Buscar";
             this.btm_buscar.UseVisualStyleBackColor = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(37, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nombre Escuela";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(71, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID Reserva";
+            // 
             // Txt_Escuela
             // 
             this.Txt_Escuela.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -210,26 +230,6 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.Txt_ID.Pp_Validable = false;
             this.Txt_ID.Size = new System.Drawing.Size(100, 23);
             this.Txt_ID.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(37, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre Escuela";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(64, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID Reserva";
             // 
             // FrmGestionarReserva
             // 

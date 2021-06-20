@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DSI_3K2_PPAI.Pantallas;
 
 namespace DSI_3K2_PPAI
 {
@@ -15,6 +16,12 @@ namespace DSI_3K2_PPAI
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Principal inicio = new Principal();
+            inicio.ShowDialog();
         }
     }
 }
