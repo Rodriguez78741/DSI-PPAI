@@ -28,6 +28,7 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
                 NE_Reserva reserva = new NE_Reserva();
                 reserva.Insertar_Reserva(this.Controls);
                 this.Close();
+
             }
             else
             {
