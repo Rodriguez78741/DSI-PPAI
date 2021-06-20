@@ -9,3 +9,16 @@ E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\obj\Debug\DSI
 E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.CoreCompileInputs.cache
 E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.exe
 E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.pdb
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\bin\Debug\DSI-3K2-PPAI.exe.config
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\bin\Debug\DSI-3K2-PPAI.exe
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\bin\Debug\DSI-3K2-PPAI.pdb
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.AssemblyReference.cache
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Clases.TextBox001.resources
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Form1.resources
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.FrmGestionarReserva.resources
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Principal.resources
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Properties.Resources.resources
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.GenerateResource.cache
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.CoreCompileInputs.cache
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.exe
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.pdb

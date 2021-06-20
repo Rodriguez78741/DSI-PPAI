@@ -47,6 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\BE_AccesoDatos.cs" />
+    <Compile Include="Clases\ComboBox01.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Clases\EstructuraComboBox.cs" />
+    <Compile Include="Clases\TextBox001.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Clases\TextBox001.Designer.cs">
+      <DependentUpon>TextBox001.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Barrio.cs" />
     <Compile Include="Entidades\Cargo.cs" />
     <Compile Include="Entidades\Ciudad.cs" />
@@ -97,6 +108,12 @@
     <Compile Include="Pantallas\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pantallas\GestionarReserva\FrmGestionarReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\GestionarReserva\FrmGestionarReserva.Designer.cs">
+      <DependentUpon>FrmGestionarReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantallas\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,8 +122,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Clases\TextBox001.resx">
+      <DependentUpon>TextBox001.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\GestionarReserva\FrmGestionarReserva.resx">
+      <DependentUpon>FrmGestionarReserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

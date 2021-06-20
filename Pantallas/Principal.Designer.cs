@@ -35,6 +35,9 @@ namespace DSI_3K2_PPAI
             this.gestionarColeccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarExposicionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarExposicionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearExposiciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarExposicionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarExposicionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarEscuelasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,13 +59,6 @@ namespace DSI_3K2_PPAI
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.renovarReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearExposiciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarExposicionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarExposicionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,16 +116,30 @@ namespace DSI_3K2_PPAI
             this.gestionarExposicionesToolStripMenuItem1.Size = new System.Drawing.Size(195, 22);
             this.gestionarExposicionesToolStripMenuItem1.Text = "Gestionar Exposiciones";
             // 
+            // crearExposiciónToolStripMenuItem
+            // 
+            this.crearExposiciónToolStripMenuItem.Name = "crearExposiciónToolStripMenuItem";
+            this.crearExposiciónToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.crearExposiciónToolStripMenuItem.Text = "Crear exposición";
+            // 
+            // modificarExposicionToolStripMenuItem
+            // 
+            this.modificarExposicionToolStripMenuItem.Name = "modificarExposicionToolStripMenuItem";
+            this.modificarExposicionToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.modificarExposicionToolStripMenuItem.Text = "Modificar Exposicion";
+            // 
+            // eliminarExposicionToolStripMenuItem
+            // 
+            this.eliminarExposicionToolStripMenuItem.Name = "eliminarExposicionToolStripMenuItem";
+            this.eliminarExposicionToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.eliminarExposicionToolStripMenuItem.Text = "Eliminar Exposicion";
+            // 
             // gestionarReservaToolStripMenuItem
             // 
-            this.gestionarReservaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reservasToolStripMenuItem,
-            this.renovarReservaToolStripMenuItem,
-            this.modificarReservaToolStripMenuItem,
-            this.eliminarReservaToolStripMenuItem});
             this.gestionarReservaToolStripMenuItem.Name = "gestionarReservaToolStripMenuItem";
             this.gestionarReservaToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.gestionarReservaToolStripMenuItem.Text = "Gestionar Reserva";
+            this.gestionarReservaToolStripMenuItem.Click += new System.EventHandler(this.gestionarReservaToolStripMenuItem_Click);
             // 
             // gestionarEscuelasToolStripMenuItem
             // 
@@ -157,7 +167,7 @@ namespace DSI_3K2_PPAI
             // sedeToolStripMenuItem
             // 
             this.sedeToolStripMenuItem.Name = "sedeToolStripMenuItem";
-            this.sedeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sedeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.sedeToolStripMenuItem.Text = "Sede";
             // 
             // empleadosToolStripMenuItem
@@ -169,7 +179,7 @@ namespace DSI_3K2_PPAI
             this.cargoToolStripMenuItem,
             this.horarioDeEmpleadosToolStripMenuItem});
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.empleadosToolStripMenuItem.Text = "Personas";
             // 
             // tipoDocumentoToolStripMenuItem
@@ -198,25 +208,25 @@ namespace DSI_3K2_PPAI
             // barrioToolStripMenuItem
             // 
             this.barrioToolStripMenuItem.Name = "barrioToolStripMenuItem";
-            this.barrioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.barrioToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.barrioToolStripMenuItem.Text = "Barrio";
             // 
             // ciudadToolStripMenuItem
             // 
             this.ciudadToolStripMenuItem.Name = "ciudadToolStripMenuItem";
-            this.ciudadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ciudadToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.ciudadToolStripMenuItem.Text = "Ciudad";
             // 
             // provinciaToolStripMenuItem
             // 
             this.provinciaToolStripMenuItem.Name = "provinciaToolStripMenuItem";
-            this.provinciaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.provinciaToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.provinciaToolStripMenuItem.Text = "Provincia";
             // 
             // departamentoToolStripMenuItem
             // 
             this.departamentoToolStripMenuItem.Name = "departamentoToolStripMenuItem";
-            this.departamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.departamentoToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.departamentoToolStripMenuItem.Text = "Departamento";
             // 
             // cargoToolStripMenuItem
@@ -237,19 +247,19 @@ namespace DSI_3K2_PPAI
             this.tipoDeVisitaToolStripMenuItem,
             this.tipoDeExposicionToolStripMenuItem});
             this.exposicionToolStripMenuItem.Name = "exposicionToolStripMenuItem";
-            this.exposicionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exposicionToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.exposicionToolStripMenuItem.Text = "Exposicion";
             // 
             // tipoDeVisitaToolStripMenuItem
             // 
             this.tipoDeVisitaToolStripMenuItem.Name = "tipoDeVisitaToolStripMenuItem";
-            this.tipoDeVisitaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoDeVisitaToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.tipoDeVisitaToolStripMenuItem.Text = "Tipo de visita";
             // 
             // tipoDeExposicionToolStripMenuItem
             // 
             this.tipoDeExposicionToolStripMenuItem.Name = "tipoDeExposicionToolStripMenuItem";
-            this.tipoDeExposicionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoDeExposicionToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.tipoDeExposicionToolStripMenuItem.Text = "Tipo de Exposicion";
             // 
             // usuarioToolStripMenuItem
@@ -258,62 +268,20 @@ namespace DSI_3K2_PPAI
             this.usuarioToolStripMenuItem1,
             this.sesionToolStripMenuItem});
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.usuarioToolStripMenuItem.Text = "Usuario";
             // 
             // usuarioToolStripMenuItem1
             // 
             this.usuarioToolStripMenuItem1.Name = "usuarioToolStripMenuItem1";
-            this.usuarioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.usuarioToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
             this.usuarioToolStripMenuItem1.Text = "Usuario";
             // 
             // sesionToolStripMenuItem
             // 
             this.sesionToolStripMenuItem.Name = "sesionToolStripMenuItem";
-            this.sesionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sesionToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.sesionToolStripMenuItem.Text = "Sesion";
-            // 
-            // reservasToolStripMenuItem
-            // 
-            this.reservasToolStripMenuItem.Name = "reservasToolStripMenuItem";
-            this.reservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.reservasToolStripMenuItem.Text = "Crear Reserva";
-            // 
-            // renovarReservaToolStripMenuItem
-            // 
-            this.renovarReservaToolStripMenuItem.Name = "renovarReservaToolStripMenuItem";
-            this.renovarReservaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.renovarReservaToolStripMenuItem.Text = "Renovar Reserva";
-            // 
-            // modificarReservaToolStripMenuItem
-            // 
-            this.modificarReservaToolStripMenuItem.Name = "modificarReservaToolStripMenuItem";
-            this.modificarReservaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.modificarReservaToolStripMenuItem.Text = "Modificar Reserva";
-            // 
-            // eliminarReservaToolStripMenuItem
-            // 
-            this.eliminarReservaToolStripMenuItem.Name = "eliminarReservaToolStripMenuItem";
-            this.eliminarReservaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.eliminarReservaToolStripMenuItem.Text = "Eliminar reserva";
-            // 
-            // crearExposiciónToolStripMenuItem
-            // 
-            this.crearExposiciónToolStripMenuItem.Name = "crearExposiciónToolStripMenuItem";
-            this.crearExposiciónToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.crearExposiciónToolStripMenuItem.Text = "Crear exposición";
-            // 
-            // modificarExposicionToolStripMenuItem
-            // 
-            this.modificarExposicionToolStripMenuItem.Name = "modificarExposicionToolStripMenuItem";
-            this.modificarExposicionToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.modificarExposicionToolStripMenuItem.Text = "Modificar Exposicion";
-            // 
-            // eliminarExposicionToolStripMenuItem
-            // 
-            this.eliminarExposicionToolStripMenuItem.Name = "eliminarExposicionToolStripMenuItem";
-            this.eliminarExposicionToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.eliminarExposicionToolStripMenuItem.Text = "Eliminar Exposicion";
             // 
             // Principal
             // 
@@ -365,9 +333,5 @@ namespace DSI_3K2_PPAI
         private System.Windows.Forms.ToolStripMenuItem crearExposiciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarExposicionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarExposicionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reservasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem renovarReservaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarReservaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarReservaToolStripMenuItem;
     }
 }
