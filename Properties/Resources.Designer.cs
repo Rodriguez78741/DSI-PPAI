@@ -63,9 +63,39 @@ namespace DSI_3K2_PPAI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _18 {
+            get {
+                object obj = ResourceManager.GetObject("18", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editar_imagenes_clipart_2 {
+            get {
+                object obj = ResourceManager.GetObject("editar-imagenes-clipart-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fondo_1 {
             get {
                 object obj = ResourceManager.GetObject("Fondo 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_transparent_computer_icons_document_add_button_number_add_button_add {
+            get {
+                object obj = ResourceManager.GetObject("png-transparent-computer-icons-document-add-button-number-add-button-add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

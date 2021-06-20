@@ -163,5 +163,14 @@
   <ItemGroup>
     <None Include="Resources\Fondo 1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-computer-icons-document-add-button-number-add-button-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar-imagenes-clipart-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\18.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
