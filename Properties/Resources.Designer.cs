@@ -99,5 +99,25 @@ namespace DSI_3K2_PPAI.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2021_06_20_at_16_48_25 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2021-06-20 at 16.48.25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2021_06_20_at_17_05_20 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2021-06-20 at 17.05.20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

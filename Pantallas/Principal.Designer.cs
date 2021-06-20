@@ -287,7 +287,8 @@ namespace DSI_3K2_PPAI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::DSI_3K2_PPAI.Properties.Resources.Fondo_1;
+            this.BackgroundImage = global::DSI_3K2_PPAI.Properties.Resources.WhatsApp_Image_2021_06_20_at_17_05_20;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(625, 394);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
