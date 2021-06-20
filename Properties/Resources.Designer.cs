@@ -93,9 +93,30 @@ namespace DSI_3K2_PPAI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap kisspng_multiplication_sign_computer_icons_button_x_icon_5b15131f4ee6f5_9780013515281078073232 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-multiplication-sign-computer-icons-button-x-icon-5b15131f4ee6f5.978001351" +
+                        "5281078073232", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap png_transparent_computer_icons_document_add_button_number_add_button_add {
             get {
                 object obj = ResourceManager.GetObject("png-transparent-computer-icons-document-add-button-number-add-button-add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tilde {
+            get {
+                object obj = ResourceManager.GetObject("tilde", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

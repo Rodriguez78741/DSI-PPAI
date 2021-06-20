@@ -16,5 +16,11 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
         {
             InitializeComponent();
         }
+
+        private void btm_Agregar_Click(object sender, EventArgs e)
+        {
+            AgregarReserva reserva = new AgregarReserva();
+            reserva.ShowDialog();
+        }
     }
 }

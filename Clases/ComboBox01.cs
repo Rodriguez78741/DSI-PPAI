@@ -28,7 +28,7 @@ namespace DSI_3K2_PPAI.Clases
             string sql = "SELECT " + Pp_Pk + ", " + Pp_descripcion + " FROM " + Pp_tabla;
             this.DisplayMember = Pp_descripcion;
             this.ValueMember = Pp_Pk;
-            this.DataSource = _BD.Ejecutar_Select(sql);
+            this.DataSource = _BD.EjecutarSelect(sql);
             if (this.Pp_Coseleccion == true)
             {
                 this.SelectedIndex = 0;

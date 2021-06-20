@@ -12,7 +12,6 @@ E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\obj\Debug\DSI
 C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\bin\Debug\DSI-3K2-PPAI.exe.config
 C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\bin\Debug\DSI-3K2-PPAI.exe
 C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\bin\Debug\DSI-3K2-PPAI.pdb
-C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.AssemblyReference.cache
 C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Clases.TextBox001.resources
 C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Form1.resources
 C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.FrmGestionarReserva.resources
@@ -22,3 +21,17 @@ C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.cspr
 C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.CoreCompileInputs.cache
 C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.exe
 C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.pdb
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\bin\Debug\MySql.Data.dll
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\bin\Debug\Zstandard.Net.dll
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\bin\Debug\System.Buffers.dll
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\bin\Debug\System.Memory.dll
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Clases.LabelText01.resources
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.AgregarReserva.resources
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.CopyComplete
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.AssemblyReference.cache
