@@ -20,8 +20,12 @@ namespace DSI_3K2_PPAI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             Principal inicio = new Principal();
             inicio.ShowDialog();
+            this.Close();
+
+
         }
     }
 }

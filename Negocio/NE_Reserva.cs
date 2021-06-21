@@ -30,8 +30,7 @@ namespace DSI_3K2_PPAI.Negocio
 
         public void Insertar_Reserva()
         {
-            string InsertarReserva = "INSERT INTO Cliente (tipo_documento, numero_documento, apellido,nombre, fecha_nacimiento, sexo" +
-            ", telefono, mail, calle, nro_direccion, id_barrio ) "
+            string InsertarReserva = "INSERT INTO Reserva (id_tipo_visita, id_escuela, id_guia, fecha_reserva, hora_inicio, hora_fin, hora_incio_real, hora_fin_real, cant_alumnos_confirm  ) "
             + "VALUES ("
             + Pp_id_tipo_visita
             + ", " + Pp_id_escuela
