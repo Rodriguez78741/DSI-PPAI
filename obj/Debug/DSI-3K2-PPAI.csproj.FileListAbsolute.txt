@@ -36,3 +36,96 @@ C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Pant
 C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.CopyComplete
 C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.AssemblyReference.cache
 C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.AgregarExposicion.resources
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\bin\Debug\DSI-3K2-PPAI.exe.config
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\bin\Debug\DSI-3K2-PPAI.exe
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\bin\Debug\DSI-3K2-PPAI.pdb
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\bin\Debug\Zstandard.Net.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\bin\Debug\Ubiety.Dns.Core.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\bin\Debug\System.Buffers.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\bin\Debug\K4os.Compression.LZ4.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\bin\Debug\K4os.Hash.xxHash.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\bin\Debug\System.Memory.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\bin\Debug\System.Numerics.Vectors.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\obj\Debug\DSI-3K2-PPAI.csprojAssemblyReference.cache
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\obj\Debug\DSI_3K2_PPAI.Clases.LabelText01.resources
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\obj\Debug\DSI_3K2_PPAI.Clases.TextBox001.resources
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\obj\Debug\DSI_3K2_PPAI.Form1.resources
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.AgregarExposicion.resources
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.AgregarReserva.resources
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.FrmGestionarReserva.resources
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\obj\Debug\DSI_3K2_PPAI.Principal.resources
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\obj\Debug\DSI_3K2_PPAI.Properties.Resources.resources
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\obj\Debug\DSI-3K2-PPAI.csproj.GenerateResource.cache
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\obj\Debug\DSI-3K2-PPAI.csproj.CoreCompileInputs.cache
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\obj\Debug\DSI-3K2-PPAI.csproj.CopyComplete
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\obj\Debug\DSI-3K2-PPAI.exe
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master\obj\Debug\DSI-3K2-PPAI.pdb
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\obj\Debug\DSI-3K2-PPAI.csprojAssemblyReference.cache
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\obj\Debug\DSI_3K2_PPAI.Clases.LabelText01.resources
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\obj\Debug\DSI_3K2_PPAI.Clases.TextBox001.resources
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\obj\Debug\DSI_3K2_PPAI.Form1.resources
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.AgregarExposicion.resources
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.AgregarReserva.resources
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.FrmGestionarReserva.resources
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\obj\Debug\DSI_3K2_PPAI.Principal.resources
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\obj\Debug\DSI_3K2_PPAI.Properties.Resources.resources
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\obj\Debug\DSI-3K2-PPAI.csproj.GenerateResource.cache
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\obj\Debug\DSI-3K2-PPAI.csproj.CoreCompileInputs.cache
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\obj\Debug\DSI-3K2-PPAI.exe
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\obj\Debug\DSI-3K2-PPAI.pdb
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\bin\Debug\DSI-3K2-PPAI.exe.config
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\bin\Debug\DSI-3K2-PPAI.exe
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\bin\Debug\DSI-3K2-PPAI.pdb
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\bin\Debug\Zstandard.Net.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\bin\Debug\Ubiety.Dns.Core.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\bin\Debug\System.Buffers.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\bin\Debug\K4os.Compression.LZ4.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\bin\Debug\K4os.Hash.xxHash.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\bin\Debug\System.Memory.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\bin\Debug\System.Numerics.Vectors.dll
+E:\Users\Maximo\Desktop\DSI\DSI-PPAI-master-6\DSI-PPAI-master-V2\obj\Debug\DSI-3K2-PPAI.csproj.CopyComplete
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\bin\Debug\DSI-3K2-PPAI.exe.config
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\bin\Debug\DSI-3K2-PPAI.exe
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\bin\Debug\DSI-3K2-PPAI.pdb
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\bin\Debug\Zstandard.Net.dll
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\bin\Debug\Ubiety.Dns.Core.dll
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\bin\Debug\System.Buffers.dll
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\bin\Debug\K4os.Compression.LZ4.dll
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\bin\Debug\K4os.Hash.xxHash.dll
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\bin\Debug\System.Memory.dll
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\bin\Debug\System.Numerics.Vectors.dll
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\obj\Debug\DSI-3K2-PPAI.csprojAssemblyReference.cache
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\obj\Debug\DSI_3K2_PPAI.Clases.LabelText01.resources
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\obj\Debug\DSI_3K2_PPAI.Clases.TextBox001.resources
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\obj\Debug\DSI_3K2_PPAI.Form1.resources
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.AgregarExposicion.resources
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.AgregarReserva.resources
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.FrmGestionarReserva.resources
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\obj\Debug\DSI_3K2_PPAI.Principal.resources
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\obj\Debug\DSI_3K2_PPAI.Properties.Resources.resources
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\obj\Debug\DSI-3K2-PPAI.csproj.GenerateResource.cache
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\obj\Debug\DSI-3K2-PPAI.csproj.CoreCompileInputs.cache
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\obj\Debug\DSI-3K2-PPAI.csproj.CopyComplete
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\obj\Debug\DSI-3K2-PPAI.exe
+E:\Descargas\DSI-PPAI-master-V2\DSI-PPAI-master-V2\obj\Debug\DSI-3K2-PPAI.pdb
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\bin\Debug\Zstandard.Net.dll
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\bin\Debug\Ubiety.Dns.Core.dll
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\bin\Debug\System.Buffers.dll
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\bin\Debug\K4os.Compression.LZ4.dll
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\bin\Debug\K4os.Hash.xxHash.dll
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\bin\Debug\System.Memory.dll
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\bin\Debug\System.Numerics.Vectors.dll
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Clases.LabelText01.resources
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Clases.TextBox001.resources
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.AgregarExposicion.resources
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.AgregarReserva.resources
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.FrmGestionarReserva.resources
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.CopyComplete

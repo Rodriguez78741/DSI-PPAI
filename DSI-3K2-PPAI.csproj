@@ -106,6 +106,7 @@
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Negocio\NE_Exposicion.cs" />
     <Compile Include="Negocio\NE_Reserva.cs" />
+    <Compile Include="Negocio\NE_Usuarios.cs" />
     <Compile Include="Pantallas\AltaTipoDocumento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,11 +131,11 @@
     <Compile Include="Pantallas\AltaUsuario.Designer.cs">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\Form1.cs">
+    <Compile Include="Pantallas\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Pantallas\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\GestionarReserva\AgregarExposicion.cs">
       <SubType>Form</SubType>
@@ -168,8 +169,8 @@
     <EmbeddedResource Include="Clases\TextBox001.resx">
       <DependentUpon>TextBox001.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\GestionarReserva\AgregarExposicion.resx">
       <DependentUpon>AgregarExposicion.cs</DependentUpon>

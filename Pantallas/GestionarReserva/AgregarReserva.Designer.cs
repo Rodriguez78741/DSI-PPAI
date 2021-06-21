@@ -30,25 +30,25 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox011 = new DSI_3K2_PPAI.Clases.ComboBox01();
-            this.comboBox012 = new DSI_3K2_PPAI.Clases.ComboBox01();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox013 = new DSI_3K2_PPAI.Clases.ComboBox01();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox0011 = new DSI_3K2_PPAI.Clases.TextBox001();
-            this.textBox0012 = new DSI_3K2_PPAI.Clases.TextBox001();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox0013 = new DSI_3K2_PPAI.Clases.TextBox001();
-            this.textBox0014 = new DSI_3K2_PPAI.Clases.TextBox001();
-            this.textBox0015 = new DSI_3K2_PPAI.Clases.TextBox001();
-            this.textBox0016 = new DSI_3K2_PPAI.Clases.TextBox001();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.textBox0016 = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.textBox0015 = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.textBox0014 = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.textBox0013 = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.textBox0012 = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.textBox0011 = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.comboBox013 = new DSI_3K2_PPAI.Clases.ComboBox01();
+            this.comboBox012 = new DSI_3K2_PPAI.Clases.ComboBox01();
+            this.comboBox011 = new DSI_3K2_PPAI.Clases.ComboBox01();
             this.SuspendLayout();
             // 
             // label1
@@ -59,38 +59,6 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo Visita";
-            // 
-            // comboBox011
-            // 
-            this.comboBox011.FormattingEnabled = true;
-            this.comboBox011.Location = new System.Drawing.Point(99, 40);
-            this.comboBox011.Name = "comboBox011";
-            this.comboBox011.Pp_Coseleccion = false;
-            this.comboBox011.Pp_descripcion = "descripcion";
-            this.comboBox011.Pp_MensajeError = "No cargo el tipo visita";
-            this.comboBox011.Pp_NombreCampo = null;
-            this.comboBox011.Pp_NombreTabla = "Tipo_visita";
-            this.comboBox011.Pp_Pk = "id_tipo_visita";
-            this.comboBox011.Pp_tabla = "Tipo_visita";
-            this.comboBox011.Pp_Validable = false;
-            this.comboBox011.Size = new System.Drawing.Size(121, 21);
-            this.comboBox011.TabIndex = 2;
-            // 
-            // comboBox012
-            // 
-            this.comboBox012.FormattingEnabled = true;
-            this.comboBox012.Location = new System.Drawing.Point(99, 70);
-            this.comboBox012.Name = "comboBox012";
-            this.comboBox012.Pp_Coseleccion = false;
-            this.comboBox012.Pp_descripcion = "nombre";
-            this.comboBox012.Pp_MensajeError = "No ingreso la escuela";
-            this.comboBox012.Pp_NombreCampo = null;
-            this.comboBox012.Pp_NombreTabla = "Escuela";
-            this.comboBox012.Pp_Pk = "id_escuela";
-            this.comboBox012.Pp_tabla = "Escuela";
-            this.comboBox012.Pp_Validable = false;
-            this.comboBox012.Size = new System.Drawing.Size(121, 21);
-            this.comboBox012.TabIndex = 3;
             // 
             // label2
             // 
@@ -110,22 +78,6 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.label3.TabIndex = 5;
             this.label3.Text = "Guia";
             // 
-            // comboBox013
-            // 
-            this.comboBox013.FormattingEnabled = true;
-            this.comboBox013.Location = new System.Drawing.Point(99, 97);
-            this.comboBox013.Name = "comboBox013";
-            this.comboBox013.Pp_Coseleccion = false;
-            this.comboBox013.Pp_descripcion = "nombre";
-            this.comboBox013.Pp_MensajeError = "No ingreso el guia";
-            this.comboBox013.Pp_NombreCampo = null;
-            this.comboBox013.Pp_NombreTabla = "Empleado";
-            this.comboBox013.Pp_Pk = "id_empleado";
-            this.comboBox013.Pp_tabla = "Empleado";
-            this.comboBox013.Pp_Validable = false;
-            this.comboBox013.Size = new System.Drawing.Size(121, 21);
-            this.comboBox013.TabIndex = 6;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -134,28 +86,6 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.label4.Size = new System.Drawing.Size(80, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Fecha Reserva";
-            // 
-            // textBox0011
-            // 
-            this.textBox0011.Location = new System.Drawing.Point(99, 124);
-            this.textBox0011.Name = "textBox0011";
-            this.textBox0011.Pp_MensajeError = null;
-            this.textBox0011.Pp_NombreCampo = null;
-            this.textBox0011.Pp_NombreTabla = null;
-            this.textBox0011.Pp_Validable = false;
-            this.textBox0011.Size = new System.Drawing.Size(121, 20);
-            this.textBox0011.TabIndex = 8;
-            // 
-            // textBox0012
-            // 
-            this.textBox0012.Location = new System.Drawing.Point(99, 150);
-            this.textBox0012.Name = "textBox0012";
-            this.textBox0012.Pp_MensajeError = null;
-            this.textBox0012.Pp_NombreCampo = null;
-            this.textBox0012.Pp_NombreTabla = null;
-            this.textBox0012.Pp_Validable = false;
-            this.textBox0012.Size = new System.Drawing.Size(121, 20);
-            this.textBox0012.TabIndex = 9;
             // 
             // label5
             // 
@@ -202,50 +132,6 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.label9.TabIndex = 14;
             this.label9.Text = "Cant. Alumnos";
             // 
-            // textBox0013
-            // 
-            this.textBox0013.Location = new System.Drawing.Point(99, 178);
-            this.textBox0013.Name = "textBox0013";
-            this.textBox0013.Pp_MensajeError = null;
-            this.textBox0013.Pp_NombreCampo = null;
-            this.textBox0013.Pp_NombreTabla = null;
-            this.textBox0013.Pp_Validable = false;
-            this.textBox0013.Size = new System.Drawing.Size(121, 20);
-            this.textBox0013.TabIndex = 15;
-            // 
-            // textBox0014
-            // 
-            this.textBox0014.Location = new System.Drawing.Point(99, 205);
-            this.textBox0014.Name = "textBox0014";
-            this.textBox0014.Pp_MensajeError = null;
-            this.textBox0014.Pp_NombreCampo = null;
-            this.textBox0014.Pp_NombreTabla = null;
-            this.textBox0014.Pp_Validable = false;
-            this.textBox0014.Size = new System.Drawing.Size(121, 20);
-            this.textBox0014.TabIndex = 16;
-            // 
-            // textBox0015
-            // 
-            this.textBox0015.Location = new System.Drawing.Point(99, 230);
-            this.textBox0015.Name = "textBox0015";
-            this.textBox0015.Pp_MensajeError = null;
-            this.textBox0015.Pp_NombreCampo = null;
-            this.textBox0015.Pp_NombreTabla = null;
-            this.textBox0015.Pp_Validable = false;
-            this.textBox0015.Size = new System.Drawing.Size(121, 20);
-            this.textBox0015.TabIndex = 17;
-            // 
-            // textBox0016
-            // 
-            this.textBox0016.Location = new System.Drawing.Point(99, 260);
-            this.textBox0016.Name = "textBox0016";
-            this.textBox0016.Pp_MensajeError = null;
-            this.textBox0016.Pp_NombreCampo = null;
-            this.textBox0016.Pp_NombreTabla = null;
-            this.textBox0016.Pp_Validable = false;
-            this.textBox0016.Size = new System.Drawing.Size(121, 20);
-            this.textBox0016.TabIndex = 18;
-            // 
             // button1
             // 
             this.button1.BackgroundImage = global::DSI_3K2_PPAI.Properties.Resources.tilde;
@@ -268,11 +154,125 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // textBox0016
+            // 
+            this.textBox0016.Location = new System.Drawing.Point(99, 260);
+            this.textBox0016.Name = "textBox0016";
+            this.textBox0016.Pp_MensajeError = null;
+            this.textBox0016.Pp_NombreCampo = null;
+            this.textBox0016.Pp_NombreTabla = null;
+            this.textBox0016.Pp_Validable = false;
+            this.textBox0016.Size = new System.Drawing.Size(121, 20);
+            this.textBox0016.TabIndex = 18;
+            // 
+            // textBox0015
+            // 
+            this.textBox0015.Location = new System.Drawing.Point(99, 230);
+            this.textBox0015.Name = "textBox0015";
+            this.textBox0015.Pp_MensajeError = null;
+            this.textBox0015.Pp_NombreCampo = null;
+            this.textBox0015.Pp_NombreTabla = null;
+            this.textBox0015.Pp_Validable = false;
+            this.textBox0015.Size = new System.Drawing.Size(121, 20);
+            this.textBox0015.TabIndex = 17;
+            // 
+            // textBox0014
+            // 
+            this.textBox0014.Location = new System.Drawing.Point(99, 205);
+            this.textBox0014.Name = "textBox0014";
+            this.textBox0014.Pp_MensajeError = null;
+            this.textBox0014.Pp_NombreCampo = null;
+            this.textBox0014.Pp_NombreTabla = null;
+            this.textBox0014.Pp_Validable = false;
+            this.textBox0014.Size = new System.Drawing.Size(121, 20);
+            this.textBox0014.TabIndex = 16;
+            // 
+            // textBox0013
+            // 
+            this.textBox0013.Location = new System.Drawing.Point(99, 178);
+            this.textBox0013.Name = "textBox0013";
+            this.textBox0013.Pp_MensajeError = null;
+            this.textBox0013.Pp_NombreCampo = null;
+            this.textBox0013.Pp_NombreTabla = null;
+            this.textBox0013.Pp_Validable = false;
+            this.textBox0013.Size = new System.Drawing.Size(121, 20);
+            this.textBox0013.TabIndex = 15;
+            // 
+            // textBox0012
+            // 
+            this.textBox0012.Location = new System.Drawing.Point(99, 150);
+            this.textBox0012.Name = "textBox0012";
+            this.textBox0012.Pp_MensajeError = null;
+            this.textBox0012.Pp_NombreCampo = null;
+            this.textBox0012.Pp_NombreTabla = null;
+            this.textBox0012.Pp_Validable = false;
+            this.textBox0012.Size = new System.Drawing.Size(121, 20);
+            this.textBox0012.TabIndex = 9;
+            // 
+            // textBox0011
+            // 
+            this.textBox0011.Location = new System.Drawing.Point(99, 124);
+            this.textBox0011.Name = "textBox0011";
+            this.textBox0011.Pp_MensajeError = null;
+            this.textBox0011.Pp_NombreCampo = null;
+            this.textBox0011.Pp_NombreTabla = null;
+            this.textBox0011.Pp_Validable = false;
+            this.textBox0011.Size = new System.Drawing.Size(121, 20);
+            this.textBox0011.TabIndex = 8;
+            // 
+            // comboBox013
+            // 
+            this.comboBox013.FormattingEnabled = true;
+            this.comboBox013.Location = new System.Drawing.Point(99, 97);
+            this.comboBox013.Name = "comboBox013";
+            this.comboBox013.Pp_Coseleccion = false;
+            this.comboBox013.Pp_descripcion = "nombre";
+            this.comboBox013.Pp_MensajeError = "No ingreso el guia";
+            this.comboBox013.Pp_NombreCampo = null;
+            this.comboBox013.Pp_NombreTabla = "Empleado";
+            this.comboBox013.Pp_Pk = "id_empleado";
+            this.comboBox013.Pp_tabla = "Empleado";
+            this.comboBox013.Pp_Validable = false;
+            this.comboBox013.Size = new System.Drawing.Size(121, 21);
+            this.comboBox013.TabIndex = 6;
+            // 
+            // comboBox012
+            // 
+            this.comboBox012.FormattingEnabled = true;
+            this.comboBox012.Location = new System.Drawing.Point(99, 70);
+            this.comboBox012.Name = "comboBox012";
+            this.comboBox012.Pp_Coseleccion = false;
+            this.comboBox012.Pp_descripcion = "nombre";
+            this.comboBox012.Pp_MensajeError = "No ingreso la escuela";
+            this.comboBox012.Pp_NombreCampo = null;
+            this.comboBox012.Pp_NombreTabla = "Escuela";
+            this.comboBox012.Pp_Pk = "id_escuela";
+            this.comboBox012.Pp_tabla = "Escuela";
+            this.comboBox012.Pp_Validable = false;
+            this.comboBox012.Size = new System.Drawing.Size(121, 21);
+            this.comboBox012.TabIndex = 3;
+            // 
+            // comboBox011
+            // 
+            this.comboBox011.FormattingEnabled = true;
+            this.comboBox011.Location = new System.Drawing.Point(99, 40);
+            this.comboBox011.Name = "comboBox011";
+            this.comboBox011.Pp_Coseleccion = false;
+            this.comboBox011.Pp_descripcion = "descripcion";
+            this.comboBox011.Pp_MensajeError = "No cargo el tipo visita";
+            this.comboBox011.Pp_NombreCampo = null;
+            this.comboBox011.Pp_NombreTabla = "Tipo_visita";
+            this.comboBox011.Pp_Pk = "id_tipo_visita";
+            this.comboBox011.Pp_tabla = "Tipo_visita";
+            this.comboBox011.Pp_Validable = false;
+            this.comboBox011.Size = new System.Drawing.Size(121, 21);
+            this.comboBox011.TabIndex = 2;
+            // 
             // AgregarReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 333);
+            this.ClientSize = new System.Drawing.Size(355, 290);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox0016);

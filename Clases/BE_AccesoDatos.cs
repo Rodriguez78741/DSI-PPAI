@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
+
 namespace DSI_3K2_PPAI.Clases
 {
     class BE_AccesoDatos
@@ -14,13 +15,9 @@ namespace DSI_3K2_PPAI.Clases
         public enum EstadoTransaccion { error, correcto }
         public enum TipoConexion { simple, transaccion }
 
-        string CadenaConexion = "";
         SqlConnection Conexion = new SqlConnection();
         SqlCommand Cmd = new SqlCommand();
         SqlTransaction Transaccion;
-
-        EstadoTransaccion ControlTransaccion = EstadoTransaccion.correcto;
-        TipoConexion ControlConexion = TipoConexion.simple;
 
         public void InicioTransaccion()
         {
@@ -50,7 +47,7 @@ namespace DSI_3K2_PPAI.Clases
         {
             if (Conexion.State == ConnectionState.Closed)
             {
-                Conexion.ConnectionString = CadenaConexion;
+                Conexion.ConnectionString = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
                 Conexion.Open();
                 Cmd.Connection = Conexion;
                 Cmd.CommandType = CommandType.Text;
@@ -62,6 +59,15 @@ namespace DSI_3K2_PPAI.Clases
                 }
             }
         }
+
+        EstadoTransaccion ControlTransaccion = EstadoTransaccion.correcto;
+        TipoConexion ControlConexion = TipoConexion.simple;
+
+       
+
+        
+
+        
         private void Desconectar()
         {
             if (ControlConexion == TipoConexion.simple)
@@ -89,7 +95,16 @@ namespace DSI_3K2_PPAI.Clases
         }
         public EstadoTransaccion Insertar(string SqlInsertar)
         {
+            MessageBox.Show("diego");
             return InsModBorr(SqlInsertar);
+        }
+
+        public void Insertar_Reserva(string sqlInsertar)
+        {
+            Conectar();
+            Cmd.CommandText = sqlInsertar;
+            Cmd.ExecuteNonQuery();
+            Desconectar();
         }
         public EstadoTransaccion Modificar(string SqlModificar)
         {
@@ -101,6 +116,7 @@ namespace DSI_3K2_PPAI.Clases
         }
         private EstadoTransaccion InsModBorr(string sql)
         {
+            MessageBox.Show("Diego 2");
             Conectar();
             Cmd.CommandText = sql;
             try
@@ -124,6 +140,29 @@ namespace DSI_3K2_PPAI.Clases
         {
             return InsModBorr(sqlbuscar);
         }
-    }
+        public DataTable Consulta(String sql)
 
+        {
+            Conectar();
+            Cmd.CommandText = sql;
+            DataTable tabla = new DataTable();
+            try
+            {
+                tabla.Load(Cmd.ExecuteReader());
+            }
+            catch (Exception e)
+            {
+                ControlTransaccion = EstadoTransaccion.error;
+                MessageBox.Show("Error con la Base de Datos" + "\n"
+                                + "En el comando:" + "\n"
+                                + sql + "\n"
+                                + "El mensaje es:" + "\n"
+                                + e.Message);
+            }
+
+            Desconectar();
+            return tabla;
+        }
+
+}
 }
