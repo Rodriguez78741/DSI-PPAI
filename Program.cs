@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DSI_3K2_PPAI.Pantallas.GestionarReserva;
 
 namespace DSI_3K2_PPAI
 {
@@ -16,8 +17,8 @@ namespace DSI_3K2_PPAI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-            //Application.Run(new Principal());
+            //Application.Run(new Form1());
+            Application.Run(new FrmGestionarReserva());
         }
     }
 }
