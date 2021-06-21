@@ -7,35 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DSI_3K2_PPAI.Negocio;
 using DSI_3K2_PPAI.Clases;
+using DSI_3K2_PPAI.Negocio;
 
 namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
 {
-    public partial class AgregarReserva : Form
+    public partial class AgregarExposicion : Form
     {
-        public AgregarReserva()
+        public AgregarExposicion()
         {
             InitializeComponent();
         }
 
-        private void AgregarReserva_Load(object sender, EventArgs e)
-        {
-            comboBox011.CargarCombo();
-            comboBox012.CargarCombo();
-            comboBox013.CargarCombo();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btm_agregar_Click(object sender, EventArgs e)
         {
             TratamientosEspeciales Tratamientos = new TratamientosEspeciales();
 
             if (Tratamientos.Validar(this.Controls) == TratamientosEspeciales.Resultado.correcto)
             {
-                NE_Reserva reserva = new NE_Reserva();
-                reserva.Insertar_Reserva(this.Controls);
-
-
+                NE_Exposicion exposicion = new NE_Exposicion();
+                exposicion.Insertar_Reserva(this.Controls);
                 this.Close();
 
             }
@@ -43,9 +34,16 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             {
                 return;
             }
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void AgregarReserva_Load(object sender, EventArgs e)
+        {
+            cbm_guia.CargarCombo();
+            cbm_tipo.CargarCombo();
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }

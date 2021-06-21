@@ -187,6 +187,7 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.btm_buscar.TabIndex = 4;
             this.btm_buscar.Text = "Buscar";
             this.btm_buscar.UseVisualStyleBackColor = false;
+            this.btm_buscar.Click += new System.EventHandler(this.btm_buscar_Click);
             // 
             // Txt_Escuela
             // 

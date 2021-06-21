@@ -30,304 +30,268 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox011 = new DSI_3K2_PPAI.Clases.ComboBox01();
+            this.comboBox012 = new DSI_3K2_PPAI.Clases.ComboBox01();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.comboBox013 = new DSI_3K2_PPAI.Clases.ComboBox01();
             this.label4 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.textBox0011 = new DSI_3K2_PPAI.Clases.TextBox001();
-            this.cmb_visita = new DSI_3K2_PPAI.Clases.ComboBox01();
-            this.cmb_escuela = new DSI_3K2_PPAI.Clases.ComboBox01();
-            this.cmb_guia = new DSI_3K2_PPAI.Clases.ComboBox01();
-            this.labelText011 = new DSI_3K2_PPAI.Clases.LabelText01();
-            this.labelText012 = new DSI_3K2_PPAI.Clases.LabelText01();
-            this.labelText013 = new DSI_3K2_PPAI.Clases.LabelText01();
-            this.labelText014 = new DSI_3K2_PPAI.Clases.LabelText01();
-            this.labelText015 = new DSI_3K2_PPAI.Clases.LabelText01();
-            this.labelText016 = new DSI_3K2_PPAI.Clases.LabelText01();
-            this.labelText017 = new DSI_3K2_PPAI.Clases.LabelText01();
-            this.btm_agregar = new System.Windows.Forms.Button();
-            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.textBox0012 = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox0013 = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.textBox0014 = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.textBox0015 = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.textBox0016 = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label1.Location = new System.Drawing.Point(55, 37);
+            this.label1.Location = new System.Drawing.Point(27, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ID Reserva";
+            this.label1.Text = "Tipo Visita";
+            // 
+            // comboBox011
+            // 
+            this.comboBox011.FormattingEnabled = true;
+            this.comboBox011.Location = new System.Drawing.Point(99, 40);
+            this.comboBox011.Name = "comboBox011";
+            this.comboBox011.Pp_Coseleccion = false;
+            this.comboBox011.Pp_descripcion = "descripcion";
+            this.comboBox011.Pp_MensajeError = "No cargo el tipo visita";
+            this.comboBox011.Pp_NombreCampo = null;
+            this.comboBox011.Pp_NombreTabla = "Tipo_visita";
+            this.comboBox011.Pp_Pk = "id_tipo_visita";
+            this.comboBox011.Pp_tabla = "Tipo_visita";
+            this.comboBox011.Pp_Validable = false;
+            this.comboBox011.Size = new System.Drawing.Size(121, 21);
+            this.comboBox011.TabIndex = 2;
+            // 
+            // comboBox012
+            // 
+            this.comboBox012.FormattingEnabled = true;
+            this.comboBox012.Location = new System.Drawing.Point(99, 70);
+            this.comboBox012.Name = "comboBox012";
+            this.comboBox012.Pp_Coseleccion = false;
+            this.comboBox012.Pp_descripcion = "nombre";
+            this.comboBox012.Pp_MensajeError = "No ingreso la escuela";
+            this.comboBox012.Pp_NombreCampo = null;
+            this.comboBox012.Pp_NombreTabla = "Escuela";
+            this.comboBox012.Pp_Pk = "id_escuela";
+            this.comboBox012.Pp_tabla = "Escuela";
+            this.comboBox012.Pp_Validable = false;
+            this.comboBox012.Size = new System.Drawing.Size(121, 21);
+            this.comboBox012.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label2.Location = new System.Drawing.Point(60, 67);
+            this.label2.Location = new System.Drawing.Point(38, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tipo Visita";
+            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Escuela";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label3.Location = new System.Drawing.Point(57, 97);
+            this.label3.Location = new System.Drawing.Point(54, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "ID Escuela";
+            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Guia";
+            // 
+            // comboBox013
+            // 
+            this.comboBox013.FormattingEnabled = true;
+            this.comboBox013.Location = new System.Drawing.Point(99, 97);
+            this.comboBox013.Name = "comboBox013";
+            this.comboBox013.Pp_Coseleccion = false;
+            this.comboBox013.Pp_descripcion = "nombre";
+            this.comboBox013.Pp_MensajeError = "No ingreso el guia";
+            this.comboBox013.Pp_NombreCampo = null;
+            this.comboBox013.Pp_NombreTabla = "Empleado";
+            this.comboBox013.Pp_Pk = "id_empleado";
+            this.comboBox013.Pp_tabla = "Empleado";
+            this.comboBox013.Pp_Validable = false;
+            this.comboBox013.Size = new System.Drawing.Size(121, 21);
+            this.comboBox013.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label4.Location = new System.Drawing.Point(74, 127);
+            this.label4.Location = new System.Drawing.Point(4, 131);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "ID Guia";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label9.Location = new System.Drawing.Point(9, 264);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 15);
-            this.label9.TabIndex = 8;
+            this.label4.Size = new System.Drawing.Size(80, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Fecha Reserva";
             // 
             // textBox0011
             // 
-            this.textBox0011.Location = new System.Drawing.Point(137, 32);
+            this.textBox0011.Location = new System.Drawing.Point(99, 124);
             this.textBox0011.Name = "textBox0011";
             this.textBox0011.Pp_MensajeError = null;
             this.textBox0011.Pp_NombreCampo = null;
             this.textBox0011.Pp_NombreTabla = null;
             this.textBox0011.Pp_Validable = false;
-            this.textBox0011.Size = new System.Drawing.Size(100, 20);
-            this.textBox0011.TabIndex = 11;
+            this.textBox0011.Size = new System.Drawing.Size(121, 20);
+            this.textBox0011.TabIndex = 8;
             // 
-            // cmb_visita
+            // textBox0012
             // 
-            this.cmb_visita.FormattingEnabled = true;
-            this.cmb_visita.Location = new System.Drawing.Point(137, 62);
-            this.cmb_visita.Name = "cmb_visita";
-            this.cmb_visita.Pp_Coseleccion = false;
-            this.cmb_visita.Pp_descripcion = "descripcion";
-            this.cmb_visita.Pp_MensajeError = null;
-            this.cmb_visita.Pp_NombreCampo = "Tipo_visita";
-            this.cmb_visita.Pp_NombreTabla = null;
-            this.cmb_visita.Pp_Pk = "id_tipo_visita";
-            this.cmb_visita.Pp_tabla = "Tipo_visita";
-            this.cmb_visita.Pp_Validable = false;
-            this.cmb_visita.Size = new System.Drawing.Size(121, 21);
-            this.cmb_visita.TabIndex = 12;
+            this.textBox0012.Location = new System.Drawing.Point(99, 150);
+            this.textBox0012.Name = "textBox0012";
+            this.textBox0012.Pp_MensajeError = null;
+            this.textBox0012.Pp_NombreCampo = null;
+            this.textBox0012.Pp_NombreTabla = null;
+            this.textBox0012.Pp_Validable = false;
+            this.textBox0012.Size = new System.Drawing.Size(121, 20);
+            this.textBox0012.TabIndex = 9;
             // 
-            // cmb_escuela
+            // label5
             // 
-            this.cmb_escuela.FormattingEnabled = true;
-            this.cmb_escuela.Location = new System.Drawing.Point(137, 92);
-            this.cmb_escuela.Name = "cmb_escuela";
-            this.cmb_escuela.Pp_Coseleccion = false;
-            this.cmb_escuela.Pp_descripcion = "nombre";
-            this.cmb_escuela.Pp_MensajeError = null;
-            this.cmb_escuela.Pp_NombreCampo = "Escuela";
-            this.cmb_escuela.Pp_NombreTabla = null;
-            this.cmb_escuela.Pp_Pk = "id_escuela";
-            this.cmb_escuela.Pp_tabla = "Escuela";
-            this.cmb_escuela.Pp_Validable = false;
-            this.cmb_escuela.Size = new System.Drawing.Size(121, 21);
-            this.cmb_escuela.TabIndex = 13;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(25, 157);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Hora Inicio";
             // 
-            // cmb_guia
+            // label6
             // 
-            this.cmb_guia.FormattingEnabled = true;
-            this.cmb_guia.Location = new System.Drawing.Point(137, 122);
-            this.cmb_guia.Name = "cmb_guia";
-            this.cmb_guia.Pp_Coseleccion = false;
-            this.cmb_guia.Pp_descripcion = "nombre";
-            this.cmb_guia.Pp_MensajeError = null;
-            this.cmb_guia.Pp_NombreCampo = "Empleado";
-            this.cmb_guia.Pp_NombreTabla = "";
-            this.cmb_guia.Pp_Pk = "id_empleado";
-            this.cmb_guia.Pp_tabla = "Empleado";
-            this.cmb_guia.Pp_Validable = false;
-            this.cmb_guia.Size = new System.Drawing.Size(121, 21);
-            this.cmb_guia.TabIndex = 14;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(36, 185);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Hora Fin";
             // 
-            // labelText011
+            // label7
             // 
-            this.labelText011.AutoSize = true;
-            this.labelText011.Location = new System.Drawing.Point(1, 149);
-            this.labelText011.Name = "labelText011";
-            this.labelText011.Pp_ancho = 10;
-            this.labelText011.Pp_decimales = 2;
-            this.labelText011.Pp_Etiqueta = "Fecha Creacion";
-            this.labelText011.Pp_mensajeError = null;
-            this.labelText011.Pp_nombre_campo = null;
-            this.labelText011.Pp_nombre_tabla = null;
-            this.labelText011.Pp_ReadOnly = false;
-            this.labelText011.Pp_Text = "  /  /";
-            this.labelText011.Pp_tipoDato = DSI_3K2_PPAI.Clases.LabelText01.TipoDato.fecha;
-            this.labelText011.Pp_validable = false;
-            this.labelText011.Size = new System.Drawing.Size(236, 26);
-            this.labelText011.TabIndex = 16;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(0, 208);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(83, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Hora Inicio Real";
             // 
-            // labelText012
+            // label8
             // 
-            this.labelText012.AutoSize = true;
-            this.labelText012.Location = new System.Drawing.Point(-1, 181);
-            this.labelText012.Name = "labelText012";
-            this.labelText012.Pp_ancho = 10;
-            this.labelText012.Pp_decimales = 2;
-            this.labelText012.Pp_Etiqueta = "Fecha Reserva";
-            this.labelText012.Pp_mensajeError = null;
-            this.labelText012.Pp_nombre_campo = null;
-            this.labelText012.Pp_nombre_tabla = null;
-            this.labelText012.Pp_ReadOnly = false;
-            this.labelText012.Pp_Text = "  /  /";
-            this.labelText012.Pp_tipoDato = DSI_3K2_PPAI.Clases.LabelText01.TipoDato.fecha;
-            this.labelText012.Pp_validable = false;
-            this.labelText012.Size = new System.Drawing.Size(236, 26);
-            this.labelText012.TabIndex = 17;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 237);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Hora Fin Real";
             // 
-            // labelText013
+            // label9
             // 
-            this.labelText013.AutoSize = true;
-            this.labelText013.Location = new System.Drawing.Point(-1, 210);
-            this.labelText013.Name = "labelText013";
-            this.labelText013.Pp_ancho = 10;
-            this.labelText013.Pp_decimales = 2;
-            this.labelText013.Pp_Etiqueta = "Hora Inicio";
-            this.labelText013.Pp_mensajeError = null;
-            this.labelText013.Pp_nombre_campo = null;
-            this.labelText013.Pp_nombre_tabla = null;
-            this.labelText013.Pp_ReadOnly = false;
-            this.labelText013.Pp_Text = "  :";
-            this.labelText013.Pp_tipoDato = DSI_3K2_PPAI.Clases.LabelText01.TipoDato.hora;
-            this.labelText013.Pp_validable = false;
-            this.labelText013.Size = new System.Drawing.Size(236, 26);
-            this.labelText013.TabIndex = 18;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(8, 263);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 13);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Cant. Alumnos";
             // 
-            // labelText014
+            // textBox0013
             // 
-            this.labelText014.AutoSize = true;
-            this.labelText014.Location = new System.Drawing.Point(-1, 242);
-            this.labelText014.Name = "labelText014";
-            this.labelText014.Pp_ancho = 10;
-            this.labelText014.Pp_decimales = 2;
-            this.labelText014.Pp_Etiqueta = "Hora Fin";
-            this.labelText014.Pp_mensajeError = null;
-            this.labelText014.Pp_nombre_campo = null;
-            this.labelText014.Pp_nombre_tabla = null;
-            this.labelText014.Pp_ReadOnly = false;
-            this.labelText014.Pp_Text = "  :";
-            this.labelText014.Pp_tipoDato = DSI_3K2_PPAI.Clases.LabelText01.TipoDato.hora;
-            this.labelText014.Pp_validable = false;
-            this.labelText014.Size = new System.Drawing.Size(236, 26);
-            this.labelText014.TabIndex = 19;
+            this.textBox0013.Location = new System.Drawing.Point(99, 178);
+            this.textBox0013.Name = "textBox0013";
+            this.textBox0013.Pp_MensajeError = null;
+            this.textBox0013.Pp_NombreCampo = null;
+            this.textBox0013.Pp_NombreTabla = null;
+            this.textBox0013.Pp_Validable = false;
+            this.textBox0013.Size = new System.Drawing.Size(121, 20);
+            this.textBox0013.TabIndex = 15;
             // 
-            // labelText015
+            // textBox0014
             // 
-            this.labelText015.AutoSize = true;
-            this.labelText015.Location = new System.Drawing.Point(-1, 274);
-            this.labelText015.Name = "labelText015";
-            this.labelText015.Pp_ancho = 10;
-            this.labelText015.Pp_decimales = 2;
-            this.labelText015.Pp_Etiqueta = "Hora Inicio Real";
-            this.labelText015.Pp_mensajeError = null;
-            this.labelText015.Pp_nombre_campo = null;
-            this.labelText015.Pp_nombre_tabla = null;
-            this.labelText015.Pp_ReadOnly = false;
-            this.labelText015.Pp_Text = "  :";
-            this.labelText015.Pp_tipoDato = DSI_3K2_PPAI.Clases.LabelText01.TipoDato.hora;
-            this.labelText015.Pp_validable = false;
-            this.labelText015.Size = new System.Drawing.Size(236, 26);
-            this.labelText015.TabIndex = 20;
+            this.textBox0014.Location = new System.Drawing.Point(99, 205);
+            this.textBox0014.Name = "textBox0014";
+            this.textBox0014.Pp_MensajeError = null;
+            this.textBox0014.Pp_NombreCampo = null;
+            this.textBox0014.Pp_NombreTabla = null;
+            this.textBox0014.Pp_Validable = false;
+            this.textBox0014.Size = new System.Drawing.Size(121, 20);
+            this.textBox0014.TabIndex = 16;
             // 
-            // labelText016
+            // textBox0015
             // 
-            this.labelText016.AutoSize = true;
-            this.labelText016.Location = new System.Drawing.Point(-1, 306);
-            this.labelText016.Name = "labelText016";
-            this.labelText016.Pp_ancho = 10;
-            this.labelText016.Pp_decimales = 2;
-            this.labelText016.Pp_Etiqueta = "Hora Inicio Fin";
-            this.labelText016.Pp_mensajeError = null;
-            this.labelText016.Pp_nombre_campo = null;
-            this.labelText016.Pp_nombre_tabla = null;
-            this.labelText016.Pp_ReadOnly = false;
-            this.labelText016.Pp_Text = "  :";
-            this.labelText016.Pp_tipoDato = DSI_3K2_PPAI.Clases.LabelText01.TipoDato.hora;
-            this.labelText016.Pp_validable = false;
-            this.labelText016.Size = new System.Drawing.Size(236, 26);
-            this.labelText016.TabIndex = 21;
+            this.textBox0015.Location = new System.Drawing.Point(99, 230);
+            this.textBox0015.Name = "textBox0015";
+            this.textBox0015.Pp_MensajeError = null;
+            this.textBox0015.Pp_NombreCampo = null;
+            this.textBox0015.Pp_NombreTabla = null;
+            this.textBox0015.Pp_Validable = false;
+            this.textBox0015.Size = new System.Drawing.Size(121, 20);
+            this.textBox0015.TabIndex = 17;
             // 
-            // labelText017
+            // textBox0016
             // 
-            this.labelText017.AutoSize = true;
-            this.labelText017.Location = new System.Drawing.Point(-1, 338);
-            this.labelText017.Name = "labelText017";
-            this.labelText017.Pp_ancho = 10;
-            this.labelText017.Pp_decimales = 2;
-            this.labelText017.Pp_Etiqueta = "Cantidad Alumno";
-            this.labelText017.Pp_mensajeError = null;
-            this.labelText017.Pp_nombre_campo = null;
-            this.labelText017.Pp_nombre_tabla = null;
-            this.labelText017.Pp_ReadOnly = false;
-            this.labelText017.Pp_Text = "       ,";
-            this.labelText017.Pp_tipoDato = DSI_3K2_PPAI.Clases.LabelText01.TipoDato.numero;
-            this.labelText017.Pp_validable = false;
-            this.labelText017.Size = new System.Drawing.Size(236, 26);
-            this.labelText017.TabIndex = 22;
+            this.textBox0016.Location = new System.Drawing.Point(99, 260);
+            this.textBox0016.Name = "textBox0016";
+            this.textBox0016.Pp_MensajeError = null;
+            this.textBox0016.Pp_NombreCampo = null;
+            this.textBox0016.Pp_NombreTabla = null;
+            this.textBox0016.Pp_Validable = false;
+            this.textBox0016.Size = new System.Drawing.Size(121, 20);
+            this.textBox0016.TabIndex = 18;
             // 
-            // btm_agregar
+            // button1
             // 
-            this.btm_agregar.BackgroundImage = global::DSI_3K2_PPAI.Properties.Resources.tilde;
-            this.btm_agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btm_agregar.Location = new System.Drawing.Point(335, 127);
-            this.btm_agregar.Name = "btm_agregar";
-            this.btm_agregar.Size = new System.Drawing.Size(56, 48);
-            this.btm_agregar.TabIndex = 23;
-            this.btm_agregar.UseVisualStyleBackColor = true;
-            this.btm_agregar.Click += new System.EventHandler(this.btm_agregar_Click);
+            this.button1.BackgroundImage = global::DSI_3K2_PPAI.Properties.Resources.tilde;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(294, 106);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(49, 38);
+            this.button1.TabIndex = 19;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btn_cancelar
+            // button2
             // 
-            this.btn_cancelar.BackgroundImage = global::DSI_3K2_PPAI.Properties.Resources.kisspng_multiplication_sign_computer_icons_button_x_icon_5b15131f4ee6f5_9780013515281078073232;
-            this.btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_cancelar.ForeColor = System.Drawing.Color.Transparent;
-            this.btn_cancelar.Location = new System.Drawing.Point(335, 181);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(56, 42);
-            this.btn_cancelar.TabIndex = 24;
-            this.btn_cancelar.UseVisualStyleBackColor = true;
-            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            this.button2.BackgroundImage = global::DSI_3K2_PPAI.Properties.Resources.kisspng_multiplication_sign_computer_icons_button_x_icon_5b15131f4ee6f5_9780013515281078073232;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(294, 161);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(49, 37);
+            this.button2.TabIndex = 20;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // AgregarReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 384);
-            this.Controls.Add(this.btn_cancelar);
-            this.Controls.Add(this.btm_agregar);
-            this.Controls.Add(this.labelText017);
-            this.Controls.Add(this.labelText016);
-            this.Controls.Add(this.labelText015);
-            this.Controls.Add(this.labelText014);
-            this.Controls.Add(this.labelText013);
-            this.Controls.Add(this.labelText012);
-            this.Controls.Add(this.labelText011);
-            this.Controls.Add(this.cmb_guia);
-            this.Controls.Add(this.cmb_escuela);
-            this.Controls.Add(this.cmb_visita);
-            this.Controls.Add(this.textBox0011);
+            this.ClientSize = new System.Drawing.Size(355, 333);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox0016);
+            this.Controls.Add(this.textBox0015);
+            this.Controls.Add(this.textBox0014);
+            this.Controls.Add(this.textBox0013);
             this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox0012);
+            this.Controls.Add(this.textBox0011);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.comboBox013);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBox012);
+            this.Controls.Add(this.comboBox011);
             this.Controls.Add(this.label1);
             this.Name = "AgregarReserva";
             this.Text = "AgregarReserva";
@@ -340,22 +304,24 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private Clases.ComboBox01 comboBox011;
+        private Clases.ComboBox01 comboBox012;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private Clases.ComboBox01 comboBox013;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label9;
         private Clases.TextBox001 textBox0011;
-        private Clases.ComboBox01 cmb_visita;
-        private Clases.ComboBox01 cmb_escuela;
-        private Clases.ComboBox01 cmb_guia;
-        private Clases.LabelText01 labelText011;
-        private Clases.LabelText01 labelText012;
-        private Clases.LabelText01 labelText013;
-        private Clases.LabelText01 labelText014;
-        private Clases.LabelText01 labelText015;
-        private Clases.LabelText01 labelText016;
-        private Clases.LabelText01 labelText017;
-        private System.Windows.Forms.Button btm_agregar;
-        private System.Windows.Forms.Button btn_cancelar;
+        private Clases.TextBox001 textBox0012;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private Clases.TextBox001 textBox0013;
+        private Clases.TextBox001 textBox0014;
+        private Clases.TextBox001 textBox0015;
+        private Clases.TextBox001 textBox0016;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

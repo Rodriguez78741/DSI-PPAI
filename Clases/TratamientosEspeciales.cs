@@ -26,15 +26,17 @@ namespace DSI_3K2_PPAI.Clases
                         return Resultado.error;
                     }
                 }
-                if (item.GetType().Name == "LabelText01")
-                {
-                    if (((LabelText01)item).Pp_Text == "")
-                    {
-                        MessageBox.Show(((LabelText01)item).Pp_mensajeError);
-                        ((LabelText01)item).Focus();
-                        return Resultado.error;
-                    }
-                }
+                //if (item.GetType().Name == "LabelText01")
+                //{
+                    
+                    
+                //    if (((LabelText01)item).Text == "")
+                //    {
+                //        MessageBox.Show(((LabelText01)item).Pp_mensajeError);
+                //        ((LabelText01)item).Focus();
+                //        return Resultado.error;
+                //    }
+                //}
                 if (item.GetType().Name == "ComboBox01")
                 {
                     if (((ComboBox01)item).SelectedIndex == -1)
@@ -132,32 +134,32 @@ namespace DSI_3K2_PPAI.Clases
             }
         }
 
-        public string RecuperarFecha()
-        {
-            BE_AccesoDatos _BD = new BE_AccesoDatos();
-            return _BD.EjecutarSelect("select convert(char(10),getdate(),103)").Rows[0][0].ToString();
-        }
+        //public string RecuperarFecha()
+        //{
+        //    BE_AccesoDatos _BD = new BE_AccesoDatos();
+        //    return _BD.EjecutarSelect("select convert(char(10),getdate(),103)").Rows[0][0].ToString();
+        //}
 
-        public Resultado ValidarFecha(string fecha)
-        {
-            try
-            {
-                DateTime.Parse(fecha);
-                return Resultado.correcto;
-            }
-            catch (Exception)
-            {
-                return Resultado.error;
-            }
-        }
-        public Resultado ValidarNumero(string numero)
-        {
-            Int32 valor;
-            if (Int32.TryParse(numero, out valor) == true)
-                return Resultado.correcto;
-            else
-                return Resultado.error;
-        }
+        //public Resultado ValidarFecha(string fecha)
+        //{
+        //    try
+        //    {
+        //        DateTime.Parse(fecha);
+        //        return Resultado.correcto;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return Resultado.error;
+        //    }
+        //}
+        //public Resultado ValidarNumero(string numero)
+        //{
+        //    Int32 valor;
+        //    if (Int32.TryParse(numero, out valor) == true)
+        //        return Resultado.correcto;
+        //    else
+        //        return Resultado.error;
+        //}
 
     }
 }
