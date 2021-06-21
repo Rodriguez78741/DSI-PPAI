@@ -35,3 +35,4 @@ C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Clas
 C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.AgregarReserva.resources
 C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.CopyComplete
 C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.AssemblyReference.cache
+C:\Users\Julian\Source\Repos\Rodriguez78741\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Pantallas.GestionarReserva.AgregarExposicion.resources

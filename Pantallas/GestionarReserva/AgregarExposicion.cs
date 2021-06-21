@@ -27,6 +27,13 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             {
                 NE_Exposicion exposicion = new NE_Exposicion();
                 exposicion.Insertar_Reserva(this.Controls);
+
+                //string sqlExpoxReserva= "INSERT INTO Expo_X_Reserva (id_reserva, id_exposicion)" +
+                //    "VALUES ("
+                //    +
+
+
+
                 this.Close();
 
             }
