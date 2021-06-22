@@ -101,11 +101,157 @@ namespace DSI_3K2_PPAI.Clases
 
         public void Insertar_Reserva(string sqlInsertar)
         {
+
             Conectar();
             Cmd.CommandText = sqlInsertar;
             Cmd.ExecuteNonQuery();
             Desconectar();
         }
+
+
+
+        public static bool TransaccionReserva(List<int> exposiciones, List<int> empleados)
+        {
+            string cadenaconexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlTransaction objetoTransaccion = null;
+            SqlConnection cn = new SqlConnection(cadenaconexion);
+            try
+            {
+
+
+
+                int idReserva = ObtenerUltimoIdReserva();
+
+
+                SqlCommand cmd = new SqlCommand();
+
+
+                
+
+
+                cn.Open();
+
+                objetoTransaccion = cn.BeginTransaction("RegistroDeReserva");
+                cmd.Transaction = objetoTransaccion;
+                cmd.Connection = cn;
+
+                
+
+
+
+                foreach (var idEmpleado in empleados)
+                {
+
+                    string consultaAlumno = "INSERT INTO Guia_X_Reserva values(@idPersona,@idCurso)";
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@idPersona", idEmpleado);
+                    cmd.Parameters.AddWithValue("@idCurso", idReserva);
+                    
+
+                    cmd.CommandText = consultaAlumno;
+                    cmd.ExecuteNonQuery();
+                }
+
+
+
+                foreach (var idExpo in exposiciones)
+                {
+
+                    string consultaAlumno = "INSERT INTO Expo_X_Reserva values(@idCurso,@idPersona)";
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@idPersona", idExpo);
+                    cmd.Parameters.AddWithValue("@idCurso", idReserva);
+                    
+
+                    cmd.CommandText = consultaAlumno;
+                    cmd.ExecuteNonQuery();
+                }
+
+                objetoTransaccion.Commit();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                objetoTransaccion.Rollback();
+                return false;
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+
+        }
+
+
+        public static int ObtenerUltimoIdReserva()
+        {
+            string cadenaconexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaconexion);
+            try
+            {
+
+
+                SqlCommand cmd = new SqlCommand();
+
+
+                string consulta = "SELECT MAX(id_reserva) FROM Reserva";
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                int resultado = (int)cmd.ExecuteScalar();
+                return resultado;
+
+            }
+            catch (Exception)
+            {
+
+                return 0;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public EstadoTransaccion Modificar(string SqlModificar)
         {
             return InsModBorr(SqlModificar);

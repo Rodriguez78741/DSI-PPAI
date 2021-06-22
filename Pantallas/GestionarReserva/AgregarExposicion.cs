@@ -45,6 +45,8 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
         {
             cbm_guia.CargarCombo();
             cbm_tipo.CargarCombo();
+
+
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)

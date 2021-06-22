@@ -40,21 +40,51 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarEmpleado = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnAgregarGuia = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarExposicion = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnAgregarExposicion = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idExposicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreExposicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionExposicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbExposicion = new DSI_3K2_PPAI.Clases.ComboBox01();
+            this.txtApellidoExpo = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.txtNombreExpo = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.cmbGuia = new DSI_3K2_PPAI.Clases.ComboBox01();
+            this.txtApellidoEmpleado = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.txtNombreEmpleado = new DSI_3K2_PPAI.Clases.TextBox001();
             this.textBox0016 = new DSI_3K2_PPAI.Clases.TextBox001();
             this.textBox0015 = new DSI_3K2_PPAI.Clases.TextBox001();
             this.textBox0014 = new DSI_3K2_PPAI.Clases.TextBox001();
             this.textBox0013 = new DSI_3K2_PPAI.Clases.TextBox001();
             this.textBox0012 = new DSI_3K2_PPAI.Clases.TextBox001();
             this.textBox0011 = new DSI_3K2_PPAI.Clases.TextBox001();
-            this.comboBox013 = new DSI_3K2_PPAI.Clases.ComboBox01();
             this.comboBox012 = new DSI_3K2_PPAI.Clases.ComboBox01();
             this.comboBox011 = new DSI_3K2_PPAI.Clases.ComboBox01();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 43);
+            this.label1.Location = new System.Drawing.Point(27, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 0;
@@ -63,7 +93,7 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 78);
+            this.label2.Location = new System.Drawing.Point(38, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 4;
@@ -72,11 +102,10 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(54, 105);
+            this.label3.Location = new System.Drawing.Point(419, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Guia";
             // 
             // label4
             // 
@@ -134,25 +163,308 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             // 
             // button1
             // 
-            this.button1.BackgroundImage = global::DSI_3K2_PPAI.Properties.Resources.tilde;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(294, 106);
+            this.button1.Location = new System.Drawing.Point(534, 419);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(49, 38);
+            this.button1.Size = new System.Drawing.Size(65, 37);
             this.button1.TabIndex = 19;
+            this.button1.Text = "Agregar Reserva";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.BackgroundImage = global::DSI_3K2_PPAI.Properties.Resources.kisspng_multiplication_sign_computer_icons_button_x_icon_5b15131f4ee6f5_9780013515281078073232;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(294, 161);
+            this.button2.Location = new System.Drawing.Point(605, 419);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(49, 37);
+            this.button2.Size = new System.Drawing.Size(57, 37);
             this.button2.TabIndex = 20;
+            this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(419, 157);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(0, 13);
+            this.label10.TabIndex = 21;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnBuscarEmpleado);
+            this.groupBox1.Controls.Add(this.cmbGuia);
+            this.groupBox1.Controls.Add(this.txtApellidoEmpleado);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.txtNombreEmpleado);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.btnAgregarGuia);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Location = new System.Drawing.Point(263, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(399, 202);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Guías";
+            // 
+            // btnBuscarEmpleado
+            // 
+            this.btnBuscarEmpleado.Location = new System.Drawing.Point(31, 89);
+            this.btnBuscarEmpleado.Name = "btnBuscarEmpleado";
+            this.btnBuscarEmpleado.Size = new System.Drawing.Size(75, 43);
+            this.btnBuscarEmpleado.TabIndex = 35;
+            this.btnBuscarEmpleado.Text = "Buscar Empleado";
+            this.btnBuscarEmpleado.UseVisualStyleBackColor = true;
+            this.btnBuscarEmpleado.Click += new System.EventHandler(this.btnBuscarEmpleado_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(289, 36);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(44, 13);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "Apellido";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(162, 36);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(47, 13);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "Nombre ";
+            // 
+            // btnAgregarGuia
+            // 
+            this.btnAgregarGuia.Location = new System.Drawing.Point(308, 114);
+            this.btnAgregarGuia.Name = "btnAgregarGuia";
+            this.btnAgregarGuia.Size = new System.Drawing.Size(85, 23);
+            this.btnAgregarGuia.TabIndex = 28;
+            this.btnAgregarGuia.Text = "Agregar Guia";
+            this.btnAgregarGuia.UseVisualStyleBackColor = true;
+            this.btnAgregarGuia.Click += new System.EventHandler(this.btnAgregarGuia_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 36);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 13);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Id Guia";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_empleado,
+            this.nombreEmpleado,
+            this.apellidoEmpleado});
+            this.dataGridView1.Location = new System.Drawing.Point(0, 142);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(355, 60);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // id_empleado
+            // 
+            this.id_empleado.HeaderText = "ID";
+            this.id_empleado.Name = "id_empleado";
+            this.id_empleado.ReadOnly = true;
+            // 
+            // nombreEmpleado
+            // 
+            this.nombreEmpleado.HeaderText = "Nombre";
+            this.nombreEmpleado.Name = "nombreEmpleado";
+            this.nombreEmpleado.ReadOnly = true;
+            // 
+            // apellidoEmpleado
+            // 
+            this.apellidoEmpleado.HeaderText = "Apellido";
+            this.apellidoEmpleado.Name = "apellidoEmpleado";
+            this.apellidoEmpleado.ReadOnly = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnBuscarExposicion);
+            this.groupBox2.Controls.Add(this.cmbExposicion);
+            this.groupBox2.Controls.Add(this.txtApellidoExpo);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.txtNombreExpo);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.btnAgregarExposicion);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Location = new System.Drawing.Point(263, 220);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(399, 193);
+            this.groupBox2.TabIndex = 23;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Exposiciones";
+            // 
+            // btnBuscarExposicion
+            // 
+            this.btnBuscarExposicion.Location = new System.Drawing.Point(31, 77);
+            this.btnBuscarExposicion.Name = "btnBuscarExposicion";
+            this.btnBuscarExposicion.Size = new System.Drawing.Size(75, 43);
+            this.btnBuscarExposicion.TabIndex = 36;
+            this.btnBuscarExposicion.Text = "Buscar Exposicion";
+            this.btnBuscarExposicion.UseVisualStyleBackColor = true;
+            this.btnBuscarExposicion.Click += new System.EventHandler(this.btnBuscarExposicion_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(263, 34);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(63, 13);
+            this.label16.TabIndex = 32;
+            this.label16.Text = "Descripcion";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(135, 34);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(42, 13);
+            this.label15.TabIndex = 30;
+            this.label15.Text = "nombre";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // btnAgregarExposicion
+            // 
+            this.btnAgregarExposicion.Location = new System.Drawing.Point(279, 104);
+            this.btnAgregarExposicion.Name = "btnAgregarExposicion";
+            this.btnAgregarExposicion.Size = new System.Drawing.Size(114, 23);
+            this.btnAgregarExposicion.TabIndex = 29;
+            this.btnAgregarExposicion.Text = "Agregar Exposicion";
+            this.btnAgregarExposicion.UseVisualStyleBackColor = true;
+            this.btnAgregarExposicion.Click += new System.EventHandler(this.btnAgregarExposicion_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 34);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(69, 13);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "id Exposicion";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idExposicion,
+            this.nombreExposicion,
+            this.descripcionExposicion});
+            this.dataGridView2.Location = new System.Drawing.Point(0, 133);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(393, 60);
+            this.dataGridView2.TabIndex = 1;
+            // 
+            // idExposicion
+            // 
+            this.idExposicion.HeaderText = "ID";
+            this.idExposicion.Name = "idExposicion";
+            this.idExposicion.ReadOnly = true;
+            // 
+            // nombreExposicion
+            // 
+            this.nombreExposicion.HeaderText = "NOMBRE";
+            this.nombreExposicion.Name = "nombreExposicion";
+            this.nombreExposicion.ReadOnly = true;
+            // 
+            // descripcionExposicion
+            // 
+            this.descripcionExposicion.HeaderText = "Descripcion";
+            this.descripcionExposicion.Name = "descripcionExposicion";
+            this.descripcionExposicion.ReadOnly = true;
+            this.descripcionExposicion.Width = 150;
+            // 
+            // cmbExposicion
+            // 
+            this.cmbExposicion.FormattingEnabled = true;
+            this.cmbExposicion.Location = new System.Drawing.Point(9, 50);
+            this.cmbExposicion.Name = "cmbExposicion";
+            this.cmbExposicion.Pp_Coseleccion = false;
+            this.cmbExposicion.Pp_descripcion = null;
+            this.cmbExposicion.Pp_MensajeError = null;
+            this.cmbExposicion.Pp_NombreCampo = null;
+            this.cmbExposicion.Pp_NombreTabla = null;
+            this.cmbExposicion.Pp_Pk = null;
+            this.cmbExposicion.Pp_tabla = null;
+            this.cmbExposicion.Pp_Validable = false;
+            this.cmbExposicion.Size = new System.Drawing.Size(97, 21);
+            this.cmbExposicion.TabIndex = 35;
+            // 
+            // txtApellidoExpo
+            // 
+            this.txtApellidoExpo.Location = new System.Drawing.Point(266, 50);
+            this.txtApellidoExpo.Name = "txtApellidoExpo";
+            this.txtApellidoExpo.Pp_MensajeError = null;
+            this.txtApellidoExpo.Pp_NombreCampo = null;
+            this.txtApellidoExpo.Pp_NombreTabla = null;
+            this.txtApellidoExpo.Pp_Validable = false;
+            this.txtApellidoExpo.Size = new System.Drawing.Size(127, 20);
+            this.txtApellidoExpo.TabIndex = 33;
+            // 
+            // txtNombreExpo
+            // 
+            this.txtNombreExpo.Location = new System.Drawing.Point(138, 50);
+            this.txtNombreExpo.Name = "txtNombreExpo";
+            this.txtNombreExpo.Pp_MensajeError = null;
+            this.txtNombreExpo.Pp_NombreCampo = null;
+            this.txtNombreExpo.Pp_NombreTabla = null;
+            this.txtNombreExpo.Pp_Validable = false;
+            this.txtNombreExpo.Size = new System.Drawing.Size(107, 20);
+            this.txtNombreExpo.TabIndex = 31;
+            // 
+            // cmbGuia
+            // 
+            this.cmbGuia.FormattingEnabled = true;
+            this.cmbGuia.Location = new System.Drawing.Point(9, 54);
+            this.cmbGuia.Name = "cmbGuia";
+            this.cmbGuia.Pp_Coseleccion = false;
+            this.cmbGuia.Pp_descripcion = null;
+            this.cmbGuia.Pp_MensajeError = null;
+            this.cmbGuia.Pp_NombreCampo = null;
+            this.cmbGuia.Pp_NombreTabla = null;
+            this.cmbGuia.Pp_Pk = null;
+            this.cmbGuia.Pp_tabla = null;
+            this.cmbGuia.Pp_Validable = false;
+            this.cmbGuia.Size = new System.Drawing.Size(97, 21);
+            this.cmbGuia.TabIndex = 34;
+            // 
+            // txtApellidoEmpleado
+            // 
+            this.txtApellidoEmpleado.Location = new System.Drawing.Point(292, 52);
+            this.txtApellidoEmpleado.Name = "txtApellidoEmpleado";
+            this.txtApellidoEmpleado.Pp_MensajeError = null;
+            this.txtApellidoEmpleado.Pp_NombreCampo = null;
+            this.txtApellidoEmpleado.Pp_NombreTabla = null;
+            this.txtApellidoEmpleado.Pp_Validable = false;
+            this.txtApellidoEmpleado.Size = new System.Drawing.Size(101, 20);
+            this.txtApellidoEmpleado.TabIndex = 32;
+            // 
+            // txtNombreEmpleado
+            // 
+            this.txtNombreEmpleado.Location = new System.Drawing.Point(165, 52);
+            this.txtNombreEmpleado.Name = "txtNombreEmpleado";
+            this.txtNombreEmpleado.Pp_MensajeError = null;
+            this.txtNombreEmpleado.Pp_NombreCampo = null;
+            this.txtNombreEmpleado.Pp_NombreTabla = null;
+            this.txtNombreEmpleado.Pp_Validable = false;
+            this.txtNombreEmpleado.Size = new System.Drawing.Size(107, 20);
+            this.txtNombreEmpleado.TabIndex = 30;
             // 
             // textBox0016
             // 
@@ -220,26 +532,10 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.textBox0011.Size = new System.Drawing.Size(121, 20);
             this.textBox0011.TabIndex = 8;
             // 
-            // comboBox013
-            // 
-            this.comboBox013.FormattingEnabled = true;
-            this.comboBox013.Location = new System.Drawing.Point(99, 97);
-            this.comboBox013.Name = "comboBox013";
-            this.comboBox013.Pp_Coseleccion = false;
-            this.comboBox013.Pp_descripcion = "nombre";
-            this.comboBox013.Pp_MensajeError = "No ingreso el guia";
-            this.comboBox013.Pp_NombreCampo = null;
-            this.comboBox013.Pp_NombreTabla = "Empleado";
-            this.comboBox013.Pp_Pk = "id_empleado";
-            this.comboBox013.Pp_tabla = "Empleado";
-            this.comboBox013.Pp_Validable = false;
-            this.comboBox013.Size = new System.Drawing.Size(121, 21);
-            this.comboBox013.TabIndex = 6;
-            // 
             // comboBox012
             // 
             this.comboBox012.FormattingEnabled = true;
-            this.comboBox012.Location = new System.Drawing.Point(99, 70);
+            this.comboBox012.Location = new System.Drawing.Point(99, 93);
             this.comboBox012.Name = "comboBox012";
             this.comboBox012.Pp_Coseleccion = false;
             this.comboBox012.Pp_descripcion = "nombre";
@@ -255,7 +551,7 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             // comboBox011
             // 
             this.comboBox011.FormattingEnabled = true;
-            this.comboBox011.Location = new System.Drawing.Point(99, 40);
+            this.comboBox011.Location = new System.Drawing.Point(99, 63);
             this.comboBox011.Name = "comboBox011";
             this.comboBox011.Pp_Coseleccion = false;
             this.comboBox011.Pp_descripcion = "descripcion";
@@ -272,7 +568,10 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 290);
+            this.ClientSize = new System.Drawing.Size(701, 468);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox0016);
@@ -287,7 +586,6 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.Controls.Add(this.textBox0012);
             this.Controls.Add(this.textBox0011);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox013);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox012);
@@ -296,6 +594,12 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.Name = "AgregarReserva";
             this.Text = "AgregarReserva";
             this.Load += new System.EventHandler(this.AgregarReserva_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,7 +612,6 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
         private Clases.ComboBox01 comboBox012;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private Clases.ComboBox01 comboBox013;
         private System.Windows.Forms.Label label4;
         private Clases.TextBox001 textBox0011;
         private Clases.TextBox001 textBox0012;
@@ -323,5 +626,32 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
         private Clases.TextBox001 textBox0016;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnAgregarGuia;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnAgregarExposicion;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private Clases.TextBox001 txtApellidoEmpleado;
+        private System.Windows.Forms.Label label14;
+        private Clases.TextBox001 txtNombreEmpleado;
+        private System.Windows.Forms.Label label13;
+        private Clases.TextBox001 txtApellidoExpo;
+        private System.Windows.Forms.Label label16;
+        private Clases.TextBox001 txtNombreExpo;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnBuscarEmpleado;
+        private Clases.ComboBox01 cmbGuia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoEmpleado;
+        private System.Windows.Forms.Button btnBuscarExposicion;
+        private Clases.ComboBox01 cmbExposicion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idExposicion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreExposicion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionExposicion;
     }
 }

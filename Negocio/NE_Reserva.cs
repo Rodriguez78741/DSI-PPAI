@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DSI_3K2_PPAI.Clases;
 using System.Windows.Forms;
-
-
+using System.Data;
+using System.Data.SqlClient;
 
 namespace DSI_3K2_PPAI.Negocio
 {
@@ -38,14 +38,13 @@ namespace DSI_3K2_PPAI.Negocio
 
         }
 
-        public void Insertar_Reserva()
+        public void Insertar_Reserva(List<int> exposiciones, List<int> empleados)
         {
-            string InsertarReserva = "INSERT INTO Reserva (id_tipo_visita, id_escuela, id_guia, fecha_creacion,fecha_reserva, hora_inicio, hora_fin" +
+            string InsertarReserva = "INSERT INTO Reserva (id_tipo_visita, id_escuela, fecha_creacion,fecha_reserva, hora_inicio, hora_fin" +
             ", hora_incio_real, hora_fin_real, cant_alumnos_confirm ) "
             + "VALUES ("
             + Pp_id_tipo_visita
-            + ", " + Pp_id_escuela
-            + ", " + Pp_id_guia 
+            + ", " + Pp_id_escuela 
             + ", '" + "'"
             + ", '" + Pp_fecha_reserva + "'"
             + ", '" + Pp_hora_inicio + "'"
@@ -56,8 +55,196 @@ namespace DSI_3K2_PPAI.Negocio
 
             MessageBox.Show(InsertarReserva);
             _BD.Insertar_Reserva(InsertarReserva);
+
+            MessageBox.Show("inicio Transaccion");
+            BE_AccesoDatos.TransaccionReserva(exposiciones,empleados);
+            MessageBox.Show("fin Transaccion");
             MessageBox.Show("La carga a finalizado correctamente");
 
+
+
         }
+
+
+        public static DataTable ObtenerGuia()
+        {
+            string cadenaconexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaconexion);
+            try
+            {
+
+
+                SqlCommand cmd = new SqlCommand();
+
+
+                string consulta = "SELECT * FROM Empleado";
+
+
+                cmd.Parameters.Clear();
+                
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+        }
+
+        public static DataTable ObtenerExpo()
+        {
+            string cadenaconexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaconexion);
+            try
+            {
+
+
+                SqlCommand cmd = new SqlCommand();
+
+
+                string consulta = "SELECT * FROM Exposicion";
+
+
+                cmd.Parameters.Clear();
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+
+
+
+
+        public static DataTable ObtenerGuiaEspecifica(int id)
+        {
+            string cadenaconexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaconexion);
+            try
+            {
+
+
+                SqlCommand cmd = new SqlCommand();
+
+
+                string consulta = "SELECT * FROM Empleado WHERE id_empleado=@Id ";
+
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@Id",id);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+        }
+
+
+        public static DataTable ObtenerExpoEspecifica(int id)
+        {
+            string cadenaconexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaconexion);
+            try
+            {
+
+
+                SqlCommand cmd = new SqlCommand();
+
+
+                string consulta = "SELECT * FROM Exposicion WHERE id_expo=@id";
+
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("id",id);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+
+
     }
+
+
+
 }

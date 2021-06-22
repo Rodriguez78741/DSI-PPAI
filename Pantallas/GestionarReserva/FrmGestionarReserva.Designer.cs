@@ -45,10 +45,10 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.hora_fin_real = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cant_alumnos_confirm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btm_buscar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.Txt_Escuela = new DSI_3K2_PPAI.Clases.TextBox001();
             this.Txt_ID = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbx_reserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Reserva)).BeginInit();
             this.SuspendLayout();
@@ -77,36 +77,36 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             // btm_eliminar
             // 
             this.btm_eliminar.BackColor = System.Drawing.Color.Transparent;
-            this.btm_eliminar.BackgroundImage = global::DSI_3K2_PPAI.Properties.Resources._18;
             this.btm_eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btm_eliminar.Enabled = false;
-            this.btm_eliminar.Location = new System.Drawing.Point(162, 401);
+            this.btm_eliminar.Location = new System.Drawing.Point(291, 396);
             this.btm_eliminar.Name = "btm_eliminar";
-            this.btm_eliminar.Size = new System.Drawing.Size(55, 38);
+            this.btm_eliminar.Size = new System.Drawing.Size(90, 46);
             this.btm_eliminar.TabIndex = 8;
+            this.btm_eliminar.Text = "Eliminar Exposicion";
             this.btm_eliminar.UseVisualStyleBackColor = false;
             this.btm_eliminar.Click += new System.EventHandler(this.btm_eliminar_Click);
             // 
             // btm_modificar
             // 
             this.btm_modificar.BackColor = System.Drawing.Color.Transparent;
-            this.btm_modificar.BackgroundImage = global::DSI_3K2_PPAI.Properties.Resources.editar_imagenes_clipart_2;
             this.btm_modificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btm_modificar.Location = new System.Drawing.Point(101, 401);
+            this.btm_modificar.Location = new System.Drawing.Point(167, 396);
             this.btm_modificar.Name = "btm_modificar";
-            this.btm_modificar.Size = new System.Drawing.Size(55, 38);
+            this.btm_modificar.Size = new System.Drawing.Size(100, 47);
             this.btm_modificar.TabIndex = 7;
+            this.btm_modificar.Text = "Modificar Exposicion";
             this.btm_modificar.UseVisualStyleBackColor = false;
             // 
             // btm_Agregar
             // 
             this.btm_Agregar.BackColor = System.Drawing.Color.Transparent;
-            this.btm_Agregar.BackgroundImage = global::DSI_3K2_PPAI.Properties.Resources.png_transparent_computer_icons_document_add_button_number_add_button_add;
             this.btm_Agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btm_Agregar.Location = new System.Drawing.Point(40, 401);
+            this.btm_Agregar.Location = new System.Drawing.Point(40, 396);
             this.btm_Agregar.Name = "btm_Agregar";
-            this.btm_Agregar.Size = new System.Drawing.Size(55, 38);
+            this.btm_Agregar.Size = new System.Drawing.Size(109, 47);
             this.btm_Agregar.TabIndex = 6;
+            this.btm_Agregar.Text = "Agregar Exposicion";
             this.btm_Agregar.UseVisualStyleBackColor = false;
             this.btm_Agregar.Click += new System.EventHandler(this.btm_Agregar_Click);
             // 
@@ -125,7 +125,7 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.hora_inicio_real,
             this.hora_fin_real,
             this.cant_alumnos_confirm});
-            this.dataGrid_Reserva.Location = new System.Drawing.Point(40, 140);
+            this.dataGrid_Reserva.Location = new System.Drawing.Point(40, 135);
             this.dataGrid_Reserva.Name = "dataGrid_Reserva";
             this.dataGrid_Reserva.Size = new System.Drawing.Size(691, 255);
             this.dataGrid_Reserva.TabIndex = 5;
@@ -202,26 +202,6 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.btm_buscar.UseVisualStyleBackColor = false;
             this.btm_buscar.Click += new System.EventHandler(this.btm_buscar_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(37, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre Escuela";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(71, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID Reserva";
-            // 
             // Txt_Escuela
             // 
             this.Txt_Escuela.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -245,6 +225,26 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.Txt_ID.Pp_Validable = false;
             this.Txt_ID.Size = new System.Drawing.Size(100, 23);
             this.Txt_ID.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(37, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nombre Escuela";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(71, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID Reserva";
             // 
             // FrmGestionarReserva
             // 

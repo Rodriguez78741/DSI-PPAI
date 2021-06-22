@@ -21,5 +21,8 @@ namespace DSI_3K2_PPAI.Negocio
             _BD.Insertar(tratamientos.CostructorInsert("Exposicion", controles));
 
         }
+
+
+
     }
 }
