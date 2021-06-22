@@ -1,4 +1,4 @@
-DELETE DATABASE DSI_PPAI2
+DELETE DATABASE DSI_PPAI
 CREATE DATABASE DSI_PPAI
 
 
@@ -285,10 +285,6 @@ INSERT INTO Escuela (nombre, email, nombre_calle, nro_calle, id_barrio, tel_celu
 
 --Insert Reserva
 INSERT INTO Reserva (id_tipo_visita, id_escuela, id_guia, fecha_creacion, fecha_reserva, hora_inicio, hora_fin, hora_incio_real, hora_fin_real, cant_alumnos_confirm) 
-VALUES (1,1,1,'','2021/7/15', '15:00:00', '17:00:00', '15:17:00', '17:15:00', 150);
-
-
-INSERT INTO Reserva (id_tipo_visita, id_escuela, id_guia, fecha_reserva, hora_inicio, hora_fin, hora_incio_real, hora_fin_real, cant_alumnos_confirm )
 VALUES (1,1,1,'','2021/7/15', '15:00:00', '17:00:00', '15:17:00', '17:15:00', 150);
 
 --Insert Expo X Reserva

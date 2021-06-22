@@ -17,8 +17,8 @@ namespace DSI_3K2_PPAI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
-            Application.Run(new FrmGestionarReserva());
+            Application.Run(new Principal());
+            //Application.Run(new FrmGestionarReserva());
         }
     }
 }

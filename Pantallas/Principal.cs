@@ -28,5 +28,17 @@ namespace DSI_3K2_PPAI
             FrmGestionarReserva GestionReservas = new FrmGestionarReserva();
             GestionReservas.ShowDialog();
         }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            Form1 login = new Form1();
+            //login.ShowDialog();
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                //MessageBox.Show("Bienvenido " + login.usuario);
+            }
+            login.Dispose();
+
+        }
     }
 }
