@@ -34,11 +34,6 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.btm_modificar = new System.Windows.Forms.Button();
             this.btm_Agregar = new System.Windows.Forms.Button();
             this.dataGrid_Reserva = new System.Windows.Forms.DataGridView();
-            this.btm_buscar = new System.Windows.Forms.Button();
-            this.Txt_Escuela = new DSI_3K2_PPAI.Clases.TextBox001();
-            this.Txt_ID = new DSI_3K2_PPAI.Clases.TextBox001();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.Id_Reserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_Visita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Escuela = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +44,11 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.hora_inicio_real = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hora_fin_real = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cant_alumnos_confirm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btm_buscar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Txt_Escuela = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.Txt_ID = new DSI_3K2_PPAI.Clases.TextBox001();
             this.gbx_reserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Reserva)).BeginInit();
             this.SuspendLayout();
@@ -79,11 +79,13 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.btm_eliminar.BackColor = System.Drawing.Color.Transparent;
             this.btm_eliminar.BackgroundImage = global::DSI_3K2_PPAI.Properties.Resources._18;
             this.btm_eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btm_eliminar.Enabled = false;
             this.btm_eliminar.Location = new System.Drawing.Point(162, 401);
             this.btm_eliminar.Name = "btm_eliminar";
             this.btm_eliminar.Size = new System.Drawing.Size(55, 38);
             this.btm_eliminar.TabIndex = 8;
             this.btm_eliminar.UseVisualStyleBackColor = false;
+            this.btm_eliminar.Click += new System.EventHandler(this.btm_eliminar_Click);
             // 
             // btm_modificar
             // 
@@ -127,61 +129,7 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.dataGrid_Reserva.Name = "dataGrid_Reserva";
             this.dataGrid_Reserva.Size = new System.Drawing.Size(691, 255);
             this.dataGrid_Reserva.TabIndex = 5;
-            // 
-            // btm_buscar
-            // 
-            this.btm_buscar.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btm_buscar.Location = new System.Drawing.Point(656, 98);
-            this.btm_buscar.Name = "btm_buscar";
-            this.btm_buscar.Size = new System.Drawing.Size(75, 28);
-            this.btm_buscar.TabIndex = 4;
-            this.btm_buscar.Text = "Buscar";
-            this.btm_buscar.UseVisualStyleBackColor = false;
-            this.btm_buscar.Click += new System.EventHandler(this.btm_buscar_Click);
-            // 
-            // Txt_Escuela
-            // 
-            this.Txt_Escuela.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Txt_Escuela.Location = new System.Drawing.Point(167, 78);
-            this.Txt_Escuela.Name = "Txt_Escuela";
-            this.Txt_Escuela.Pp_MensajeError = null;
-            this.Txt_Escuela.Pp_NombreCampo = null;
-            this.Txt_Escuela.Pp_NombreTabla = null;
-            this.Txt_Escuela.Pp_Validable = false;
-            this.Txt_Escuela.Size = new System.Drawing.Size(100, 23);
-            this.Txt_Escuela.TabIndex = 3;
-            // 
-            // Txt_ID
-            // 
-            this.Txt_ID.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Txt_ID.Location = new System.Drawing.Point(167, 42);
-            this.Txt_ID.Name = "Txt_ID";
-            this.Txt_ID.Pp_MensajeError = null;
-            this.Txt_ID.Pp_NombreCampo = null;
-            this.Txt_ID.Pp_NombreTabla = null;
-            this.Txt_ID.Pp_Validable = false;
-            this.Txt_ID.Size = new System.Drawing.Size(100, 23);
-            this.Txt_ID.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(37, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre Escuela";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(71, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID Reserva";
+            this.dataGrid_Reserva.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_Reserva_CellContentClick);
             // 
             // Id_Reserva
             // 
@@ -242,6 +190,61 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.cant_alumnos_confirm.DataPropertyName = "cant_alumnos_confirm";
             this.cant_alumnos_confirm.HeaderText = "Cant. Alumnos";
             this.cant_alumnos_confirm.Name = "cant_alumnos_confirm";
+            // 
+            // btm_buscar
+            // 
+            this.btm_buscar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btm_buscar.Location = new System.Drawing.Point(656, 98);
+            this.btm_buscar.Name = "btm_buscar";
+            this.btm_buscar.Size = new System.Drawing.Size(75, 28);
+            this.btm_buscar.TabIndex = 4;
+            this.btm_buscar.Text = "Buscar";
+            this.btm_buscar.UseVisualStyleBackColor = false;
+            this.btm_buscar.Click += new System.EventHandler(this.btm_buscar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(37, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nombre Escuela";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(71, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID Reserva";
+            // 
+            // Txt_Escuela
+            // 
+            this.Txt_Escuela.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Txt_Escuela.Location = new System.Drawing.Point(167, 78);
+            this.Txt_Escuela.Name = "Txt_Escuela";
+            this.Txt_Escuela.Pp_MensajeError = null;
+            this.Txt_Escuela.Pp_NombreCampo = null;
+            this.Txt_Escuela.Pp_NombreTabla = null;
+            this.Txt_Escuela.Pp_Validable = false;
+            this.Txt_Escuela.Size = new System.Drawing.Size(100, 23);
+            this.Txt_Escuela.TabIndex = 3;
+            // 
+            // Txt_ID
+            // 
+            this.Txt_ID.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Txt_ID.Location = new System.Drawing.Point(167, 42);
+            this.Txt_ID.Name = "Txt_ID";
+            this.Txt_ID.Pp_MensajeError = null;
+            this.Txt_ID.Pp_NombreCampo = null;
+            this.Txt_ID.Pp_NombreTabla = null;
+            this.Txt_ID.Pp_Validable = false;
+            this.Txt_ID.Size = new System.Drawing.Size(100, 23);
+            this.Txt_ID.TabIndex = 2;
             // 
             // FrmGestionarReserva
             // 

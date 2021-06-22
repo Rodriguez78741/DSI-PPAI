@@ -91,6 +91,54 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             
         }
 
+        private void dataGrid_Reserva_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            btm_eliminar.Enabled = true;
+            DataGridViewRow filaSeleccionada = dataGrid_Reserva.Rows[index];
+            string documento = filaSeleccionada.Cells["Id_Reserva"].Value.ToString();
+            
+            Txt_ID.Text = documento;
+            
+        }
+
+        private void btm_eliminar_Click(object sender, EventArgs e)
+        {
+            EliminarCampos(int.Parse(Txt_ID.Text));
+        }
+
+        private void EliminarCampos(int id)
+        {
+            
+
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "DELETE FROM Reserva WHERE id_reserva=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+        }
 
     }
 }
+
