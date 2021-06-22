@@ -145,6 +145,9 @@ E:\Users\Maximo\Desktop\DSI\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.CoreCompileIn
 E:\Users\Maximo\Desktop\DSI\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.CopyComplete
 E:\Users\Maximo\Desktop\DSI\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.exe
 E:\Users\Maximo\Desktop\DSI\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.pdb
+E:\Descargas\DSI-PPAI\bin\Debug\DSI-3K2-PPAI.exe.config
+E:\Descargas\DSI-PPAI\bin\Debug\DSI-3K2-PPAI.exe
+E:\Descargas\DSI-PPAI\bin\Debug\DSI-3K2-PPAI.pdb
 E:\Descargas\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csprojAssemblyReference.cache
 E:\Descargas\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Clases.LabelText01.resources
 E:\Descargas\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Clases.TextBox001.resources
@@ -156,9 +159,6 @@ E:\Descargas\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Principal.resources
 E:\Descargas\DSI-PPAI\obj\Debug\DSI_3K2_PPAI.Properties.Resources.resources
 E:\Descargas\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.GenerateResource.cache
 E:\Descargas\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.CoreCompileInputs.cache
+E:\Descargas\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.CopyComplete
 E:\Descargas\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.exe
 E:\Descargas\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.pdb
-E:\Descargas\DSI-PPAI\bin\Debug\DSI-3K2-PPAI.exe.config
-E:\Descargas\DSI-PPAI\bin\Debug\DSI-3K2-PPAI.exe
-E:\Descargas\DSI-PPAI\bin\Debug\DSI-3K2-PPAI.pdb
-E:\Descargas\DSI-PPAI\obj\Debug\DSI-3K2-PPAI.csproj.CopyComplete
