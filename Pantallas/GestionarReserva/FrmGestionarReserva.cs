@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,71 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
 
         private void btm_buscar_Click(object sender, EventArgs e)
         {
+                try
+                {
+                    dataGrid_Reserva.DataSource = ObtenerReservas();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al obtener persona");
+                }
+
+            
 
         }
+
+
+        private DataTable ObtenerReservas()
+        {
+            
+
+
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            SqlConnection cn = new SqlConnection(cadenaconexion);
+            try
+            {
+
+
+                SqlCommand cmd = new SqlCommand();
+
+
+                string consulta = "SELECT * FROM Reserva";
+
+
+                cmd.Parameters.Clear();
+                
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+
+
+
+            
+        }
+
+
     }
 }

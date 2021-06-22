@@ -34,6 +34,11 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.btm_modificar = new System.Windows.Forms.Button();
             this.btm_Agregar = new System.Windows.Forms.Button();
             this.dataGrid_Reserva = new System.Windows.Forms.DataGridView();
+            this.btm_buscar = new System.Windows.Forms.Button();
+            this.Txt_Escuela = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.Txt_ID = new DSI_3K2_PPAI.Clases.TextBox001();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.Id_Reserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_Visita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Escuela = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,11 +49,6 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.hora_inicio_real = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hora_fin_real = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cant_alumnos_confirm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btm_buscar = new System.Windows.Forms.Button();
-            this.Txt_Escuela = new DSI_3K2_PPAI.Clases.TextBox001();
-            this.Txt_ID = new DSI_3K2_PPAI.Clases.TextBox001();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.gbx_reserva.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Reserva)).BeginInit();
             this.SuspendLayout();
@@ -128,56 +128,6 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.dataGrid_Reserva.Size = new System.Drawing.Size(691, 255);
             this.dataGrid_Reserva.TabIndex = 5;
             // 
-            // Id_Reserva
-            // 
-            this.Id_Reserva.HeaderText = "ID";
-            this.Id_Reserva.Name = "Id_Reserva";
-            // 
-            // Tipo_Visita
-            // 
-            this.Tipo_Visita.HeaderText = "Tipo Visita";
-            this.Tipo_Visita.Name = "Tipo_Visita";
-            // 
-            // Escuela
-            // 
-            this.Escuela.HeaderText = "Escuela";
-            this.Escuela.Name = "Escuela";
-            // 
-            // Fecha_creacion
-            // 
-            this.Fecha_creacion.HeaderText = "Fecha Creacion";
-            this.Fecha_creacion.Name = "Fecha_creacion";
-            // 
-            // fecha_reserva
-            // 
-            this.fecha_reserva.HeaderText = "Fecha Reserva";
-            this.fecha_reserva.Name = "fecha_reserva";
-            // 
-            // hora_inicio
-            // 
-            this.hora_inicio.HeaderText = "Hora Inicio";
-            this.hora_inicio.Name = "hora_inicio";
-            // 
-            // hora_fin
-            // 
-            this.hora_fin.HeaderText = "Hora Fin";
-            this.hora_fin.Name = "hora_fin";
-            // 
-            // hora_inicio_real
-            // 
-            this.hora_inicio_real.HeaderText = "Hora Inicio Real";
-            this.hora_inicio_real.Name = "hora_inicio_real";
-            // 
-            // hora_fin_real
-            // 
-            this.hora_fin_real.HeaderText = "Hora Fin Real";
-            this.hora_fin_real.Name = "hora_fin_real";
-            // 
-            // cant_alumnos_confirm
-            // 
-            this.cant_alumnos_confirm.HeaderText = "Cant. Alumnos";
-            this.cant_alumnos_confirm.Name = "cant_alumnos_confirm";
-            // 
             // btm_buscar
             // 
             this.btm_buscar.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -232,6 +182,66 @@ namespace DSI_3K2_PPAI.Pantallas.GestionarReserva
             this.label1.Size = new System.Drawing.Size(78, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID Reserva";
+            // 
+            // Id_Reserva
+            // 
+            this.Id_Reserva.DataPropertyName = "id_reserva";
+            this.Id_Reserva.HeaderText = "ID";
+            this.Id_Reserva.Name = "Id_Reserva";
+            // 
+            // Tipo_Visita
+            // 
+            this.Tipo_Visita.DataPropertyName = "id_tipo_visita";
+            this.Tipo_Visita.HeaderText = "Tipo Visita";
+            this.Tipo_Visita.Name = "Tipo_Visita";
+            // 
+            // Escuela
+            // 
+            this.Escuela.DataPropertyName = "id_escuela";
+            this.Escuela.HeaderText = "Escuela";
+            this.Escuela.Name = "Escuela";
+            // 
+            // Fecha_creacion
+            // 
+            this.Fecha_creacion.DataPropertyName = "fecha_creacion";
+            this.Fecha_creacion.HeaderText = "Fecha Creacion";
+            this.Fecha_creacion.Name = "Fecha_creacion";
+            // 
+            // fecha_reserva
+            // 
+            this.fecha_reserva.DataPropertyName = "fecha_reserva";
+            this.fecha_reserva.HeaderText = "Fecha Reserva";
+            this.fecha_reserva.Name = "fecha_reserva";
+            // 
+            // hora_inicio
+            // 
+            this.hora_inicio.DataPropertyName = "hora_inicio";
+            this.hora_inicio.HeaderText = "Hora Inicio";
+            this.hora_inicio.Name = "hora_inicio";
+            // 
+            // hora_fin
+            // 
+            this.hora_fin.DataPropertyName = "hora_fin";
+            this.hora_fin.HeaderText = "Hora Fin";
+            this.hora_fin.Name = "hora_fin";
+            // 
+            // hora_inicio_real
+            // 
+            this.hora_inicio_real.DataPropertyName = "hora_incio_real";
+            this.hora_inicio_real.HeaderText = "Hora Inicio Real";
+            this.hora_inicio_real.Name = "hora_inicio_real";
+            // 
+            // hora_fin_real
+            // 
+            this.hora_fin_real.DataPropertyName = "hora_fin_real";
+            this.hora_fin_real.HeaderText = "Hora Fin Real";
+            this.hora_fin_real.Name = "hora_fin_real";
+            // 
+            // cant_alumnos_confirm
+            // 
+            this.cant_alumnos_confirm.DataPropertyName = "cant_alumnos_confirm";
+            this.cant_alumnos_confirm.HeaderText = "Cant. Alumnos";
+            this.cant_alumnos_confirm.Name = "cant_alumnos_confirm";
             // 
             // FrmGestionarReserva
             // 
