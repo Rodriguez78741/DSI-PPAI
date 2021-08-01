@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPAI", "PPAI\PPAI.csproj", "{2F7D4229-7039-450D-96AB-563B060E6FCF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F7D4229-7039-450D-96AB-563B060E6FCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F7D4229-7039-450D-96AB-563B060E6FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F7D4229-7039-450D-96AB-563B060E6FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F7D4229-7039-450D-96AB-563B060E6FCF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {160874EE-678C-49BD-A16B-FE93F4322E05}
+	EndGlobalSection
+EndGlobal
