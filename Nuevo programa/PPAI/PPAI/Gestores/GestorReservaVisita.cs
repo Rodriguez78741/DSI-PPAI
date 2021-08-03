@@ -45,9 +45,9 @@ namespace PPAI.Gestores
         }
 
         //Tomar Escuelas
-        public static void tomarEscuela ()
+        public static void tomarEscuela (int id)
         {
-            
+            int idEscuela = id;
         }
 
         //Tomar Cantidad de Visitantes
@@ -381,11 +381,36 @@ namespace PPAI.Gestores
 
         }
 
+        //tomar-guias
+        public static void tomarGuias(List<int> idExpo, int idEscuela, int cantVisit, int idSede, int tipoVisita, DateTime fechaReserva, string horainicioReserva, string horafinReserva, List<int> idGuias)
+        {
+            DateTime fechaActual = tomarFechayHoraAct();
+            int idReserva = (buscarUltimoNroReserva() + 1);
+            RegistrarReserva(idReserva, idExpo, idEscuela, cantVisit, idSede, tipoVisita, fechaReserva, horainicioReserva, horafinReserva, fechaActual, idGuias);
 
+
+        }
+
+        //Buscar ultimo id reserva
+        private static int buscarUltimoNroReserva()
+        {
+            int id = Datos.buscarUltimoIdReserva();
+            return id;
+        }
+
+        //Registrar Reserva
+        private static void RegistrarReserva(int idReserva, List<int> idExpo, int idEscuela, int cantVisit, int idSede, int tipoVisita, DateTime fechaReserva, string horainicioReserva, string horafinReserva, DateTime fechaActual, List<int> idGuias)
+        {
+            Datos.AltaReserva(idReserva, tipoVisita, idEscuela, fechaActual, fechaReserva, horainicioReserva, horafinReserva, cantVisit, idSede, idExpo, idGuias);
+        }
+
+
+
+//Funciones Auxiliares
         private static List<Empleado> tablaAEmpleado(DataTable tabla)
         {
             List<Empleado> empleados = new List<Empleado>();
-            for(var r = 0; r < tabla.Rows.Count; r++)
+            for (var r = 0; r < tabla.Rows.Count; r++)
             {
                 empleados.Add(new Empleado((int)tabla.Rows[r][0], tabla.Rows[r][1].ToString(), tabla.Rows[r][2].ToString(), (int)tabla.Rows[r][3], (decimal)tabla.Rows[r][4], tabla.Rows[r][5].ToString(), (int)tabla.Rows[r][6], (int)tabla.Rows[r][7], (int)tabla.Rows[r][8], (int)tabla.Rows[r][9], tabla.Rows[r][10].ToString(), tabla.Rows[r][11].ToString(), (int)tabla.Rows[r][12], tabla.Rows[r][13].ToString(), (DateTime)tabla.Rows[r][14], (DateTime)tabla.Rows[r][15]));
             }
@@ -427,27 +452,7 @@ namespace PPAI.Gestores
             return tabla;
         }
 
-        //tomar-guias
-        public static void tomarGuias(List<int> idExpo, int idEscuela, int cantVisit, int idSede, int tipoVisita, DateTime fechaReserva, string horainicioReserva, string horafinReserva, List<int> idGuias)
-        {
-            DateTime fechaActual = tomarFechayHoraAct();
-            int idReserva = (buscarUltimoNroReserva() + 1);
-            RegistrarReserva(idReserva, idExpo, idEscuela, cantVisit, idSede, tipoVisita, fechaReserva, horainicioReserva, horafinReserva, fechaActual, idGuias);
 
 
-        }
-
-        //Buscar ultimo id reserva
-        private static int buscarUltimoNroReserva()
-        {
-            int id = Datos.buscarUltimoIdReserva();
-            return id;
-        }
-
-        //Registrar Reserva
-        private static void RegistrarReserva(int idReserva, List<int> idExpo, int idEscuela, int cantVisit, int idSede, int tipoVisita, DateTime fechaReserva, string horainicioReserva, string horafinReserva, DateTime fechaActual, List<int> idGuias)
-        {
-            Datos.AltaReserva(idReserva, tipoVisita, idEscuela, fechaActual, fechaReserva, horainicioReserva, horafinReserva, cantVisit, idSede, idExpo, idGuias);
-        }
     }
 }

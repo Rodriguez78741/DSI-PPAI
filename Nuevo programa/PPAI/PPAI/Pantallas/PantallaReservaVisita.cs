@@ -18,6 +18,8 @@ namespace PPAI.Pantallas
             InitializeComponent();
         }
 
+//Pantalla
+
         //Tomar Opcion Registrar Reserva Visitas
         private void PantallaReservaVisita_Load(object sender, EventArgs e)
         {
@@ -25,16 +27,7 @@ namespace PPAI.Pantallas
             MostrarEscuela(tabla);
         }
 
-        //Mostrar Escuela
-        private void MostrarEscuela(DataTable tabla)
-        {
-            cmdEscuelas.DataSource = tabla;
-            cmdEscuelas.DisplayMember = "Nombre";
-            cmdEscuelas.ValueMember = "Id";
-            cmdEscuelas.SelectedIndex = -1;   
-        }
-
-        //Tomar Seleccion de escuela
+        //Boton seleccionar escuela
         private void btnSeleccionarEscuela_Click(object sender, EventArgs e)
         {
             if (cmdEscuelas.SelectedValue == null)
@@ -46,13 +39,124 @@ namespace PPAI.Pantallas
                 tomarSeleccionEscuela();
                 solicitarCantidadVisitantes();
                 cmdEscuelas.Enabled = false;
-            } 
+            }
         }
-        
+
+        //Boton seleccionar cantidad
+        private void btnSeleccionarCantidad_Click(object sender, EventArgs e)
+        {
+            tomarCantidadVisitantes();
+        }
+
+        //Boton seleccionar sede
+        private void btnSeleccionarSede_Click(object sender, EventArgs e)
+        {
+            tomarSelecSede();
+
+        }
+
+        //Boton seleccionar tipo visita
+        private void btnSeleccionarTipoVisita_Click(object sender, EventArgs e)
+        {
+            tomarSelecTipoVisita();
+        }
+
+        //Boton agregar exposicion
+        private void btnAgregarExpo_Click(object sender, EventArgs e)
+        {
+            if (txtIdExpo.Text == "")
+            {
+                MessageBox.Show("Falta informacion");
+            }
+            else
+            {
+                dataGridViewExpo.Rows.Add(txtIdExpo.Text, txtDetalle.Text, txtPublico.Text, txtTemporal.Text);
+            }
+        }
+
+        //Boton buscar exposicion
+        private void btnBuscarExpo_Click(object sender, EventArgs e)
+        {
+            DataTable tabla = GestorReservaVisita.tomarTipoVisita(int.Parse(cmdSede.SelectedValue.ToString()));
+            for (var c = 0; c < tabla.Rows.Count; c++)
+            {
+                if (tabla.Rows[c][0].ToString() == cmdExposicion.SelectedValue.ToString())
+                {
+                    txtIdExpo.Text = tabla.Rows[c][0].ToString();
+                    txtDetalle.Text = tabla.Rows[c][3].ToString();
+                    txtPublico.Text = tabla.Rows[c][2].ToString();
+                    txtTemporal.Text = tabla.Rows[c][1].ToString();
+                }
+            }
+        }
+
+        //Boton seleccionar Exposicion
+        private void btnSeleccionarExposicion_Click(object sender, EventArgs e)
+        {
+            tomarSelecExposicion();
+            solicitarFechaHoraRes();
+        }
+
+        //Boton seleccionar horario
+        private void btnSeleccionarHorario_Click(object sender, EventArgs e)
+        {
+            tomarFechaHoraRes();
+        }
+
+        //Boton Agregar guia
+        private void btnAgregarGuia_Click(object sender, EventArgs e)
+        {
+            if (txtIdGuia.Text == "")
+            {
+                MessageBox.Show("Informacion incompleta");
+            }
+            else
+            {
+                dataGridViewGuias.Rows.Add(txtIdGuia.Text, txtNombre.Text, txtApellido.Text, txtCuil.Text);
+            }
+        }
+
+        //Boton buscar guia
+        private void btnBuscarGuia_Click(object sender, EventArgs e)
+        {
+            DataTable tabla = dataSet1.Tables[0];
+            for (var c = 0; c < tabla.Rows.Count; c++)
+            {
+                if (tabla.Rows[c][0].ToString() == cmdGuia.SelectedValue.ToString())
+                {
+                    txtIdGuia.Text = tabla.Rows[c][0].ToString();
+                    txtNombre.Text = tabla.Rows[c][1].ToString();
+                    txtApellido.Text = tabla.Rows[c][2].ToString();
+                    txtCuil.Text = tabla.Rows[c][3].ToString();
+                }
+            }
+
+        }
+
+        //Boton agregar reserva
+        private void btnAgregarReserva_Click(object sender, EventArgs e)
+        {
+            tomarSelecionGuias();
+        }
+
+
+
+//Funciones programa
+
+        //Mostrar Escuela
+        private void MostrarEscuela(DataTable tabla)
+        {
+            cmdEscuelas.DataSource = tabla;
+            cmdEscuelas.DisplayMember = "Nombre";
+            cmdEscuelas.ValueMember = "Id";
+            cmdEscuelas.SelectedIndex = -1;   
+        }
+
+        //Tomar Seleccion de escuela              
         private void tomarSeleccionEscuela()
         {
             int id = int.Parse(cmdEscuelas.SelectedValue.ToString());
-            GestorReservaVisita.tomarEscuela();
+            GestorReservaVisita.tomarEscuela(id);
         }
 
         //Solicitar Cantidad de visitantes
@@ -62,10 +166,6 @@ namespace PPAI.Pantallas
             panelEscuelas.Enabled = false;
         }
 
-        private void btnSeleccionarCantidad_Click(object sender, EventArgs e)
-        {
-            tomarCantidadVisitantes();
-        }
 
         //Tomar Cantidad de Visitantes
         private void tomarCantidadVisitantes()
@@ -77,11 +177,8 @@ namespace PPAI.Pantallas
             else
             {
                 int cantidad = int.Parse(txtCantidad.Text);
-                MostrarSedes();
-               
-            }
-
-            
+                MostrarSedes();               
+            }           
         }
 
         //Mostrar sedes
@@ -100,12 +197,6 @@ namespace PPAI.Pantallas
         }
 
         //Tomar Seleccion de Sede
-        private void btnSeleccionarSede_Click(object sender, EventArgs e)
-        {
-            tomarSelecSede();
-            
-        }
-
         private int tomarSelecSede()
         {
             if (cmdSede.Text == "")
@@ -136,11 +227,6 @@ namespace PPAI.Pantallas
         }
 
         //Tomar Seleccion tipo visita
-        private void btnSeleccionarTipoVisita_Click(object sender, EventArgs e)
-        {
-            tomarSelecTipoVisita();
-        }
-
         private void tomarSelecTipoVisita()
         {
             if (cmdTipoVisita.Text == "")
@@ -165,46 +251,11 @@ namespace PPAI.Pantallas
             cmdExposicion.SelectedIndex = -1;
 
             panelTipoVisitas.Enabled = false;
-            panelExposicion.Visible = true;
-            
-
+            panelExposicion.Visible = true;           
         }
 
        
         //Tomar Selecion de Exposicion
-        private void btnAgregarExpo_Click(object sender, EventArgs e)
-        {
-            if (txtIdExpo.Text == "")
-            {
-                MessageBox.Show("Falta informacion");
-            }
-            else
-            {
-                dataGridViewExpo.Rows.Add(txtIdExpo.Text, txtDetalle.Text, txtPublico.Text, txtTemporal.Text);
-            }
-        }
-
-        private void btnBuscarExpo_Click(object sender, EventArgs e)
-        {
-            DataTable tabla = GestorReservaVisita.tomarTipoVisita(int.Parse(cmdSede.SelectedValue.ToString()));
-            for(var c = 0; c<tabla.Rows.Count; c++)
-            {
-                if (tabla.Rows[c][0].ToString() == cmdExposicion.SelectedValue.ToString())
-                {
-                    txtIdExpo.Text = tabla.Rows[c][0].ToString();
-                    txtDetalle.Text = tabla.Rows[c][3].ToString();
-                    txtPublico.Text = tabla.Rows[c][2].ToString();
-                    txtTemporal.Text = tabla.Rows[c][1].ToString();
-                }
-            }
-        }
-
-        private void btnSeleccionarExposicion_Click(object sender, EventArgs e)
-        {
-            tomarSelecExposicion();
-            solicitarFechaHoraRes();
-        }
-
         private List<int> tomarSelecExposicion()
         {
             List<int> idExposiciones = new List<int>();
@@ -225,11 +276,6 @@ namespace PPAI.Pantallas
         }
 
         //Tomar fecha y hora respectiva
-        private void btnSeleccionarHorario_Click(object sender, EventArgs e)
-        {
-            tomarFechaHoraRes();
-        }
-
         private void tomarFechaHoraRes()
         {
             DateTime hi = DateTime.Parse(txtHorarioInicio.Text);
@@ -274,39 +320,6 @@ namespace PPAI.Pantallas
         }
 
         //Tomar Seleccion guias
-        private void btnAgregarGuia_Click(object sender, EventArgs e)
-        {
-            if(txtIdGuia.Text == "")
-            {
-                MessageBox.Show("Informacion incompleta");
-            }
-            else
-            {
-                dataGridViewGuias.Rows.Add(txtIdGuia.Text, txtNombre.Text, txtApellido.Text, txtCuil.Text);
-            }
-        }
-
-        private void btnBuscarGuia_Click(object sender, EventArgs e)
-        {
-            DataTable tabla = dataSet1.Tables[0];
-            for (var c = 0; c < tabla.Rows.Count; c++)
-            {
-                if (tabla.Rows[c][0].ToString() == cmdGuia.SelectedValue.ToString())
-                {
-                    txtIdGuia.Text = tabla.Rows[c][0].ToString();
-                    txtNombre.Text = tabla.Rows[c][1].ToString();
-                    txtApellido.Text = tabla.Rows[c][2].ToString();
-                    txtCuil.Text = tabla.Rows[c][3].ToString();
-                }
-            }
-
-        }
-
-        private void btnAgregarReserva_Click(object sender, EventArgs e)
-        {
-            tomarSelecionGuias();
-        }
-
         private void tomarSelecionGuias()
         {
             List<int> idGuias = new List<int>();
@@ -326,8 +339,15 @@ namespace PPAI.Pantallas
             string horafinReserva = (txtHorarioFin.Text);
 
             GestorReservaVisita.tomarGuias(idExpo, idEscuela, cantVisit, idSede, tipoVisita, fechaReserva, horainicioReserva, horafinReserva, idGuias);
+            MessageBox.Show("Reserva agregada con exito");
+            this.Close();
         }
 
+
+
+//Funciones Auxiliares
+
+        //Seleccion de sede desde pantalla
         private int tomarSelecSede2()
         {
             if (cmdSede.Text == "")
@@ -336,10 +356,11 @@ namespace PPAI.Pantallas
             }
             else
             {
-                int sede = int.Parse(cmdSede.SelectedValue.ToString());        
+                int sede = int.Parse(cmdSede.SelectedValue.ToString());
                 return sede;
             }
             return 0;
         }
+
     }
 }
