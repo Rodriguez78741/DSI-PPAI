@@ -52,7 +52,6 @@ namespace PPAI.Pantallas
         private void btnSeleccionarSede_Click(object sender, EventArgs e)
         {
             tomarSelecSede();
-
         }
 
         //Boton seleccionar tipo visita
@@ -70,7 +69,7 @@ namespace PPAI.Pantallas
             }
             else
             {
-                dataGridViewExpo.Rows.Add(txtIdExpo.Text, txtDetalle.Text, txtPublico.Text, txtTemporal.Text);
+                dataGridViewExpo.Rows.Add(txtIdExpo.Text, txtTipoExpo.Text, txtPublico.Text, txtDetalle.Text);
             }
         }
 
@@ -85,7 +84,7 @@ namespace PPAI.Pantallas
                     txtIdExpo.Text = tabla.Rows[c][0].ToString();
                     txtDetalle.Text = tabla.Rows[c][3].ToString();
                     txtPublico.Text = tabla.Rows[c][2].ToString();
-                    txtTemporal.Text = tabla.Rows[c][1].ToString();
+                    txtTipoExpo.Text = tabla.Rows[c][1].ToString();
                 }
             }
         }
@@ -215,11 +214,7 @@ namespace PPAI.Pantallas
         //Mostrar Tipo Visita
         private void MostrarTiposVisita()
         {
-            DataTable tabla = GestorReservaVisita.TomarSede();
 
-            cmdTipoVisita.DataSource = tabla;
-            cmdTipoVisita.DisplayMember = "Nombre";
-            cmdTipoVisita.ValueMember = "Id";
             cmdTipoVisita.SelectedIndex = -1;
 
             panelTipoVisitas.Visible = true;
@@ -229,15 +224,26 @@ namespace PPAI.Pantallas
         //Tomar Seleccion tipo visita
         private void tomarSelecTipoVisita()
         {
+            //Si no selecciona nada genera un error para que seleccione un tipo de visita
             if (cmdTipoVisita.Text == "")
             {
                 MessageBox.Show("Ingrese TipoVisita");
             }
+
+            //En el caso de que si seleccione, se verifica si es general o particular.
             else
             {
-                int tipoVisita = int.Parse(cmdTipoVisita.SelectedValue.ToString());
-               
-                MostrarDatosExpoTempVig();                
+                int tipoVisita = cmdTipoVisita.SelectedIndex;
+                //Si es general se seleccionaría todas las exposiciones
+                if (tipoVisita == 0)
+                {
+                    //N-Help: Esperando a que exposiciones siga
+                }
+                //Si es particular, ingresa a la interfaz para que seleccione las exposiciones que quiere ver
+                else
+                {
+                    MostrarDatosExpoTempVig();
+                }
             }
         }
 
@@ -362,5 +368,14 @@ namespace PPAI.Pantallas
             return 0;
         }
 
+        private void cmdTipoVisita_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

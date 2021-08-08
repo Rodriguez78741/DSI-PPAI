@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace PPAI.Objetos
 {
@@ -18,6 +20,18 @@ namespace PPAI.Objetos
             this.nombre_tipo_expo = nombre;
             this.descripcion = descrip;
         }
+
+        public static string esTemporal(int id_tipo_expo)
+        {
+            string tipo = "Temporal";
+
+            if (id_tipo_expo == 1)
+            {
+                tipo = "Permanente";
+            }
+            return tipo;
+
+        }        
 
         public int Id
         {

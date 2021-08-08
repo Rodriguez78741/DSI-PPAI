@@ -22,3 +22,15 @@ E:\Facultad\3° año\Gestion de sistemas\PPAI\Programa\PPAI - copia\PPAI\obj\Deb
 E:\Facultad\3° año\Gestion de sistemas\PPAI\Programa\PPAI - copia\PPAI\obj\Debug\PPAI.csproj.CoreCompileInputs.cache
 E:\Facultad\3° año\Gestion de sistemas\PPAI\Programa\PPAI - copia\PPAI\obj\Debug\PPAI.exe
 E:\Facultad\3° año\Gestion de sistemas\PPAI\Programa\PPAI - copia\PPAI\obj\Debug\PPAI.pdb
+C:\Users\Nico\Documents\Proyectos VS\DSI-PPAI\Nuevo programa\PPAI\PPAI\bin\Debug\PPAI.exe.config
+C:\Users\Nico\Documents\Proyectos VS\DSI-PPAI\Nuevo programa\PPAI\PPAI\bin\Debug\PPAI.exe
+C:\Users\Nico\Documents\Proyectos VS\DSI-PPAI\Nuevo programa\PPAI\PPAI\bin\Debug\PPAI.pdb
+C:\Users\Nico\Documents\Proyectos VS\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.csprojAssemblyReference.cache
+C:\Users\Nico\Documents\Proyectos VS\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.Form1.resources
+C:\Users\Nico\Documents\Proyectos VS\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.Pantallas.MenuPrograma.resources
+C:\Users\Nico\Documents\Proyectos VS\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.Pantallas.PantallaReservaVisita.resources
+C:\Users\Nico\Documents\Proyectos VS\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.Properties.Resources.resources
+C:\Users\Nico\Documents\Proyectos VS\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.csproj.GenerateResource.cache
+C:\Users\Nico\Documents\Proyectos VS\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.csproj.CoreCompileInputs.cache
+C:\Users\Nico\Documents\Proyectos VS\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.exe
+C:\Users\Nico\Documents\Proyectos VS\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.pdb

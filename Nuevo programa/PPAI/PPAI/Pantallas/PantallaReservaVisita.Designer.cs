@@ -48,10 +48,26 @@ namespace PPAI.Pantallas
             this.cmdTipoVisita = new System.Windows.Forms.ComboBox();
             this.panelExposicion = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarExpo = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDetalle = new System.Windows.Forms.TextBox();
+            this.txtPublico = new System.Windows.Forms.TextBox();
+            this.txtTipoExpo = new System.Windows.Forms.TextBox();
+            this.txtIdExpo = new System.Windows.Forms.TextBox();
+            this.btnAgregarExpo = new System.Windows.Forms.Button();
+            this.dataGridViewExpo = new System.Windows.Forms.DataGridView();
             this.btnSeleccionarExposicion = new System.Windows.Forms.Button();
             this.cmdExposicion = new System.Windows.Forms.ComboBox();
             this.panelFechaYHora = new System.Windows.Forms.Panel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtMes = new System.Windows.Forms.TextBox();
+            this.txtAño = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDia = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtHorarioInicio = new System.Windows.Forms.TextBox();
@@ -59,6 +75,9 @@ namespace PPAI.Pantallas
             this.btnSeleccionarHorario = new System.Windows.Forms.Button();
             this.panelGuias = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.labelCant = new System.Windows.Forms.Label();
+            this.btnBuscarGuia = new System.Windows.Forms.Button();
+            this.txtIdGuia = new System.Windows.Forms.TextBox();
             this.btnAgregarReserva = new System.Windows.Forms.Button();
             this.btnAgregarGuia = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -74,30 +93,11 @@ namespace PPAI.Pantallas
             this.ApellidoGuia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CuitGuia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmdGuia = new System.Windows.Forms.ComboBox();
-            this.dataGridViewExpo = new System.Windows.Forms.DataGridView();
+            this.dataSet1 = new System.Data.DataSet();
             this.idExpo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.temporal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoExpo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.publicoDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalleExpo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAgregarExpo = new System.Windows.Forms.Button();
-            this.txtIdExpo = new System.Windows.Forms.TextBox();
-            this.txtTemporal = new System.Windows.Forms.TextBox();
-            this.txtPublico = new System.Windows.Forms.TextBox();
-            this.txtDetalle = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtIdGuia = new System.Windows.Forms.TextBox();
-            this.btnBuscarExpo = new System.Windows.Forms.Button();
-            this.btnBuscarGuia = new System.Windows.Forms.Button();
-            this.labelCant = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtDia = new System.Windows.Forms.TextBox();
-            this.txtAño = new System.Windows.Forms.TextBox();
-            this.txtMes = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dataSet1 = new System.Data.DataSet();
             this.panelEscuelas.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panelCantidadDeVisitantes.SuspendLayout();
@@ -108,12 +108,12 @@ namespace PPAI.Pantallas
             this.groupBox4.SuspendLayout();
             this.panelExposicion.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExpo)).BeginInit();
             this.panelFechaYHora.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.panelGuias.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGuias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExpo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -256,6 +256,7 @@ namespace PPAI.Pantallas
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Seleccionar tipo de visita";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // btnSeleccionarTipoVisita
             // 
@@ -270,10 +271,14 @@ namespace PPAI.Pantallas
             // cmdTipoVisita
             // 
             this.cmdTipoVisita.FormattingEnabled = true;
+            this.cmdTipoVisita.Items.AddRange(new object[] {
+            "General",
+            "Particular"});
             this.cmdTipoVisita.Location = new System.Drawing.Point(21, 28);
             this.cmdTipoVisita.Name = "cmdTipoVisita";
             this.cmdTipoVisita.Size = new System.Drawing.Size(121, 21);
             this.cmdTipoVisita.TabIndex = 1;
+            this.cmdTipoVisita.SelectedIndexChanged += new System.EventHandler(this.cmdTipoVisita_SelectedIndexChanged);
             // 
             // panelExposicion
             // 
@@ -292,7 +297,7 @@ namespace PPAI.Pantallas
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.txtDetalle);
             this.groupBox5.Controls.Add(this.txtPublico);
-            this.groupBox5.Controls.Add(this.txtTemporal);
+            this.groupBox5.Controls.Add(this.txtTipoExpo);
             this.groupBox5.Controls.Add(this.txtIdExpo);
             this.groupBox5.Controls.Add(this.btnAgregarExpo);
             this.groupBox5.Controls.Add(this.dataGridViewExpo);
@@ -304,6 +309,106 @@ namespace PPAI.Pantallas
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Seleccionar Exposicion ";
+            // 
+            // btnBuscarExpo
+            // 
+            this.btnBuscarExpo.Location = new System.Drawing.Point(164, 26);
+            this.btnBuscarExpo.Name = "btnBuscarExpo";
+            this.btnBuscarExpo.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarExpo.TabIndex = 27;
+            this.btnBuscarExpo.Text = "Buscar";
+            this.btnBuscarExpo.UseVisualStyleBackColor = true;
+            this.btnBuscarExpo.Click += new System.EventHandler(this.btnBuscarExpo_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(242, 76);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 13);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Detalle:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(142, 76);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 13);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Publico:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(49, 76);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 13);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Tipo de expo:";
+            // 
+            // txtDetalle
+            // 
+            this.txtDetalle.Enabled = false;
+            this.txtDetalle.Location = new System.Drawing.Point(245, 93);
+            this.txtDetalle.Name = "txtDetalle";
+            this.txtDetalle.ReadOnly = true;
+            this.txtDetalle.Size = new System.Drawing.Size(107, 20);
+            this.txtDetalle.TabIndex = 23;
+            // 
+            // txtPublico
+            // 
+            this.txtPublico.Enabled = false;
+            this.txtPublico.Location = new System.Drawing.Point(145, 93);
+            this.txtPublico.Name = "txtPublico";
+            this.txtPublico.ReadOnly = true;
+            this.txtPublico.Size = new System.Drawing.Size(94, 20);
+            this.txtPublico.TabIndex = 22;
+            // 
+            // txtTipoExpo
+            // 
+            this.txtTipoExpo.Enabled = false;
+            this.txtTipoExpo.Location = new System.Drawing.Point(52, 93);
+            this.txtTipoExpo.Name = "txtTipoExpo";
+            this.txtTipoExpo.ReadOnly = true;
+            this.txtTipoExpo.Size = new System.Drawing.Size(87, 20);
+            this.txtTipoExpo.TabIndex = 21;
+            // 
+            // txtIdExpo
+            // 
+            this.txtIdExpo.Enabled = false;
+            this.txtIdExpo.Location = new System.Drawing.Point(9, 93);
+            this.txtIdExpo.Name = "txtIdExpo";
+            this.txtIdExpo.ReadOnly = true;
+            this.txtIdExpo.Size = new System.Drawing.Size(26, 20);
+            this.txtIdExpo.TabIndex = 20;
+            this.txtIdExpo.Visible = false;
+            // 
+            // btnAgregarExpo
+            // 
+            this.btnAgregarExpo.Location = new System.Drawing.Point(252, 28);
+            this.btnAgregarExpo.Name = "btnAgregarExpo";
+            this.btnAgregarExpo.Size = new System.Drawing.Size(100, 39);
+            this.btnAgregarExpo.TabIndex = 19;
+            this.btnAgregarExpo.Text = "Agregar Exposicion";
+            this.btnAgregarExpo.UseVisualStyleBackColor = true;
+            this.btnAgregarExpo.Click += new System.EventHandler(this.btnAgregarExpo_Click);
+            // 
+            // dataGridViewExpo
+            // 
+            this.dataGridViewExpo.AllowUserToAddRows = false;
+            this.dataGridViewExpo.AllowUserToDeleteRows = false;
+            this.dataGridViewExpo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewExpo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idExpo,
+            this.TipoExpo,
+            this.publicoDestino,
+            this.detalleExpo});
+            this.dataGridViewExpo.Location = new System.Drawing.Point(9, 121);
+            this.dataGridViewExpo.Name = "dataGridViewExpo";
+            this.dataGridViewExpo.ReadOnly = true;
+            this.dataGridViewExpo.Size = new System.Drawing.Size(343, 144);
+            this.dataGridViewExpo.TabIndex = 14;
             // 
             // btnSeleccionarExposicion
             // 
@@ -351,6 +456,54 @@ namespace PPAI.Pantallas
             this.groupBox6.TabIndex = 3;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Seleccionar Horario";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(111, 36);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(25, 13);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "año";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(65, 36);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(26, 13);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "mes";
+            // 
+            // txtMes
+            // 
+            this.txtMes.Location = new System.Drawing.Point(68, 52);
+            this.txtMes.Name = "txtMes";
+            this.txtMes.Size = new System.Drawing.Size(37, 20);
+            this.txtMes.TabIndex = 23;
+            // 
+            // txtAño
+            // 
+            this.txtAño.Location = new System.Drawing.Point(111, 52);
+            this.txtAño.Name = "txtAño";
+            this.txtAño.Size = new System.Drawing.Size(43, 20);
+            this.txtAño.TabIndex = 22;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(25, 36);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(21, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "dia";
+            // 
+            // txtDia
+            // 
+            this.txtDia.Location = new System.Drawing.Point(25, 52);
+            this.txtDia.Name = "txtDia";
+            this.txtDia.Size = new System.Drawing.Size(37, 20);
+            this.txtDia.TabIndex = 20;
             // 
             // label4
             // 
@@ -425,6 +578,32 @@ namespace PPAI.Pantallas
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Seleccionar guias";
+            // 
+            // labelCant
+            // 
+            this.labelCant.AutoSize = true;
+            this.labelCant.Location = new System.Drawing.Point(101, 26);
+            this.labelCant.Name = "labelCant";
+            this.labelCant.Size = new System.Drawing.Size(0, 13);
+            this.labelCant.TabIndex = 20;
+            // 
+            // btnBuscarGuia
+            // 
+            this.btnBuscarGuia.Location = new System.Drawing.Point(161, 45);
+            this.btnBuscarGuia.Name = "btnBuscarGuia";
+            this.btnBuscarGuia.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarGuia.TabIndex = 28;
+            this.btnBuscarGuia.Text = "Buscar";
+            this.btnBuscarGuia.UseVisualStyleBackColor = true;
+            this.btnBuscarGuia.Click += new System.EventHandler(this.btnBuscarGuia_Click);
+            // 
+            // txtIdGuia
+            // 
+            this.txtIdGuia.Location = new System.Drawing.Point(323, 45);
+            this.txtIdGuia.Name = "txtIdGuia";
+            this.txtIdGuia.ReadOnly = true;
+            this.txtIdGuia.Size = new System.Drawing.Size(26, 20);
+            this.txtIdGuia.TabIndex = 27;
             // 
             // btnAgregarReserva
             // 
@@ -555,21 +734,9 @@ namespace PPAI.Pantallas
             this.cmdGuia.Size = new System.Drawing.Size(121, 21);
             this.cmdGuia.TabIndex = 4;
             // 
-            // dataGridViewExpo
+            // dataSet1
             // 
-            this.dataGridViewExpo.AllowUserToAddRows = false;
-            this.dataGridViewExpo.AllowUserToDeleteRows = false;
-            this.dataGridViewExpo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewExpo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idExpo,
-            this.temporal,
-            this.publicoDestino,
-            this.detalleExpo});
-            this.dataGridViewExpo.Location = new System.Drawing.Point(9, 121);
-            this.dataGridViewExpo.Name = "dataGridViewExpo";
-            this.dataGridViewExpo.ReadOnly = true;
-            this.dataGridViewExpo.Size = new System.Drawing.Size(343, 144);
-            this.dataGridViewExpo.TabIndex = 14;
+            this.dataSet1.DataSetName = "NewDataSet";
             // 
             // idExpo
             // 
@@ -578,15 +745,15 @@ namespace PPAI.Pantallas
             this.idExpo.ReadOnly = true;
             this.idExpo.Visible = false;
             // 
-            // temporal
+            // TipoExpo
             // 
-            this.temporal.HeaderText = "Temporal";
-            this.temporal.Name = "temporal";
-            this.temporal.ReadOnly = true;
+            this.TipoExpo.HeaderText = "Tipo de Expo";
+            this.TipoExpo.Name = "TipoExpo";
+            this.TipoExpo.ReadOnly = true;
             // 
             // publicoDestino
             // 
-            this.publicoDestino.HeaderText = "Publico ";
+            this.publicoDestino.HeaderText = "Publico";
             this.publicoDestino.Name = "publicoDestino";
             this.publicoDestino.ReadOnly = true;
             // 
@@ -595,168 +762,6 @@ namespace PPAI.Pantallas
             this.detalleExpo.HeaderText = "Detalle";
             this.detalleExpo.Name = "detalleExpo";
             this.detalleExpo.ReadOnly = true;
-            // 
-            // btnAgregarExpo
-            // 
-            this.btnAgregarExpo.Location = new System.Drawing.Point(252, 28);
-            this.btnAgregarExpo.Name = "btnAgregarExpo";
-            this.btnAgregarExpo.Size = new System.Drawing.Size(100, 39);
-            this.btnAgregarExpo.TabIndex = 19;
-            this.btnAgregarExpo.Text = "Agregar Exposicion";
-            this.btnAgregarExpo.UseVisualStyleBackColor = true;
-            this.btnAgregarExpo.Click += new System.EventHandler(this.btnAgregarExpo_Click);
-            // 
-            // txtIdExpo
-            // 
-            this.txtIdExpo.Enabled = false;
-            this.txtIdExpo.Location = new System.Drawing.Point(9, 93);
-            this.txtIdExpo.Name = "txtIdExpo";
-            this.txtIdExpo.ReadOnly = true;
-            this.txtIdExpo.Size = new System.Drawing.Size(26, 20);
-            this.txtIdExpo.TabIndex = 20;
-            this.txtIdExpo.Visible = false;
-            // 
-            // txtTemporal
-            // 
-            this.txtTemporal.Enabled = false;
-            this.txtTemporal.Location = new System.Drawing.Point(52, 93);
-            this.txtTemporal.Name = "txtTemporal";
-            this.txtTemporal.ReadOnly = true;
-            this.txtTemporal.Size = new System.Drawing.Size(87, 20);
-            this.txtTemporal.TabIndex = 21;
-            // 
-            // txtPublico
-            // 
-            this.txtPublico.Enabled = false;
-            this.txtPublico.Location = new System.Drawing.Point(145, 93);
-            this.txtPublico.Name = "txtPublico";
-            this.txtPublico.ReadOnly = true;
-            this.txtPublico.Size = new System.Drawing.Size(94, 20);
-            this.txtPublico.TabIndex = 22;
-            // 
-            // txtDetalle
-            // 
-            this.txtDetalle.Enabled = false;
-            this.txtDetalle.Location = new System.Drawing.Point(245, 93);
-            this.txtDetalle.Name = "txtDetalle";
-            this.txtDetalle.ReadOnly = true;
-            this.txtDetalle.Size = new System.Drawing.Size(107, 20);
-            this.txtDetalle.TabIndex = 23;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(49, 76);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Temporal:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(142, 76);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 13);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Publico:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(242, 76);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 13);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "Detalle:";
-            // 
-            // txtIdGuia
-            // 
-            this.txtIdGuia.Location = new System.Drawing.Point(323, 45);
-            this.txtIdGuia.Name = "txtIdGuia";
-            this.txtIdGuia.ReadOnly = true;
-            this.txtIdGuia.Size = new System.Drawing.Size(26, 20);
-            this.txtIdGuia.TabIndex = 27;
-            // 
-            // btnBuscarExpo
-            // 
-            this.btnBuscarExpo.Location = new System.Drawing.Point(164, 26);
-            this.btnBuscarExpo.Name = "btnBuscarExpo";
-            this.btnBuscarExpo.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarExpo.TabIndex = 27;
-            this.btnBuscarExpo.Text = "Buscar";
-            this.btnBuscarExpo.UseVisualStyleBackColor = true;
-            this.btnBuscarExpo.Click += new System.EventHandler(this.btnBuscarExpo_Click);
-            // 
-            // btnBuscarGuia
-            // 
-            this.btnBuscarGuia.Location = new System.Drawing.Point(161, 45);
-            this.btnBuscarGuia.Name = "btnBuscarGuia";
-            this.btnBuscarGuia.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarGuia.TabIndex = 28;
-            this.btnBuscarGuia.Text = "Buscar";
-            this.btnBuscarGuia.UseVisualStyleBackColor = true;
-            this.btnBuscarGuia.Click += new System.EventHandler(this.btnBuscarGuia_Click);
-            // 
-            // labelCant
-            // 
-            this.labelCant.AutoSize = true;
-            this.labelCant.Location = new System.Drawing.Point(101, 26);
-            this.labelCant.Name = "labelCant";
-            this.labelCant.Size = new System.Drawing.Size(0, 13);
-            this.labelCant.TabIndex = 20;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 36);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(21, 13);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "dia";
-            // 
-            // txtDia
-            // 
-            this.txtDia.Location = new System.Drawing.Point(25, 52);
-            this.txtDia.Name = "txtDia";
-            this.txtDia.Size = new System.Drawing.Size(37, 20);
-            this.txtDia.TabIndex = 20;
-            // 
-            // txtAño
-            // 
-            this.txtAño.Location = new System.Drawing.Point(111, 52);
-            this.txtAño.Name = "txtAño";
-            this.txtAño.Size = new System.Drawing.Size(43, 20);
-            this.txtAño.TabIndex = 22;
-            // 
-            // txtMes
-            // 
-            this.txtMes.Location = new System.Drawing.Point(68, 52);
-            this.txtMes.Name = "txtMes";
-            this.txtMes.Size = new System.Drawing.Size(37, 20);
-            this.txtMes.TabIndex = 23;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(65, 36);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(26, 13);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "mes";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(111, 36);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(25, 13);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "año";
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "NewDataSet";
             // 
             // PantallaReservaVisita
             // 
@@ -785,6 +790,7 @@ namespace PPAI.Pantallas
             this.panelExposicion.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExpo)).EndInit();
             this.panelFechaYHora.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
@@ -792,7 +798,6 @@ namespace PPAI.Pantallas
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGuias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExpo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
 
@@ -847,16 +852,12 @@ namespace PPAI.Pantallas
         private System.Windows.Forms.TextBox txtHorarioFin;
         private System.Windows.Forms.Button btnAgregarExpo;
         private System.Windows.Forms.DataGridView dataGridViewExpo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idExpo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn temporal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn publicoDestino;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detalleExpo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDetalle;
         private System.Windows.Forms.TextBox txtPublico;
-        private System.Windows.Forms.TextBox txtTemporal;
+        private System.Windows.Forms.TextBox txtTipoExpo;
         private System.Windows.Forms.TextBox txtIdExpo;
         private System.Windows.Forms.TextBox txtIdGuia;
         private System.Windows.Forms.Button btnBuscarExpo;
@@ -869,5 +870,9 @@ namespace PPAI.Pantallas
         private System.Windows.Forms.TextBox txtMes;
         private System.Windows.Forms.TextBox txtAño;
         private System.Data.DataSet dataSet1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idExpo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoExpo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn publicoDestino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detalleExpo;
     }
 }

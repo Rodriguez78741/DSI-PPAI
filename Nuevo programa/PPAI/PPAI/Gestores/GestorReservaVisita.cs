@@ -82,7 +82,10 @@ namespace PPAI.Gestores
             return sedes;
         }
 
+        //NOTA Importante: He decidido eliminar este codigo ya que es obsoleto ya que los tipos de visita no se irian a actualizar en la BD 
+            //es decir, son solos dos y con los CMB podes poner la selección, por supuesto, habría que hacer el camino dependiendo que se seleccionó
         //Tomar Sede
+        /*
         public static DataTable TomarSede()
         {
             List<TipoVisita> sedes = BuscarTipoVisita();
@@ -96,9 +99,10 @@ namespace PPAI.Gestores
             }
             return tabla;
         }
-
+        */
 
         //Buscar Tipo Visita
+        /*
         private static List<TipoVisita> BuscarTipoVisita()
         {
                
@@ -114,6 +118,7 @@ namespace PPAI.Gestores
              return tipoVisitas;
                   
         }
+        */
 
         //Tomar fecha y hora actuales
         private static DateTime tomarFechayHoraAct()
@@ -128,19 +133,14 @@ namespace PPAI.Gestores
             List<Exposicion> Exposiciones = BuscarExpoTempVig(idSede);
             DataTable tabla = new DataTable();
             tabla.Columns.Add(new DataColumn("Id", typeof(int)));
-            tabla.Columns.Add(new DataColumn("Temporal", typeof(string)));
+            tabla.Columns.Add(new DataColumn("Tipo", typeof(string)));
             tabla.Columns.Add(new DataColumn("Publico", typeof(string)));
             tabla.Columns.Add(new DataColumn("Detalle", typeof(string)));
             foreach (var e in Exposiciones)
             {
-                string temp = "Falso";
-
-                if (e.Temporal == true)
-                {
-                    temp = "verdadero";
-                }
+                string tipo = TipoExposicion.esTemporal(e.idTipoExpo);
             
-                tabla.Rows.Add(e.idExposicion, temp, e.Publico,e.nombreExpo);
+                tabla.Rows.Add(e.idExposicion, tipo, e.Publico,e.nombreExpo);
             }
 
             return tabla;

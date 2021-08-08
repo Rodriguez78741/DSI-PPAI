@@ -19,8 +19,20 @@ namespace PPAI.Objetos
         private string descripcion;
         private int id_empleado;
         private TimeSpan duracion_expo_obra;
+        private string nombre_artista;
 
-        public Obra(int id, string nombre, int alto, int ancho, int peso, DateTime fechaCreacion, DateTime fechaIngreso, int valuacion, string descripcion, int idEmpleado, TimeSpan dracionexob)
+        public Obra(int id,
+                    string nombre,
+                    int alto,
+                    int ancho,
+                    int peso,
+                    DateTime fechaCreacion,
+                    DateTime fechaIngreso,
+                    int valuacion,
+                    string descripcion,
+                    int idEmpleado,
+                    TimeSpan dracionexob,
+                    string artista)
         {
             this.id_obra = id;
             this.nombre = nombre;
@@ -33,64 +45,71 @@ namespace PPAI.Objetos
             this.descripcion = descripcion;
             this.id_empleado = idEmpleado;
             this.duracion_expo_obra = dracionexob;
-
-    }
-
-    public int idObra
-        {
-            get => id_obra;
-            set => id_obra = value;
+            this.nombre_artista = artista;
+       
+            
         }
+    
+        public string nom_artistca
+        {
+            get => nombre_artista;
+            set => nombre_artista = value;
+        }
+        public int idObra
+            {
+                get => id_obra;
+                set => id_obra = value;
+            }
         public string Nombre
-        {
-            get => nombre;
-            set => nombre = value;
-        }
+            {
+                get => nombre;
+                set => nombre = value;
+            }
         public int Alto
-        {
-            get => alto;
-            set => alto = value;
-        }
+            {
+                get => alto;
+                set => alto = value;
+            }
         public int Ancho
-        {
-            get => ancho;
-            set => ancho = value;
-        }
+            {
+                get => ancho;
+                set => ancho = value;
+            }
         public int Peso
-        {
-            get => peso;
-            set => peso = value;
-        }
+            {
+                get => peso;
+                set => peso = value;
+            }
         public DateTime fechaCreacion
-        {
-            get => fecha_creacion;
-            set => fecha_creacion = value;
-        }
+            {
+                get => fecha_creacion;
+                set => fecha_creacion = value;
+            }
         public DateTime fechaIngreso
-        {
-            get => fecha_ingreso;
-            set => fecha_ingreso = value;
-        }
+            {
+                get => fecha_ingreso;
+                set => fecha_ingreso = value;
+            }
         public int Valuacion
-        {
-            get => valuacion;
-            set => valuacion = value;
-        }
+            {
+                get => valuacion;
+                set => valuacion = value;
+            }
         public string Descripcion
-        {
-            get => descripcion;
-            set => descripcion = value;
-        }
+            {
+                get => descripcion;
+                set => descripcion = value;
+            }
         public int idEmpleado
-        {
-            get => id_empleado;
-            set => id_empleado = value;
-        }
+            {
+                get => id_empleado;
+                set => id_empleado = value;
+            }
 
         public TimeSpan duracionExpoObra
-        {
-            get => duracion_expo_obra;
-            set => duracion_expo_obra = value;
-        }
+            {
+                get => duracion_expo_obra;
+                set => duracion_expo_obra = value;
+            }
     }
 }
