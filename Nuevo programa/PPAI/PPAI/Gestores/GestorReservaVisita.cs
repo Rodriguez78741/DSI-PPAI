@@ -156,7 +156,7 @@ namespace PPAI.Gestores
 
             for (var f = 0; f < int.Parse(tabla.Rows.Count.ToString()); f++)
             {
-                Exposiciones.Add(new Exposicion(int.Parse(tabla.Rows[f][0].ToString()), tabla.Rows[f][1].ToString(), tabla.Rows[f][2].ToString(), DateTime.Parse(tabla.Rows[f][3].ToString()), DateTime.Parse(tabla.Rows[f][4].ToString()), int.Parse(tabla.Rows[f][5].ToString()), int.Parse(tabla.Rows[f][6].ToString()), bool.Parse(tabla.Rows[f][7].ToString()), int.Parse(tabla.Rows[f][8].ToString()), int.Parse(tabla.Rows[f][9].ToString())));
+                Exposiciones.Add(new Exposicion(int.Parse(tabla.Rows[f][0].ToString()), tabla.Rows[f][1].ToString(), tabla.Rows[f][2].ToString(), DateTime.Parse(tabla.Rows[f][3].ToString()), DateTime.Parse(tabla.Rows[f][4].ToString()), bool.Parse(tabla.Rows[f][5].ToString()), int.Parse(tabla.Rows[f][6].ToString()), int.Parse(tabla.Rows[f][7].ToString()), int.Parse(tabla.Rows[f][8].ToString())));
             }
 
             return Exposiciones;
