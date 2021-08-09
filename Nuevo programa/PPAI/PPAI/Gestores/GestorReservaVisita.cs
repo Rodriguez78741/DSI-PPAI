@@ -406,13 +406,13 @@ namespace PPAI.Gestores
         }
 
         //tomar-guias
-        public static void tomarGuias(List<int> idExpo, int idEscuela, int cantVisit, int idSede, int tipoVisita, DateTime fechaReserva, string horainicioReserva, string horafinReserva, List<int> idGuias)
+        public static bool tomarGuias(List<int> idExpo, int idEscuela, int cantVisit, int idSede, int tipoVisita, DateTime fechaReserva, string horainicioReserva, string horafinReserva, List<int> idGuias)
         {
             DateTime fechaActual = tomarFechayHoraAct();
             int idReserva = (buscarUltimoNroReserva() + 1);
             TimeSpan dur = Sede.buscarDuracionExp(idExpo);
-            RegistrarReserva(idReserva, idExpo, idEscuela, cantVisit, idSede, tipoVisita, fechaReserva, horainicioReserva, horafinReserva, fechaActual, idGuias, dur);
-
+            bool res = RegistrarReserva(idReserva, idExpo, idEscuela, cantVisit, idSede, tipoVisita, fechaReserva, horainicioReserva, horafinReserva, fechaActual, idGuias, dur);
+            return res;
 
         }
 
@@ -436,10 +436,11 @@ namespace PPAI.Gestores
         }
 
         //Registrar Reserva
-        private static void RegistrarReserva(int idReserva, List<int> idExpo, int idEscuela, int cantVisit, int idSede, int tipoVisita, DateTime fechaReserva, string horainicioReserva, string horafinReserva, DateTime fechaActual, List<int> idGuias, TimeSpan dur)
+        private static bool RegistrarReserva(int idReserva, List<int> idExpo, int idEscuela, int cantVisit, int idSede, int tipoVisita, DateTime fechaReserva, string horainicioReserva, string horafinReserva, DateTime fechaActual, List<int> idGuias, TimeSpan dur)
         {
             
-            Datos.AltaReserva(idReserva, tipoVisita + 1, idEscuela, fechaActual, fechaReserva, horainicioReserva, horafinReserva, cantVisit, idSede, idExpo, idGuias, dur);
+            bool res = Datos.AltaReserva(idReserva, tipoVisita + 1, idEscuela, fechaActual, fechaReserva, horainicioReserva, horafinReserva, cantVisit, idSede, idExpo, idGuias, dur);
+            return res;
         }
 
 

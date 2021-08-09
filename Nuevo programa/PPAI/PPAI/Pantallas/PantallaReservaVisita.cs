@@ -369,8 +369,17 @@ namespace PPAI.Pantallas
             string horainicioReserva = (txtHorarioInicio.Text);
             string horafinReserva = (txtHorarioFin.Text);
 
-            GestorReservaVisita.tomarGuias(idExpo, idEscuela, cantVisit, idSede, tipoVisita, fechaReserva, horainicioReserva, horafinReserva, idGuias);
-            MessageBox.Show("Reserva agregada con exito");
+            bool res = GestorReservaVisita.tomarGuias(idExpo, idEscuela, cantVisit, idSede, tipoVisita, fechaReserva, horainicioReserva, horafinReserva, idGuias);
+
+            if (res)
+            {
+                MessageBox.Show("Reserva agregada con exito");
+            }
+            else
+            {
+                MessageBox.Show("Error en el agregado de reserva");
+            }
+            
             this.Close();
         }
 
