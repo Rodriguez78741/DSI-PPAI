@@ -46,3 +46,4 @@ E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\Nuevo program
 E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\Nuevo programa\PPAI\PPAI\bin\Debug\PPAI.exe.config
 E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\Nuevo programa\PPAI\PPAI\bin\Debug\PPAI.exe
 E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\Nuevo programa\PPAI\PPAI\bin\Debug\PPAI.pdb
+C:\Users\Nico\Documents\Proyectos VS\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.Pantallas.win_detalle_obras_expo.resources

@@ -28,5 +28,15 @@ namespace PPAI.Objetos
             get => id_exposicion;
             set => id_exposicion = value;
         }
+
+        public static DataTable expoXobra(int idExpo)
+        {
+            return Datos.BuscarExpoXobras(idExpo);
+        }
+
+        public static int cant_obrasXexpo(int idExpo)
+        {
+            return Datos.BuscarCantExpoXobras(idExpo);
+        }
     }
 }

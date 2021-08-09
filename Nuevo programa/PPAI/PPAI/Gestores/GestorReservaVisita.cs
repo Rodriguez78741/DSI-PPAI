@@ -383,6 +383,18 @@ namespace PPAI.Gestores
 
         }
 
+        public static DataTable gest_expoXobra(int idExpo)
+        {
+            return DetalleExposicion.expoXobra(idExpo);
+            //N-Help: esperando a expo
+        }
+
+        public static int gest_cant_obrasXexpo(int idExpo)
+        {
+            return DetalleExposicion.cant_obrasXexpo(idExpo);
+            //N-Help: esperando a expo
+        }
+
         //Buscar ultimo id reserva
         private static int buscarUltimoNroReserva()
         {

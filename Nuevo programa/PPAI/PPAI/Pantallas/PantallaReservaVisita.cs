@@ -377,5 +377,20 @@ namespace PPAI.Pantallas
         {
 
         }
+
+        private void btnVerObraXExposicion_Click(object sender, EventArgs e)
+        {
+            List<int> idExpo = tomarSelecExposicion();
+            if (idExpo.Count() == 0)
+            {
+                MessageBox.Show("Agregue una exposición por favor");
+            }
+            else
+            {
+                win_detalle_obras_expo win_obrasXexpo = new win_detalle_obras_expo();
+                win_obrasXexpo.expos = idExpo;
+                win_obrasXexpo.ShowDialog();
+            }
+        }
     }
 }

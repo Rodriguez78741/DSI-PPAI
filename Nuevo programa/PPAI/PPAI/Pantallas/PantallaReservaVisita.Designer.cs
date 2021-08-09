@@ -58,6 +58,10 @@ namespace PPAI.Pantallas
             this.txtIdExpo = new System.Windows.Forms.TextBox();
             this.btnAgregarExpo = new System.Windows.Forms.Button();
             this.dataGridViewExpo = new System.Windows.Forms.DataGridView();
+            this.idExpo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoExpo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publicoDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalleExpo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSeleccionarExposicion = new System.Windows.Forms.Button();
             this.cmdExposicion = new System.Windows.Forms.ComboBox();
             this.panelFechaYHora = new System.Windows.Forms.Panel();
@@ -94,10 +98,7 @@ namespace PPAI.Pantallas
             this.CuitGuia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmdGuia = new System.Windows.Forms.ComboBox();
             this.dataSet1 = new System.Data.DataSet();
-            this.idExpo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoExpo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publicoDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalleExpo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVerObraXExposicion = new System.Windows.Forms.Button();
             this.panelEscuelas.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panelCantidadDeVisitantes.SuspendLayout();
@@ -291,6 +292,7 @@ namespace PPAI.Pantallas
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.btnVerObraXExposicion);
             this.groupBox5.Controls.Add(this.btnBuscarExpo);
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.label6);
@@ -409,6 +411,31 @@ namespace PPAI.Pantallas
             this.dataGridViewExpo.ReadOnly = true;
             this.dataGridViewExpo.Size = new System.Drawing.Size(343, 144);
             this.dataGridViewExpo.TabIndex = 14;
+            // 
+            // idExpo
+            // 
+            this.idExpo.HeaderText = "id";
+            this.idExpo.Name = "idExpo";
+            this.idExpo.ReadOnly = true;
+            this.idExpo.Visible = false;
+            // 
+            // TipoExpo
+            // 
+            this.TipoExpo.HeaderText = "Tipo de Expo";
+            this.TipoExpo.Name = "TipoExpo";
+            this.TipoExpo.ReadOnly = true;
+            // 
+            // publicoDestino
+            // 
+            this.publicoDestino.HeaderText = "Publico";
+            this.publicoDestino.Name = "publicoDestino";
+            this.publicoDestino.ReadOnly = true;
+            // 
+            // detalleExpo
+            // 
+            this.detalleExpo.HeaderText = "Detalle";
+            this.detalleExpo.Name = "detalleExpo";
+            this.detalleExpo.ReadOnly = true;
             // 
             // btnSeleccionarExposicion
             // 
@@ -738,30 +765,14 @@ namespace PPAI.Pantallas
             // 
             this.dataSet1.DataSetName = "NewDataSet";
             // 
-            // idExpo
+            // btnVerObraXExposicion
             // 
-            this.idExpo.HeaderText = "id";
-            this.idExpo.Name = "idExpo";
-            this.idExpo.ReadOnly = true;
-            this.idExpo.Visible = false;
-            // 
-            // TipoExpo
-            // 
-            this.TipoExpo.HeaderText = "Tipo de Expo";
-            this.TipoExpo.Name = "TipoExpo";
-            this.TipoExpo.ReadOnly = true;
-            // 
-            // publicoDestino
-            // 
-            this.publicoDestino.HeaderText = "Publico";
-            this.publicoDestino.Name = "publicoDestino";
-            this.publicoDestino.ReadOnly = true;
-            // 
-            // detalleExpo
-            // 
-            this.detalleExpo.HeaderText = "Detalle";
-            this.detalleExpo.Name = "detalleExpo";
-            this.detalleExpo.ReadOnly = true;
+            this.btnVerObraXExposicion.Location = new System.Drawing.Point(9, 271);
+            this.btnVerObraXExposicion.Name = "btnVerObraXExposicion";
+            this.btnVerObraXExposicion.Size = new System.Drawing.Size(100, 23);
+            this.btnVerObraXExposicion.TabIndex = 28;
+            this.btnVerObraXExposicion.Text = "Ver obras";
+            this.btnVerObraXExposicion.UseVisualStyleBackColor = true;
             // 
             // PantallaReservaVisita
             // 
@@ -874,5 +885,6 @@ namespace PPAI.Pantallas
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoExpo;
         private System.Windows.Forms.DataGridViewTextBoxColumn publicoDestino;
         private System.Windows.Forms.DataGridViewTextBoxColumn detalleExpo;
+        private System.Windows.Forms.Button btnVerObraXExposicion;
     }
 }
