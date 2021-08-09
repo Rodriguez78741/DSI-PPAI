@@ -272,9 +272,6 @@ namespace PPAI.Pantallas
             // cmdTipoVisita
             // 
             this.cmdTipoVisita.FormattingEnabled = true;
-            this.cmdTipoVisita.Items.AddRange(new object[] {
-            "General",
-            "Particular"});
             this.cmdTipoVisita.Location = new System.Drawing.Point(21, 28);
             this.cmdTipoVisita.Name = "cmdTipoVisita";
             this.cmdTipoVisita.Size = new System.Drawing.Size(121, 21);

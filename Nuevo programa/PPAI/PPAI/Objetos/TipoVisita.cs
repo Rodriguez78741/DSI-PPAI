@@ -32,20 +32,11 @@ namespace PPAI.Objetos
             set => descripcion = value;
         }
 
-        //Buscar Tipo Visita
-        public static List<TipoVisita> BuscarTipoVisita()
+        //Mostrar Tipo Visita
+        public string mostrarNombre()
         {
-
-            DataTable tabla = Datos.BuscarTipoVisitasBD();
-
-            List<TipoVisita> tipoVisitas = new List<TipoVisita>();
-
-            for (var f = 0; f < int.Parse(tabla.Rows.Count.ToString()); f++)
-            {
-                tipoVisitas.Add(new TipoVisita(int.Parse(tabla.Rows[f][0].ToString()), tabla.Rows[f][1].ToString()));
-            }
-
-            return tipoVisitas;
+            string nombre = this.descripcion;
+            return nombre;
         }
     }
 }

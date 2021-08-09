@@ -183,16 +183,24 @@ namespace PPAI.Pantallas
         //Mostrar sedes
         private void MostrarSedes()
         {
-            DataTable tabla = GestorReservaVisita.tomarCantidadVisitantes();
+            int cant_visitantes = int.Parse(txtCantidad.Text);
+            DataTable tabla = GestorReservaVisita.tomarCantidadVisitantes(cant_visitantes);
 
             cmdSede.DataSource = tabla;
             cmdSede.DisplayMember = "Nombre";
             cmdSede.ValueMember = "Id";
             cmdSede.SelectedIndex = -1;
 
-            panelSedes.Visible = true;
-            panelCantidadDeVisitantes.Enabled = false;
-
+            if (tabla.Rows.Count != 0)
+            {
+                panelSedes.Visible = true;
+                panelCantidadDeVisitantes.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("La cantidad de visistantes supera la capacidad máxima de nuestras sedes");
+            }
+            
         }
 
         //Tomar Seleccion de Sede
@@ -216,6 +224,12 @@ namespace PPAI.Pantallas
         {
 
             cmdTipoVisita.SelectedIndex = -1;
+            DataTable tabla = GestorReservaVisita.TomarSede();
+
+            cmdTipoVisita.DataSource = tabla;
+            cmdTipoVisita.DisplayMember = "Nombre";
+            cmdTipoVisita.ValueMember = "Id";
+            cmdTipoVisita.SelectedIndex = -1;
 
             panelTipoVisitas.Visible = true;
             panelSedes.Enabled = false;
@@ -237,7 +251,6 @@ namespace PPAI.Pantallas
                 //Si es general se seleccionaría todas las exposiciones
                 if (tipoVisita == 0)
                 {
-                    //N-Help: Esperando a que exposiciones siga
                     panelTipoVisitas.Enabled = false;
                     DataTable tabla = GestorReservaVisita.tomarTipoVisita(int.Parse(cmdSede.SelectedValue.ToString()));
 
@@ -259,6 +272,7 @@ namespace PPAI.Pantallas
         }
 
         //Mostrar datos Exposicion
+            //Muestra las exposiciones disponibles
          private void MostrarDatosExpoTempVig()
         {
             DataTable tabla = GestorReservaVisita.tomarTipoVisita(int.Parse(cmdSede.SelectedValue.ToString()));

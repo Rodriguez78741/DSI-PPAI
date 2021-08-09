@@ -52,9 +52,9 @@ namespace PPAI.Gestores
         }
 
         //Tomar Cantidad de Visitantes
-        public static DataTable tomarCantidadVisitantes()
+        public static DataTable tomarCantidadVisitantes(int cant_visitantes)
         {
-            List<Sede> sedes = BuscarSedes();
+            List<Sede> sedes = BuscarSedes(cant_visitantes);
 
             DataTable tabla = new DataTable();
             tabla.Columns.Add(new DataColumn("Id", typeof(int)));
@@ -68,10 +68,10 @@ namespace PPAI.Gestores
         }
 
         //Buscar Sedes
-        private static List<Sede> BuscarSedes()
+        private static List<Sede> BuscarSedes(int cant_visitantes)
         {          
             //Busca las Sedes en la BD
-            DataTable tabla = Datos.BuscarSedesBD();
+            DataTable tabla = Datos.BuscarSedesBD(cant_visitantes);
 
             //Toma los datos de la tabla y los transforma en la lista de entidades Sede
             List<Sede> sedes = new List<Sede>();
@@ -83,32 +83,33 @@ namespace PPAI.Gestores
             }
             return sedes;
         }
-
-        //NOTA Importante: He decidido eliminar este codigo ya que es obsoleto ya que los tipos de visita no se irian a actualizar en la BD 
-            //es decir, son solos dos y con los CMB podes poner la selección, por supuesto, habría que hacer el camino dependiendo que se seleccionó
         //Tomar Sede
-        /*
+        
         public static DataTable TomarSede()
         {
-            List<TipoVisita> sedes = BuscarTipoVisita();
+            List<TipoVisita> visitas = BuscarTipoVisita();
 
             DataTable tabla = new DataTable();
             tabla.Columns.Add(new DataColumn("Id", typeof(int)));
             tabla.Columns.Add(new DataColumn("Nombre", typeof(string)));
-            foreach (var e in sedes)
+            foreach (var e in visitas)
             {
-                tabla.Rows.Add(e.idTipoVisita, e.Descripcion);
+                string nombre = e.mostrarNombre();
+                tabla.Rows.Add(e.idTipoVisita, nombre);
             }
             return tabla;
         }
-        */
 
         //Buscar Tipo Visita
-        /*
+        
         private static List<TipoVisita> BuscarTipoVisita()
         {
                
-            DataTable tabla = Datos.BuscarTipoVisitasBD();
+            DataTable tabla = new DataTable();
+            tabla.Columns.Add(new DataColumn("Id", typeof(int)));
+            tabla.Columns.Add(new DataColumn("Nombre", typeof(string)));
+            tabla.Rows.Add(0, "General");
+            tabla.Rows.Add(1, "Particular");
 
             List<TipoVisita> tipoVisitas = new List<TipoVisita>();
 
@@ -120,7 +121,6 @@ namespace PPAI.Gestores
              return tipoVisitas;
                   
         }
-        */
 
         //Tomar fecha y hora actuales
         private static DateTime tomarFechayHoraAct()
