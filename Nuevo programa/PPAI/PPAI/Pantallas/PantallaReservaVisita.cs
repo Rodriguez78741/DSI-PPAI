@@ -18,7 +18,7 @@ namespace PPAI.Pantallas
             InitializeComponent();
         }
 
-//Pantalla
+        //Pantalla
 
         //Tomar Opcion Registrar Reserva Visitas
         private void PantallaReservaVisita_Load(object sender, EventArgs e)
@@ -140,7 +140,7 @@ namespace PPAI.Pantallas
 
 
 
-//Funciones programa
+        //Funciones programa
 
         //Mostrar Escuela
         private void MostrarEscuela(DataTable tabla)
@@ -148,7 +148,7 @@ namespace PPAI.Pantallas
             cmdEscuelas.DataSource = tabla;
             cmdEscuelas.DisplayMember = "Nombre";
             cmdEscuelas.ValueMember = "Id";
-            cmdEscuelas.SelectedIndex = -1;   
+            cmdEscuelas.SelectedIndex = -1;
         }
 
         //Tomar Seleccion de escuela              
@@ -176,8 +176,8 @@ namespace PPAI.Pantallas
             else
             {
                 int cantidad = int.Parse(txtCantidad.Text);
-                MostrarSedes();               
-            }           
+                MostrarSedes();
+            }
         }
 
         //Mostrar sedes
@@ -200,7 +200,7 @@ namespace PPAI.Pantallas
             {
                 MessageBox.Show("La cantidad de visistantes supera la capacidad máxima de nuestras sedes");
             }
-            
+
         }
 
         //Tomar Seleccion de Sede
@@ -214,7 +214,7 @@ namespace PPAI.Pantallas
             {
                 int sede = int.Parse(cmdSede.SelectedValue.ToString());
                 MostrarTiposVisita();
-                return sede;        
+                return sede;
             }
             return 0;
         }
@@ -254,11 +254,11 @@ namespace PPAI.Pantallas
                     panelTipoVisitas.Enabled = false;
                     DataTable tabla = GestorReservaVisita.tomarTipoVisita(int.Parse(cmdSede.SelectedValue.ToString()));
 
-                    for(var r = 0; r<tabla.Rows.Count; r++)
+                    for (var r = 0; r < tabla.Rows.Count; r++)
                     {
                         dataGridViewExpo.Rows.Add(tabla.Rows[r][0], tabla.Rows[r][1], tabla.Rows[r][2], tabla.Rows[r][3]);
                     }
-                                    
+
                     panelExposicion.Visible = true;
                     panelExposicion.Enabled = false;
                     panelFechaYHora.Visible = true;
@@ -272,8 +272,8 @@ namespace PPAI.Pantallas
         }
 
         //Mostrar datos Exposicion
-            //Muestra las exposiciones disponibles
-         private void MostrarDatosExpoTempVig()
+        //Muestra las exposiciones disponibles
+        private void MostrarDatosExpoTempVig()
         {
             DataTable tabla = GestorReservaVisita.tomarTipoVisita(int.Parse(cmdSede.SelectedValue.ToString()));
             cmdExposicion.DataSource = tabla;
@@ -282,10 +282,10 @@ namespace PPAI.Pantallas
             cmdExposicion.SelectedIndex = -1;
 
             panelTipoVisitas.Enabled = false;
-            panelExposicion.Visible = true;           
+            panelExposicion.Visible = true;
         }
 
-       
+
         //Tomar Selecion de Exposicion
         private List<int> tomarSelecExposicion()
         {
@@ -298,7 +298,7 @@ namespace PPAI.Pantallas
 
             return idExposiciones;
         }
-        
+
         //solicitar Fecha y Hora Respectiva
         private void solicitarFechaHoraRes()
         {
@@ -321,7 +321,7 @@ namespace PPAI.Pantallas
             int dia = int.Parse(txtDia.Text);
             int mes = int.Parse(txtMes.Text);
             int año = int.Parse(txtAño.Text);
-            
+
 
             DateTime horaInicio = new DateTime(año, mes, dia, horai, minutoi, segundoi);
             DateTime horaFin = new DateTime(año, mes, dia, horaf, minutof, segundof);
@@ -329,13 +329,14 @@ namespace PPAI.Pantallas
             List<int> Exposiciones = tomarSelecExposicion();
             int idSede = tomarSelecSede2();
             int cantVisitas = int.Parse(txtCantidad.Text);
-            
+
             (bool, int, DataTable) tupla = GestorReservaVisita.tomarFechaHoraRes(horaInicio, horaFin, Exposiciones, idSede, cantVisitas);
             if (tupla.Item1)
             {
                 panelFechaYHora.Enabled = false;
                 panelGuias.Enabled = true;
                 labelCant.Text = "minimo: " + tupla.Item2.ToString();
+                cantid.Text = tupla.Item2.ToString();
                 cmdGuia.DataSource = tupla.Item3;
                 dataSet1.Tables.Add(tupla.Item3);
                 cmdGuia.DisplayMember = "Nombre";
@@ -360,71 +361,82 @@ namespace PPAI.Pantallas
                 idGuias.Add(int.Parse(dataGridViewGuias.Rows[i].Cells[0].Value.ToString()));
             }
 
-            List<int> idExpo = tomarSelecExposicion();
-            int idEscuela = (int)cmdEscuelas.SelectedValue;
-            int cantVisit = int.Parse(txtCantidad.Text);
-            int idSede = (int)cmdSede.SelectedValue;
-            int tipoVisita = (int)cmdTipoVisita.SelectedIndex;
-            DateTime fechaReserva = new DateTime(int.Parse(txtAño.Text), int.Parse(txtMes.Text), int.Parse(txtDia.Text));
-            string horainicioReserva = (txtHorarioInicio.Text);
-            string horafinReserva = (txtHorarioFin.Text);
-
-            bool res = GestorReservaVisita.tomarGuias(idExpo, idEscuela, cantVisit, idSede, tipoVisita, fechaReserva, horainicioReserva, horafinReserva, idGuias);
-
-            if (res)
+            int cant = int.Parse(cantid.Text);
+            if (cant > idGuias.Count)
             {
-                MessageBox.Show("Reserva agregada con exito");
+                MessageBox.Show("Se necesitan al menos " + cant + " guias");
             }
             else
             {
-                MessageBox.Show("Error en el agregado de reserva");
+
+                List<int> idExpo = tomarSelecExposicion();
+                int idEscuela = (int)cmdEscuelas.SelectedValue;
+                int cantVisit = int.Parse(txtCantidad.Text);
+                int idSede = (int)cmdSede.SelectedValue;
+                int tipoVisita = (int)cmdTipoVisita.SelectedIndex;
+                DateTime fechaReserva = new DateTime(int.Parse(txtAño.Text), int.Parse(txtMes.Text), int.Parse(txtDia.Text));
+                string horainicioReserva = (txtHorarioInicio.Text);
+                string horafinReserva = (txtHorarioFin.Text);
+
+                bool res = GestorReservaVisita.tomarGuias(idExpo, idEscuela, cantVisit, idSede, tipoVisita, fechaReserva, horainicioReserva, horafinReserva, idGuias);
+
+                if (res)
+                {
+                    MessageBox.Show("Reserva agregada con exito");
+                }
+                else
+                {
+                    MessageBox.Show("Error en el agregado de reserva");
+                }
+
+                this.Close();
+
             }
-            
-            this.Close();
         }
 
 
+            //Funciones Auxiliares
 
-//Funciones Auxiliares
-
-        //Seleccion de sede desde pantalla
-        private int tomarSelecSede2()
-        {
-            if (cmdSede.Text == "")
+            //Seleccion de sede desde pantalla
+            private int tomarSelecSede2()
             {
-                MessageBox.Show("Ingrese Sede");
+                if (cmdSede.Text == "")
+                {
+                    MessageBox.Show("Ingrese Sede");
+                }
+                else
+                {
+                    int sede = int.Parse(cmdSede.SelectedValue.ToString());
+                    return sede;
+                }
+                return 0;
             }
-            else
+
+            private void cmdTipoVisita_SelectedIndexChanged(object sender, EventArgs e)
             {
-                int sede = int.Parse(cmdSede.SelectedValue.ToString());
-                return sede;
+
             }
-            return 0;
-        }
 
-        private void cmdTipoVisita_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox4_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnVerObraXExposicion_Click(object sender, EventArgs e)
-        {
-            List<int> idExpo = tomarSelecExposicion();
-            if (idExpo.Count() == 0)
+            private void groupBox4_Enter(object sender, EventArgs e)
             {
-                MessageBox.Show("Agregue una exposición por favor");
+
             }
-            else
+
+            private void btnVerObraXExposicion_Click(object sender, EventArgs e)
             {
-                win_detalle_obras_expo win_obrasXexpo = new win_detalle_obras_expo();
-                win_obrasXexpo.expos = idExpo;
-                win_obrasXexpo.ShowDialog();
+                List<int> idExpo = tomarSelecExposicion();
+                if (idExpo.Count() == 0)
+                {
+                    MessageBox.Show("Agregue una exposición por favor");
+                }
+                else
+                {
+                    win_detalle_obras_expo win_obrasXexpo = new win_detalle_obras_expo();
+                    win_obrasXexpo.expos = idExpo;
+                    win_obrasXexpo.ShowDialog();
+                }
             }
-        }
-    }
+        
+    } 
 }
+

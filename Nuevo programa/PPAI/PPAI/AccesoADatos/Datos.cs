@@ -18,7 +18,7 @@ namespace PPAI.AccesoADatos
 
         public static DataTable BuscarEscuelasBD()
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
             {
@@ -44,7 +44,7 @@ namespace PPAI.AccesoADatos
 
         public static DataTable BuscarSedesBD(int cant_visitantes)
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
             {
@@ -73,7 +73,7 @@ namespace PPAI.AccesoADatos
 
         public static DataTable BuscarTipoVisitasBD()
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
             {
@@ -101,7 +101,7 @@ namespace PPAI.AccesoADatos
 
         public static DataTable BuscarExpoVigentesBD(int idSesion)
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
             {
@@ -128,7 +128,7 @@ namespace PPAI.AccesoADatos
 
         public static DataTable BuscarDetalleExpoidBD(int id)
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
             {
@@ -158,7 +158,7 @@ namespace PPAI.AccesoADatos
 
         public static DataTable BuscarObrasIdBD(int id)
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
             {
@@ -189,7 +189,7 @@ namespace PPAI.AccesoADatos
 
         public static DataTable BuuscarReservasXSede(int id)
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
             {
@@ -219,7 +219,7 @@ namespace PPAI.AccesoADatos
 
         public static DataTable BuuscarSedeId(int id)
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
             {
@@ -251,7 +251,7 @@ namespace PPAI.AccesoADatos
 
         public static DataTable BuscarEmpleadoGuia(int id)
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
             {
@@ -283,7 +283,7 @@ namespace PPAI.AccesoADatos
 
         public static DataTable BuscarHorarioEmpleado(int id)
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
             {
@@ -313,7 +313,7 @@ namespace PPAI.AccesoADatos
 
         public static DataTable BuscarAsignacionEmpleado()
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
             {
@@ -342,7 +342,7 @@ namespace PPAI.AccesoADatos
 
         public static bool AltaReserva(int id, int idTipoVisita, int idEscuela, DateTime fechaCreacion, DateTime fechaReserva, string horaInicio, string horaFin, int cantVisitas, int idSede, List<int> idExpo, List<int> idGuias, TimeSpan dur)
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlTransaction objetoTransaccion = null;
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
@@ -351,10 +351,11 @@ namespace PPAI.AccesoADatos
 
                 SqlCommand cmd = new SqlCommand();
 
-                string consulta = "INSERT INTO Reserva (id_tipo_visita, id_escuela, fecha_creacion, fecha_reserva,hora_inicio,hora_fin,hora_incio_real,hora_fin_real,cant_alumnos_confirm,id_sede, detalleConfirmacion, horaEstimada)" +
-                                  "VALUES(@tipoVisita, @Escuela, @fechaCreacion, @fechaReserva, @horainicio,@horafin,@horainicioreal,@horafinreal,@cantvisitas,@idsede,@pend,@dur)";
+                string consulta = "INSERT INTO Reserva (id_reserva,id_tipo_visita, id_escuela, fecha_creacion, fecha_reserva,hora_inicio,hora_fin,hora_incio_real,hora_fin_real,cant_alumnos_confirm,id_sede, detalleConfirmacion, horaEstimada)" +
+                                  "VALUES(@idRes,@tipoVisita, @Escuela, @fechaCreacion, @fechaReserva, @horainicio,@horafin,@horainicioreal,@horafinreal,@cantvisitas,@idsede,@pend,@dur)";
 
                 cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@idRes", reserva.idReserva);
                 cmd.Parameters.AddWithValue("@tipoVisita", reserva.idTipoVisita);
                 cmd.Parameters.AddWithValue("@Escuela", reserva.idEscuela);
                 cmd.Parameters.AddWithValue("@fechaCreacion", reserva.fechaCreación);
@@ -413,6 +414,22 @@ namespace PPAI.AccesoADatos
                     cmd.ExecuteNonQuery();
                 }
 
+
+                foreach (var idGuia in idGuias)
+                {
+
+                    string consultaGuia = "INSERT INTO Asignaciones values(@idguia,@Inicio,@Fin)";
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@idguia", idGuia);
+                    cmd.Parameters.AddWithValue("@Inicio", horaInicio);
+                    cmd.Parameters.AddWithValue("@Fin", horaFin);
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.CommandText = consultaGuia;
+                    cmd.ExecuteNonQuery();
+                }
+
                 objetoTransaccion.Commit();
                 return true;
             }
@@ -431,7 +448,7 @@ namespace PPAI.AccesoADatos
 
         public static int buscarUltimoIdReserva()
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
             {
@@ -467,7 +484,7 @@ namespace PPAI.AccesoADatos
 
         public static DataTable BuscarPublico(int id)
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
             {
@@ -498,7 +515,7 @@ namespace PPAI.AccesoADatos
 
         public static DataTable BuscarExpoXobras(int idExpo)
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
             {
@@ -528,7 +545,7 @@ namespace PPAI.AccesoADatos
 
         public static int BuscarCantExpoXobras(int idExpo)
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
             {
@@ -557,7 +574,7 @@ namespace PPAI.AccesoADatos
 
         public static DataTable BuscarExpoid(int id)
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
             {
@@ -585,7 +602,7 @@ namespace PPAI.AccesoADatos
 
         public static DataTable BuscarCargo(int id)
         {
-            string cadenaconexion = "Data Source=LAPTOP-17DLPH1G\\SQLEXPRESS;Initial Catalog=DSI_PPAI;Integrated Security=True";
+            string cadenaconexion = "Data Source=DESKTOP-CCTL5C4\\SQLEXPRESS01;Initial Catalog=DSI_PPAI;Integrated Security=True";
             SqlConnection cn = new SqlConnection(cadenaconexion);
             try
             {

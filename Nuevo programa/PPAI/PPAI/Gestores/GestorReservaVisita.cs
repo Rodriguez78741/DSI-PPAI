@@ -471,7 +471,7 @@ namespace PPAI.Gestores
             List<AsignacionVisita> asignacion = new List<AsignacionVisita>();
             for (var r = 0; r < tabla.Rows.Count; r++)
             {
-                asignacion.Add(new AsignacionVisita((int)tabla.Rows[r][0], (int)tabla.Rows[r][1], (TimeSpan)tabla.Rows[r][2], (TimeSpan)tabla.Rows[r][3]));
+                asignacion.Add(new AsignacionVisita((int)tabla.Rows[r][0], (int)tabla.Rows[r][1], (TimeSpan)tabla.Rows[r][2], (TimeSpan)tabla.Rows[r][3], (DateTime)tabla.Rows[r][4]));
             }
             return asignacion;
         }

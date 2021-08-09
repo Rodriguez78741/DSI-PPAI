@@ -12,13 +12,15 @@ namespace PPAI.Objetos
         private int id_empleado;
         private TimeSpan horaInicio;
         private TimeSpan horaFin;
+        private DateTime fecha;
 
-        public AsignacionVisita(int idasignacion, int idempleado, TimeSpan horainicio, TimeSpan horafin)
+        public AsignacionVisita(int idasignacion, int idempleado, TimeSpan horainicio, TimeSpan horafin, DateTime dia)
         {
             this.id_asignacion = idasignacion;
             this.id_empleado = idempleado;
             this.horaInicio = horainicio;
             this.horaFin = horafin;
+            this.fecha = dia;
         }
 
         public int idAsignacion
@@ -43,12 +45,18 @@ namespace PPAI.Objetos
             set => horaFin = value;
         }
 
+        public DateTime dia
+        {
+            get => fecha;
+            set => fecha = value;
+        }
+
         public bool buscarAsignacion(DateTime inicio, DateTime fin)
         {
 
-            int dia = inicio.Day;
-            int mes = inicio.Month;
-            int año = inicio.Year;
+            int diaa = this.dia.Day;
+            int mesa = this.dia.Month;
+            int añoa = this.dia.Year;
 
             int shia = this.horainicio.Seconds;
             int mhia = this.horainicio.Minutes;
@@ -57,8 +65,8 @@ namespace PPAI.Objetos
             int mhfa = this.horafin.Minutes;
             int hhfa = this.horafin.Hours;
 
-            DateTime horaInicioAsignacion = new DateTime(año, mes, dia, hhia, mhia, shia);
-            DateTime horafinAsignacion = new DateTime(año, mes, dia, hhfa, mhfa, shfa);
+            DateTime horaInicioAsignacion = new DateTime(añoa, mesa, diaa, hhia, mhia, shia);
+            DateTime horafinAsignacion = new DateTime(añoa, mesa, diaa, hhfa, mhfa, shfa);
 
 
             if ((horaInicioAsignacion < fin | horafinAsignacion > inicio) == false)

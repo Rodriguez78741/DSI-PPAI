@@ -99,6 +99,7 @@ namespace PPAI.Pantallas
             this.CuitGuia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmdGuia = new System.Windows.Forms.ComboBox();
             this.dataSet1 = new System.Data.DataSet();
+            this.cantid = new System.Windows.Forms.Label();
             this.panelEscuelas.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panelCantidadDeVisitantes.SuspendLayout();
@@ -591,6 +592,7 @@ namespace PPAI.Pantallas
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.cantid);
             this.groupBox7.Controls.Add(this.labelCant);
             this.groupBox7.Controls.Add(this.btnBuscarGuia);
             this.groupBox7.Controls.Add(this.txtIdGuia);
@@ -771,6 +773,16 @@ namespace PPAI.Pantallas
             // 
             this.dataSet1.DataSetName = "NewDataSet";
             // 
+            // cantid
+            // 
+            this.cantid.AutoSize = true;
+            this.cantid.Location = new System.Drawing.Point(176, 26);
+            this.cantid.Name = "cantid";
+            this.cantid.Size = new System.Drawing.Size(41, 13);
+            this.cantid.TabIndex = 29;
+            this.cantid.Text = "label11";
+            this.cantid.Visible = false;
+            // 
             // PantallaReservaVisita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -883,5 +895,6 @@ namespace PPAI.Pantallas
         private System.Windows.Forms.DataGridViewTextBoxColumn publicoDestino;
         private System.Windows.Forms.DataGridViewTextBoxColumn detalleExpo;
         private System.Windows.Forms.Button btnVerObraXExposicion;
+        private System.Windows.Forms.Label cantid;
     }
 }
