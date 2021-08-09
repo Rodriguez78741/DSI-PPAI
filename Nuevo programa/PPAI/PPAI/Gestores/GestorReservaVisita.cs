@@ -22,7 +22,8 @@ namespace PPAI.Gestores
             tabla.Columns.Add(new DataColumn("Nombre", typeof(string)));
             foreach(var e in Escuelas)
             {
-                tabla.Rows.Add(e.id, e.Nombre);
+                string nombre = e.mostrarNombre();
+                tabla.Rows.Add(e.id, nombre);
             }
             return tabla;
         }
@@ -60,7 +61,8 @@ namespace PPAI.Gestores
             tabla.Columns.Add(new DataColumn("Nombre", typeof(string)));
             foreach (var e in sedes)
             {
-                tabla.Rows.Add(e.idsede, e.nombresede);
+                string nombre = e.mostrarNombre();
+                tabla.Rows.Add(e.idsede, nombre);
             }
             return tabla;
         }
@@ -131,10 +133,7 @@ namespace PPAI.Gestores
         public static DataTable tomarTipoVisita(int idSede)
         {
             List<Exposicion> Exposiciones = BuscarExpoTempVig(idSede);
-               DataTable tabla = Sede.buscarExposiciones(Exposiciones);
-
-            
-
+            DataTable tabla = Sede.buscarExposiciones(Exposiciones);         
             return tabla;
         }
 
@@ -148,7 +147,7 @@ namespace PPAI.Gestores
 
             for (var f = 0; f < int.Parse(tabla.Rows.Count.ToString()); f++)
             {
-                Exposiciones.Add(new Exposicion(int.Parse(tabla.Rows[f][0].ToString()), tabla.Rows[f][1].ToString(), tabla.Rows[f][2].ToString(), DateTime.Parse(tabla.Rows[f][3].ToString()), DateTime.Parse(tabla.Rows[f][4].ToString()), bool.Parse(tabla.Rows[f][5].ToString()), int.Parse(tabla.Rows[f][6].ToString()), int.Parse(tabla.Rows[f][7].ToString()), int.Parse(tabla.Rows[f][8].ToString())));
+                Exposiciones.Add(new Exposicion(int.Parse(tabla.Rows[f][0].ToString()), tabla.Rows[f][1].ToString(), tabla.Rows[f][2].ToString(), DateTime.Parse(tabla.Rows[f][3].ToString()), DateTime.Parse(tabla.Rows[f][4].ToString()), int.Parse(tabla.Rows[f][5].ToString()), int.Parse(tabla.Rows[f][6].ToString()), int.Parse(tabla.Rows[f][7].ToString()), int.Parse(tabla.Rows[f][8].ToString()), bool.Parse(tabla.Rows[f][9].ToString())));
             }
 
             return Exposiciones;
@@ -163,7 +162,7 @@ namespace PPAI.Gestores
             DataTable guias = new DataTable();
 
             TimeSpan duracion = calcularDuracionEst(horainicio, horafin);
-            TimeSpan duracionObras = buscarDuracionExposicion(idExpos);
+            TimeSpan duracionObras = Sede.buscarDuracionExp(idExpos);
             bool cumpleCapacidadTiempo = calcularSobrepasoCapMax(duracion, duracionObras);
             if(cumpleCapacidadTiempo == false)
             {
@@ -172,7 +171,7 @@ namespace PPAI.Gestores
             }
             else
             {
-                bool correcto = buscarReservasParaFechaHora(idSede,horainicio,horafin);
+                bool correcto = Sede.buscarReservasParaFechaHora(idSede,horainicio,horafin,cantVisitas);
                 if (correcto == false)
                 {
                     posible = false;
@@ -195,6 +194,11 @@ namespace PPAI.Gestores
             return duracion;
         }
 
+
+
+
+
+        /*
         //Buscar Duracion Exposicion
         private static TimeSpan buscarDuracionExposicion(List<int> idExposiciones)
         {
@@ -216,6 +220,8 @@ namespace PPAI.Gestores
 
             return duracion;
         }
+        */
+
 
 
         //Calcular sobrepaso capacidad maxima
@@ -229,6 +235,7 @@ namespace PPAI.Gestores
             return resultado;
         }
 
+        /*
         //Buscar reservas para fecha y hora
         private static bool buscarReservasParaFechaHora(int idSede, DateTime horaainicio, DateTime horafin)
         {
@@ -271,105 +278,130 @@ namespace PPAI.Gestores
             return res;
         }
 
+        */
+        /*
         //Cantidad maxima de visitantes en la sede
         private static int getCantMaxVisitantes(int idSede)
         {
             DataTable tabla = Datos.BuuscarSedeId(idSede);
             Sede sede = new Sede((int)tabla.Rows[0][0], tabla.Rows[0][1].ToString(), (int)tabla.Rows[0][2], (int)tabla.Rows[0][3], (TimeSpan)tabla.Rows[0][4], (TimeSpan)tabla.Rows[0][5]);
-            int visitas = sede.maxVisitas;
+            int visitas = sede.getCantMaximaVisitantes();
             return visitas;
-        }
+        }*/
 
         //Calcular guías
         private static int calcularCantGuiasNecesarios(int visitas, int sede)
         {
-            int maxVisitas = getCantMaxVisitantes(sede);
-            int guiasXVisitas = getCantMaxPorGuia(sede);
+            DataTable tabla = Datos.BuuscarSedeId(sede);
+            Sede sedeEsp = new Sede((int)tabla.Rows[0][0], tabla.Rows[0][1].ToString(), (int)tabla.Rows[0][2], (int)tabla.Rows[0][3], (TimeSpan)tabla.Rows[0][4], (TimeSpan)tabla.Rows[0][5]);
+
+            int maxVisitas = sedeEsp.getCantMaximaVisitantes();
+            int guiasXVisitas = sedeEsp.getCantMaximaGuias();
             int maxGuias = (maxVisitas / guiasXVisitas);
             int minGuias = (visitas / guiasXVisitas);
             return minGuias;
         }
 
+        /*
         //Cantidad maxima de guias por sede
         private static int getCantMaxPorGuia(int idSede)
         {
             DataTable tabla = Datos.BuuscarSedeId(idSede);
             Sede sede = new Sede((int)tabla.Rows[0][0], tabla.Rows[0][1].ToString(), (int)tabla.Rows[0][2], (int)tabla.Rows[0][3], (TimeSpan)tabla.Rows[0][4], (TimeSpan)tabla.Rows[0][5]);
-            int guias = sede.maxGuias;
+            int guias = sede.getCantMaximaGuias();
             return guias;
         }
+        */
 
         //Buscar guias disponibles en la fecha(Que sea guia, que este disponible y devolver su id junto con su nombre y asignacion
         private static DataTable buscarGuiasDispFechaReserva(int idSede, DateTime horaInicio, DateTime Horafin)
         {
             DataTable tablaEmpleados = Datos.BuscarEmpleadoGuia(idSede);
-            DataTable tablaAsignaciones = Datos.BuscarAsignacionEmpleado();
-            DataTable tablaHoraEmpleados = Datos.BuscarHorarioEmpleado();
-
             List<Empleado> empleados = tablaAEmpleado(tablaEmpleados);
-            List<HorarioEmpleado> horarios = tablaAHorario(tablaHoraEmpleados);
-            List<AsignacionVisita> visitas = tablaAAsignacion(tablaAsignaciones);
 
             List<Empleado> guias = new List<Empleado>();
 
-            foreach (var e in empleados)
+            foreach(var e in empleados)
             {
-                if (e.idCargo == 1)
+                if (e.getGuiaDispEnHorario(horaInicio, Horafin))
                 {
-                    foreach(var h in horarios)
-                    {
-                        
-
-                        int dia = horaInicio.Day;
-                        int mes = horaInicio.Month;
-                        int año = horaInicio.Year;
-
-                        int shiem = h.horaInicio.Seconds;
-                        int mhiem = h.horaInicio.Minutes;
-                        int hhiem = h.horaInicio.Hours;
-                        int shfem = h.horaFin.Seconds;
-                        int mhfem = h.horaFin.Minutes;
-                        int hhfem = h.horaFin.Hours;
-
-                        DateTime horaInicioEmpleado = new DateTime(año, mes, dia, hhiem, mhiem, shiem);
-                        DateTime horafinEmpleado = new DateTime(año, mes, dia, hhfem, mhfem, shfem);
-
-                        if (e.id == h.idEmpleado && horaInicioEmpleado < horaInicio && horafinEmpleado > Horafin)
-                        {
-                            if(visitas.Count == 0)
-                            {
-                                guias.Add(e);
-                            }
-                            else
-                            {
-                                foreach (var a in visitas)
-                                {
-
-                                    int shia = a.horainicio.Seconds;
-                                    int mhia = a.horainicio.Minutes;
-                                    int hhia = a.horainicio.Hours;
-                                    int shfa = a.horafin.Seconds;
-                                    int mhfa = a.horafin.Minutes;
-                                    int hhfa = a.horafin.Hours;
-
-                                    DateTime horaInicioAsignacion = new DateTime(año, mes, dia, hhia, mhia, shia);
-                                    DateTime horafinAsignacion = new DateTime(año, mes, dia, hhfa, mhfa, shfa);
-
-                                    if ((e.id == a.idEmpleado && (horaInicioAsignacion < Horafin | horafinAsignacion > horaInicio)) == false)
-                                    {
-                                        guias.Add(e);
-                                    }
-                                }
-                            }
-                            
-                        }
-                    }
+                    guias.Add(e);
                 }
             }
 
             DataTable tablaGuias = listaATabla(guias);
             return tablaGuias;
 
+
+
+            /*
+                        DataTable tablaAsignaciones = Datos.BuscarAsignacionEmpleado();
+                        DataTable tablaHoraEmpleados = Datos.BuscarHorarioEmpleado();
+
+
+                        List<HorarioEmpleado> horarios = tablaAHorario(tablaHoraEmpleados);
+                        List<AsignacionVisita> visitas = tablaAAsignacion(tablaAsignaciones);
+
+                        List<Empleado> guias = new List<Empleado>();
+
+                        foreach (var e in empleados)
+                        {
+                            if (e.idCargo == 1)
+                            {
+                                foreach(var h in horarios)
+                                {
+
+
+                                    int dia = horaInicio.Day;
+                                    int mes = horaInicio.Month;
+                                    int año = horaInicio.Year;
+
+                                    int shiem = h.horaInicio.Seconds;
+                                    int mhiem = h.horaInicio.Minutes;
+                                    int hhiem = h.horaInicio.Hours;
+                                    int shfem = h.horaFin.Seconds;
+                                    int mhfem = h.horaFin.Minutes;
+                                    int hhfem = h.horaFin.Hours;
+
+                                    DateTime horaInicioEmpleado = new DateTime(año, mes, dia, hhiem, mhiem, shiem);
+                                    DateTime horafinEmpleado = new DateTime(año, mes, dia, hhfem, mhfem, shfem);
+
+                                    if (e.id == h.idEmpleado && horaInicioEmpleado < horaInicio && horafinEmpleado > Horafin)
+                                    {
+                                        if(visitas.Count == 0)
+                                        {
+                                            guias.Add(e);
+                                        }
+                                        else
+                                        {
+                                            foreach (var a in visitas)
+                                            {
+
+                                                int shia = a.horainicio.Seconds;
+                                                int mhia = a.horainicio.Minutes;
+                                                int hhia = a.horainicio.Hours;
+                                                int shfa = a.horafin.Seconds;
+                                                int mhfa = a.horafin.Minutes;
+                                                int hhfa = a.horafin.Hours;
+
+                                                DateTime horaInicioAsignacion = new DateTime(año, mes, dia, hhia, mhia, shia);
+                                                DateTime horafinAsignacion = new DateTime(año, mes, dia, hhfa, mhfa, shfa);
+
+                                                if ((e.id == a.idEmpleado && (horaInicioAsignacion < Horafin | horafinAsignacion > horaInicio)) == false)
+                                                {
+                                                    guias.Add(e);
+                                                }
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+
+                        DataTable tablaGuias = listaATabla(guias);
+                        return tablaGuias;
+            */
 
         }
 
@@ -378,7 +410,8 @@ namespace PPAI.Gestores
         {
             DateTime fechaActual = tomarFechayHoraAct();
             int idReserva = (buscarUltimoNroReserva() + 1);
-            RegistrarReserva(idReserva, idExpo, idEscuela, cantVisit, idSede, tipoVisita, fechaReserva, horainicioReserva, horafinReserva, fechaActual, idGuias);
+            TimeSpan dur = Sede.buscarDuracionExp(idExpo);
+            RegistrarReserva(idReserva, idExpo, idEscuela, cantVisit, idSede, tipoVisita, fechaReserva, horainicioReserva, horafinReserva, fechaActual, idGuias, dur);
 
 
         }
@@ -403,9 +436,10 @@ namespace PPAI.Gestores
         }
 
         //Registrar Reserva
-        private static void RegistrarReserva(int idReserva, List<int> idExpo, int idEscuela, int cantVisit, int idSede, int tipoVisita, DateTime fechaReserva, string horainicioReserva, string horafinReserva, DateTime fechaActual, List<int> idGuias)
+        private static void RegistrarReserva(int idReserva, List<int> idExpo, int idEscuela, int cantVisit, int idSede, int tipoVisita, DateTime fechaReserva, string horainicioReserva, string horafinReserva, DateTime fechaActual, List<int> idGuias, TimeSpan dur)
         {
-            Datos.AltaReserva(idReserva, tipoVisita, idEscuela, fechaActual, fechaReserva, horainicioReserva, horafinReserva, cantVisit, idSede, idExpo, idGuias);
+            
+            Datos.AltaReserva(idReserva, tipoVisita + 1, idEscuela, fechaActual, fechaReserva, horainicioReserva, horafinReserva, cantVisit, idSede, idExpo, idGuias, dur);
         }
 
 

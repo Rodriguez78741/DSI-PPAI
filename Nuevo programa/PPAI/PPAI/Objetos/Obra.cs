@@ -10,12 +10,12 @@ namespace PPAI.Objetos
     {
         private int id_obra;
         private string nombre;
-        private int alto;
-        private int ancho;
-        private int peso;
+        private decimal alto;
+        private decimal ancho;
+        private decimal peso;
         private DateTime fecha_creacion;
         private DateTime fecha_ingreso;
-        private int valuacion;
+        private decimal valuacion;
         private string descripcion;
         private int id_empleado;
         private TimeSpan duracion_expo_obra;
@@ -23,12 +23,12 @@ namespace PPAI.Objetos
 
         public Obra(int id,
                     string nombre,
-                    int alto,
-                    int ancho,
-                    int peso,
+                    decimal alto,
+                    decimal ancho,
+                    decimal peso,
                     DateTime fechaCreacion,
                     DateTime fechaIngreso,
-                    int valuacion,
+                    decimal valuacion,
                     string descripcion,
                     int idEmpleado,
                     TimeSpan dracionexob,
@@ -65,17 +65,17 @@ namespace PPAI.Objetos
                 get => nombre;
                 set => nombre = value;
             }
-        public int Alto
+        public decimal Alto
             {
                 get => alto;
                 set => alto = value;
             }
-        public int Ancho
+        public decimal Ancho
             {
                 get => ancho;
                 set => ancho = value;
             }
-        public int Peso
+        public decimal Peso
             {
                 get => peso;
                 set => peso = value;
@@ -90,7 +90,7 @@ namespace PPAI.Objetos
                 get => fecha_ingreso;
                 set => fecha_ingreso = value;
             }
-        public int Valuacion
+        public decimal Valuacion
             {
                 get => valuacion;
                 set => valuacion = value;
@@ -107,9 +107,15 @@ namespace PPAI.Objetos
             }
 
         public TimeSpan duracionExpoObra
-            {
+        {
                 get => duracion_expo_obra;
                 set => duracion_expo_obra = value;
-            }
+        }
+
+        public TimeSpan getDuracionExtendida()
+        {
+            TimeSpan dur = this.duracionExpoObra;
+            return dur;
+        }
     }
 }

@@ -238,6 +238,17 @@ namespace PPAI.Pantallas
                 if (tipoVisita == 0)
                 {
                     //N-Help: Esperando a que exposiciones siga
+                    panelTipoVisitas.Enabled = false;
+                    DataTable tabla = GestorReservaVisita.tomarTipoVisita(int.Parse(cmdSede.SelectedValue.ToString()));
+
+                    for(var r = 0; r<tabla.Rows.Count; r++)
+                    {
+                        dataGridViewExpo.Rows.Add(tabla.Rows[r][0], tabla.Rows[r][1], tabla.Rows[r][2], tabla.Rows[r][3]);
+                    }
+                                    
+                    panelExposicion.Visible = true;
+                    panelExposicion.Enabled = false;
+                    panelFechaYHora.Visible = true;
                 }
                 //Si es particular, ingresa a la interfaz para que seleccione las exposiciones que quiere ver
                 else

@@ -18,7 +18,8 @@ namespace PPAI.Objetos
         private TimeSpan hora_inicio_real;
         private TimeSpan hora_fin_real;
         private int cant_alumnos_confirm;
-        private int id_Sede;
+        private int id_Sede;   
+        
 
         public ReservaVisita(int id, int idTipoVisita, int idEscuela, DateTime fechaCreacion, DateTime fechaReserva, TimeSpan horaInicio, TimeSpan horaFin, TimeSpan horaInicioReal, TimeSpan horaFinReal, int cantAlumnosConfirm, int idSede)
         {
@@ -88,6 +89,14 @@ namespace PPAI.Objetos
         {
             get => id_Sede;
             set => id_Sede = value;
+        }
+
+        public (DateTime, TimeSpan, TimeSpan) getFechaHoraReserva()
+        {
+            DateTime fecha = this.fecha_reserva;
+            TimeSpan inicio = this.hora_inicio;
+            TimeSpan fin = this.hora_fin;
+            return (fecha, inicio, fin);
         }
     }
 }

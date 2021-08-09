@@ -42,5 +42,33 @@ namespace PPAI.Objetos
             get => horaFin;
             set => horaFin = value;
         }
+
+        public bool buscarAsignacion(DateTime inicio, DateTime fin)
+        {
+
+            int dia = inicio.Day;
+            int mes = inicio.Month;
+            int año = inicio.Year;
+
+            int shia = this.horainicio.Seconds;
+            int mhia = this.horainicio.Minutes;
+            int hhia = this.horainicio.Hours;
+            int shfa = this.horafin.Seconds;
+            int mhfa = this.horafin.Minutes;
+            int hhfa = this.horafin.Hours;
+
+            DateTime horaInicioAsignacion = new DateTime(año, mes, dia, hhia, mhia, shia);
+            DateTime horafinAsignacion = new DateTime(año, mes, dia, hhfa, mhfa, shfa);
+
+
+            if ((horaInicioAsignacion < fin | horafinAsignacion > inicio) == false)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

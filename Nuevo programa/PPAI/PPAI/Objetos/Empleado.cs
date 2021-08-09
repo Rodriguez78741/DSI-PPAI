@@ -1,5 +1,7 @@
-﻿using System;
+﻿using PPAI.AccesoADatos;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -125,5 +127,110 @@ namespace PPAI.Objetos
             get => fecha_ingreso;
             set => fecha_ingreso = value;
         }
+
+        public bool getGuiaDispEnHorario(DateTime horaInicio, DateTime Horafin)
+        {
+            bool res = true;
+           
+            DataTable tablaAsignaciones = Datos.BuscarAsignacionEmpleado();
+            DataTable tablaHoraEmpleados = Datos.BuscarHorarioEmpleado(id);
+            DataTable tablaCargos = Datos.BuscarCargo(this.id_cargo);
+            
+            HorarioEmpleado horarios = new HorarioEmpleado((int)tablaHoraEmpleados.Rows[0][0], tablaHoraEmpleados.Rows[0][1].ToString(), (TimeSpan)tablaHoraEmpleados.Rows[0][2], (TimeSpan)tablaHoraEmpleados.Rows[0][3]);
+            List<AsignacionVisita> visitas = tablaAAsignacion(tablaAsignaciones);
+            Cargo cargo = new Cargo((int)tablaCargos.Rows[0][0], tablaCargos.Rows[0][1].ToString());
+
+            List<Empleado> guias = new List<Empleado>();
+
+
+            
+            if (cargo.esGuia())
+            {
+                if (horarios.dispEnFechaHoraReserva(horaInicio,Horafin))
+                {
+                    foreach (var a in visitas)
+                    {
+                        if (a.buscarAsignacion(horaInicio, Horafin) == false)
+                        {
+                            res = false;
+                        }                                                                     
+                    }
+                }
+                else
+                {
+                    res = false;
+                }
+            }
+            else
+            {
+                res = false;
+            }
+
+            return res;
+        }
+
+
+
+
+
+
+
+        //Auxiliares
+        private static List<Empleado> tablaAEmpleado(DataTable tabla)
+        {
+            List<Empleado> empleados = new List<Empleado>();
+            for (var r = 0; r < tabla.Rows.Count; r++)
+            {
+                empleados.Add(new Empleado((int)tabla.Rows[r][0], tabla.Rows[r][1].ToString(), tabla.Rows[r][2].ToString(), (int)tabla.Rows[r][3], (decimal)tabla.Rows[r][4], tabla.Rows[r][5].ToString(), (int)tabla.Rows[r][6], (int)tabla.Rows[r][7], (int)tabla.Rows[r][8], (int)tabla.Rows[r][9], tabla.Rows[r][10].ToString(), tabla.Rows[r][11].ToString(), (int)tabla.Rows[r][12], tabla.Rows[r][13].ToString(), (DateTime)tabla.Rows[r][14], (DateTime)tabla.Rows[r][15]));
+            }
+            return empleados;
+        }
+
+        private static List<HorarioEmpleado> tablaAHorario(DataTable tabla)
+        {
+            List<HorarioEmpleado> horarios = new List<HorarioEmpleado>();
+            for (var r = 0; r < tabla.Rows.Count; r++)
+            {
+                horarios.Add(new HorarioEmpleado((int)tabla.Rows[r][0], tabla.Rows[r][1].ToString(), (TimeSpan)tabla.Rows[r][2], (TimeSpan)tabla.Rows[r][3]));
+            }
+            return horarios;
+        }
+
+        private static List<AsignacionVisita> tablaAAsignacion(DataTable tabla)
+        {
+            List<AsignacionVisita> asignacion = new List<AsignacionVisita>();
+            for (var r = 0; r < tabla.Rows.Count; r++)
+            {
+                asignacion.Add(new AsignacionVisita((int)tabla.Rows[r][0], (int)tabla.Rows[r][1], (TimeSpan)tabla.Rows[r][2], (TimeSpan)tabla.Rows[r][3]));
+            }
+            return asignacion;
+        }
+
+        private static List<Cargo> tablaACargo(DataTable tabla)
+        {
+            List<Cargo> cargo = new List<Cargo>();
+            for (var r = 0; r < tabla.Rows.Count; r++)
+            {
+                cargo.Add(new Cargo((int)tabla.Rows[r][0], tabla.Rows[r][1].ToString()));
+            }
+            return cargo;
+        }
+
+        private static DataTable listaATabla(List<Empleado> empleados)
+        {
+            DataTable tabla = new DataTable();
+            tabla.Columns.Add("Id");
+            tabla.Columns.Add("Nombre");
+            tabla.Columns.Add("Apellido");
+            tabla.Columns.Add("Cuil");
+            foreach (var e in empleados)
+            {
+                tabla.Rows.Add(e.id, e.Nombre, e.Apellido, e.Cuit);
+            }
+
+            return tabla;
+        }
+
+
     }
 }

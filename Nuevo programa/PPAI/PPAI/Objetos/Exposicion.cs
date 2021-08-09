@@ -1,5 +1,7 @@
-﻿using System;
+﻿using PPAI.AccesoADatos;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +15,15 @@ namespace PPAI.Objetos
         private string descripcion;
         private DateTime fecha_inicio;
         private DateTime fecha_fin;
-        private bool id_tipo_expo;
+        private int id_tipo_expo;
         private int id_guia;
         private int id_publico;
         private int id_sede;
+        private bool Temporal;
 
 
 
-        public Exposicion(int idExpo, string nombre, string descripcion, DateTime fechainicio, DateTime fechafin, bool idTipoExpo, int idGuia, int idpublico, int idsede)
+        public Exposicion(int idExpo, string nombre, string descripcion, DateTime fechainicio, DateTime fechafin, int idTipoExpo, int idGuia, int idpublico, int idsede, bool Temp)
         {
             this.id_expo = idExpo;
             this.nombre = nombre;
@@ -31,6 +34,7 @@ namespace PPAI.Objetos
             this.id_guia = idGuia;
             this.id_publico = idpublico;
             this.id_sede = idsede;
+            this.Temporal = Temp;
     }
 
         public int idExposicion
@@ -59,7 +63,7 @@ namespace PPAI.Objetos
             get => fecha_fin;
             set => fecha_fin = value;
         }
-        public bool idTipoExpo
+        public int idTipoExpo
         {
             get => id_tipo_expo;
             set => id_tipo_expo = value;
@@ -81,13 +85,40 @@ namespace PPAI.Objetos
             set => id_sede = value;
         }
 
+        public bool TEmporal
+        {
+            get => Temporal;
+            set => Temporal = value;
+        }
+
         public (int, string, string, string) getTempVigentes()
         {
             int ID = this.idExposicion;
-            string TIPO = TipoExposicion.esTemporal(this.idTipoExpo);
+            string TIPO = TipoExposicion.esTemporal(this.Temporal);
             string detalle = this.nombre;
             string publico = PublicoDestino.getPublicoDestino(this.id_publico);
             return (ID, TIPO, publico, detalle);
+        }
+
+        public TimeSpan buscarDurExtendidaObras()
+        {
+            DataTable tabla = Datos.BuscarDetalleExpoidBD(this.id_expo);
+            List<DetalleExposicion> DE = new List<DetalleExposicion>();
+            TimeSpan durac = new TimeSpan();
+            durac.Equals(TimeSpan.Zero);
+            for(var r = 0; r<tabla.Rows.Count; r++)
+            {
+                DE.Add(new DetalleExposicion((int)tabla.Rows[r][0], (int)tabla.Rows[r][1]));
+            }
+            
+            foreach(var d in DE)
+            {
+                TimeSpan dur = d.buscarDuracExObra();
+                durac += dur;
+            }
+
+            return durac;
+            
         }
     }
 }

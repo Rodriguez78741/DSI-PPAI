@@ -41,6 +41,33 @@ namespace PPAI.Objetos
             get => Hora_fin;
             set => Hora_fin = value;
         }
- 
+
+        public bool dispEnFechaHoraReserva(DateTime horaInicio, DateTime Horafin)
+        {
+            int dia = horaInicio.Day;
+            int mes = horaInicio.Month;
+            int año = horaInicio.Year;
+
+            int shiem = this.horaInicio.Seconds;
+            int mhiem = this.horaInicio.Minutes;
+            int hhiem = this.horaInicio.Hours;
+            int shfem = this.horaFin.Seconds;
+            int mhfem = this.horaFin.Minutes;
+            int hhfem = this.horaFin.Hours;
+
+            DateTime horaInicioEmpleado = new DateTime(año, mes, dia, hhiem, mhiem, shiem);
+            DateTime horafinEmpleado = new DateTime(año, mes, dia, hhfem, mhfem, shfem);
+
+            if (horaInicioEmpleado < horaInicio && horafinEmpleado > Horafin)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
     }
 }

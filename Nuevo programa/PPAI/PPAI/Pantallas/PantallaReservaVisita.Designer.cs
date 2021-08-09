@@ -48,6 +48,7 @@ namespace PPAI.Pantallas
             this.cmdTipoVisita = new System.Windows.Forms.ComboBox();
             this.panelExposicion = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnVerObraXExposicion = new System.Windows.Forms.Button();
             this.btnBuscarExpo = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -98,7 +99,6 @@ namespace PPAI.Pantallas
             this.CuitGuia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmdGuia = new System.Windows.Forms.ComboBox();
             this.dataSet1 = new System.Data.DataSet();
-            this.btnVerObraXExposicion = new System.Windows.Forms.Button();
             this.panelEscuelas.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panelCantidadDeVisitantes.SuspendLayout();
@@ -311,6 +311,15 @@ namespace PPAI.Pantallas
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Seleccionar Exposicion ";
+            // 
+            // btnVerObraXExposicion
+            // 
+            this.btnVerObraXExposicion.Location = new System.Drawing.Point(9, 271);
+            this.btnVerObraXExposicion.Name = "btnVerObraXExposicion";
+            this.btnVerObraXExposicion.Size = new System.Drawing.Size(100, 23);
+            this.btnVerObraXExposicion.TabIndex = 28;
+            this.btnVerObraXExposicion.Text = "Ver obras";
+            this.btnVerObraXExposicion.UseVisualStyleBackColor = true;
             // 
             // btnBuscarExpo
             // 
@@ -764,15 +773,6 @@ namespace PPAI.Pantallas
             // dataSet1
             // 
             this.dataSet1.DataSetName = "NewDataSet";
-            // 
-            // btnVerObraXExposicion
-            // 
-            this.btnVerObraXExposicion.Location = new System.Drawing.Point(9, 271);
-            this.btnVerObraXExposicion.Name = "btnVerObraXExposicion";
-            this.btnVerObraXExposicion.Size = new System.Drawing.Size(100, 23);
-            this.btnVerObraXExposicion.TabIndex = 28;
-            this.btnVerObraXExposicion.Text = "Ver obras";
-            this.btnVerObraXExposicion.UseVisualStyleBackColor = true;
             // 
             // PantallaReservaVisita
             // 

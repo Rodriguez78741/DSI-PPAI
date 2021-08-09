@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PPAI.AccesoADatos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -79,6 +80,90 @@ namespace PPAI.Objetos
             }
                        
            return tabla;
+        }
+
+        public static TimeSpan buscarDuracionExp(List<int> Expo)
+        {
+            TimeSpan duracion = new TimeSpan();
+            duracion.Equals(TimeSpan.Zero);
+            foreach(var i in Expo)
+            {
+                DataTable tabla = Datos.BuscarExpoid(i);
+                Exposicion expos = new Exposicion((int)tabla.Rows[0][0], tabla.Rows[0][1].ToString(), tabla.Rows[0][2].ToString(), (DateTime)tabla.Rows[0][3], (DateTime)tabla.Rows[0][4], (int)tabla.Rows[0][5], (int)tabla.Rows[0][6], (int)tabla.Rows[0][7], (int)tabla.Rows[0][8], (bool)tabla.Rows[0][9]);
+                TimeSpan durac = expos.buscarDurExtendidaObras();
+                duracion += durac;
+            }
+           
+            return duracion;
+            
+        }
+
+        public static bool buscarReservasParaFechaHora(int idSede, DateTime horaainicio, DateTime horafin, int cantAl)
+        {
+            DataTable tabla = Datos.BuuscarReservasXSede(idSede);
+            List<ReservaVisita> reservas = new List<ReservaVisita>();
+            DataTable sede = Datos.BuuscarSedeId(idSede);
+
+            for (var r = 0; r < tabla.Rows.Count; r++)
+            {
+                ReservaVisita reserva = new ReservaVisita((int)tabla.Rows[r][0], (int)tabla.Rows[r][1], (int)tabla.Rows[r][2], (DateTime)tabla.Rows[r][3], (DateTime)tabla.Rows[r][4], (TimeSpan)tabla.Rows[r][5], (TimeSpan)tabla.Rows[r][6], (TimeSpan)tabla.Rows[r][7], (TimeSpan)tabla.Rows[r][8], (int)tabla.Rows[r][9], (int)tabla.Rows[r][10]);
+                reservas.Add(reserva);
+            }
+
+            bool res = true;
+
+            foreach (var r in reservas)
+            {
+                (DateTime, TimeSpan, TimeSpan) tupla = r.getFechaHoraReserva();
+                            
+                    DateTime fecha = tupla.Item1;
+                    TimeSpan hie = tupla.Item2;
+                    TimeSpan hfe = tupla.Item3;
+
+                    int horaini = hie.Hours;
+                    int minutosini = hie.Minutes;
+                    int segundosini = hie.Seconds;
+
+                    int horasfin = hfe.Hours;
+                    int minutosfin = hfe.Minutes;
+                    int segundosfin = hfe.Seconds;
+
+                    int diaExpo = fecha.Day;
+                    int mesExpo = fecha.Month;
+                    int añoExpo = fecha.Year;
+
+                    DateTime horaInicioExpo = new DateTime(añoExpo, mesExpo, diaExpo, horaini, minutosini, segundosini);
+                    DateTime horaFinExpo = new DateTime(añoExpo, mesExpo, diaExpo, horasfin, minutosfin, segundosfin);
+
+                    int primero = DateTime.Compare(horaainicio, horaFinExpo);
+                    int segundo = DateTime.Compare(horafin, horaInicioExpo);
+
+                    if ((primero > 0 || primero < 0 && segundo < 0) == false)
+                    {
+                    //cantidad de personas en la sede al mismo tiempo
+                    int max = (int)sede.Rows[0][2];
+                    if(max < (r.cantAlumnos + cantAl))
+
+                        res = false;
+                    }                                
+            }
+
+            return res;
+
+        }
+
+
+
+        public int getCantMaximaVisitantes()
+        {
+            int cant = this.cant_max_visit;
+            return cant;
+        }
+
+        public int getCantMaximaGuias()
+        {
+            int cant = this.cant_max_guias;
+            return cant;
         }
     }
 }

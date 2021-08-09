@@ -28,5 +28,17 @@ namespace PPAI.Objetos
             get => descripcion;
             set => descripcion = value;
         }
+
+        public bool esGuia()
+        {
+            if (this.id_cargo == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

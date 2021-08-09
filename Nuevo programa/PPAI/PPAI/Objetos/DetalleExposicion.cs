@@ -40,5 +40,15 @@ namespace PPAI.Objetos
         {
             return Datos.BuscarCantExpoXobras(idExpo);
         }
+
+        public TimeSpan buscarDuracExObra()
+        {
+            
+            DataTable tabla = Datos.BuscarObrasIdBD(this.id_obra);
+
+            Obra obr = new Obra((int)tabla.Rows[0][0], tabla.Rows[0][1].ToString(), (decimal)tabla.Rows[0][2], (decimal)tabla.Rows[0][3], (decimal)tabla.Rows[0][4], (DateTime)tabla.Rows[0][5], (DateTime)tabla.Rows[0][6], (decimal)tabla.Rows[0][7], tabla.Rows[0][8].ToString(), (int)tabla.Rows[0][9], (TimeSpan)tabla.Rows[0][10], tabla.Rows[0][11].ToString());
+            TimeSpan dur = obr.getDuracionExtendida();
+            return dur;
+        }
     }
 }
