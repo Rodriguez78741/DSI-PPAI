@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,6 +56,29 @@ namespace PPAI.Objetos
         {
             get => horario_hasta;
             set => horario_hasta = value;
+        }
+
+        public string mostrarNombre()
+        {
+            string nombr = this.nombresede;
+            return nombr;
+        }
+
+        public static DataTable buscarExposiciones(List<Exposicion> Expo)
+        {
+            DataTable tabla = new DataTable();
+            tabla.Columns.Add(new DataColumn("Id", typeof(int)));
+            tabla.Columns.Add(new DataColumn("Tipo", typeof(string)));
+            tabla.Columns.Add(new DataColumn("Publico", typeof(string)));
+            tabla.Columns.Add(new DataColumn("Detalle", typeof(string)));
+
+            foreach (var e in Expo)
+            {
+                (int, string, string, string) tupla = e.getTempVigentes();
+                tabla.Rows.Add(tupla.Item1, tupla.Item2, tupla.Item3, tupla.Item4);
+            }
+                       
+           return tabla;
         }
     }
 }

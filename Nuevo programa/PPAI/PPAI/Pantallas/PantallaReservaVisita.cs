@@ -339,7 +339,7 @@ namespace PPAI.Pantallas
             int idEscuela = (int)cmdEscuelas.SelectedValue;
             int cantVisit = int.Parse(txtCantidad.Text);
             int idSede = (int)cmdSede.SelectedValue;
-            int tipoVisita = (int)cmdTipoVisita.SelectedValue;
+            int tipoVisita = (int)cmdTipoVisita.SelectedIndex;
             DateTime fechaReserva = new DateTime(int.Parse(txtAño.Text), int.Parse(txtMes.Text), int.Parse(txtDia.Text));
             string horainicioReserva = (txtHorarioInicio.Text);
             string horafinReserva = (txtHorarioFin.Text);

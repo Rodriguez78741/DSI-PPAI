@@ -88,5 +88,13 @@ namespace PPAI.Objetos
             set => id_sede = value;
         }
 
+        public (int, string, string, string) getTempVigentes()
+        {
+            int ID = this.idExposicion;
+            string TIPO = TipoExposicion.esTemporal(this.idTipoExpo);
+            string detalle = this.nombre;
+            string publico = PublicoDestino.getPublicoDestino(this.id_publico);
+            return (ID, TIPO, publico, detalle);
+        }
     }
 }

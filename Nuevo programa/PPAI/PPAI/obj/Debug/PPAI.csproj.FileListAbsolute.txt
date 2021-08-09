@@ -34,3 +34,15 @@ C:\Users\Nico\Documents\Proyectos VS\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug
 C:\Users\Nico\Documents\Proyectos VS\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.csproj.CoreCompileInputs.cache
 C:\Users\Nico\Documents\Proyectos VS\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.exe
 C:\Users\Nico\Documents\Proyectos VS\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.pdb
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.csprojAssemblyReference.cache
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.Form1.resources
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.Pantallas.MenuPrograma.resources
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.Pantallas.PantallaReservaVisita.resources
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.Properties.Resources.resources
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.csproj.GenerateResource.cache
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.csproj.CoreCompileInputs.cache
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.exe
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\Nuevo programa\PPAI\PPAI\obj\Debug\PPAI.pdb
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\Nuevo programa\PPAI\PPAI\bin\Debug\PPAI.exe.config
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\Nuevo programa\PPAI\PPAI\bin\Debug\PPAI.exe
+E:\Facultad\3° año\Gestion de sistemas\PPAI\Repositorio\DSI-PPAI\Nuevo programa\PPAI\PPAI\bin\Debug\PPAI.pdb

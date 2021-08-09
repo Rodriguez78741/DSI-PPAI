@@ -131,17 +131,9 @@ namespace PPAI.Gestores
         public static DataTable tomarTipoVisita(int idSede)
         {
             List<Exposicion> Exposiciones = BuscarExpoTempVig(idSede);
-            DataTable tabla = new DataTable();
-            tabla.Columns.Add(new DataColumn("Id", typeof(int)));
-            tabla.Columns.Add(new DataColumn("Tipo", typeof(string)));
-            tabla.Columns.Add(new DataColumn("Publico", typeof(string)));
-            tabla.Columns.Add(new DataColumn("Detalle", typeof(string)));
-            foreach (var e in Exposiciones)
-            {
-                string tipo = TipoExposicion.esTemporal(e.idTipoExpo);
+               DataTable tabla = Sede.buscarExposiciones(Exposiciones);
+
             
-                tabla.Rows.Add(e.idExposicion, tipo, e.Publico,e.nombreExpo);
-            }
 
             return tabla;
         }

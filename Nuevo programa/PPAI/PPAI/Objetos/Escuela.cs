@@ -69,5 +69,13 @@ namespace PPAI.Objetos
             get => tel_fijo;
             set => tel_fijo = value;
         }
+
+        public string mostrarNombre()
+        {
+            string nombr = this.nombre;
+            return nombr;
+        }
+
+
     }
 }

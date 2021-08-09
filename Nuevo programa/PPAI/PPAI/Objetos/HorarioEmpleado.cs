@@ -41,5 +41,6 @@ namespace PPAI.Objetos
             get => Hora_fin;
             set => Hora_fin = value;
         }
+ 
     }
 }
