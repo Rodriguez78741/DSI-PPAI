@@ -21,16 +21,15 @@ namespace PPAI.Objetos
             this.descripcion = descrip;
         }
 
-        public static string esTemporal(int id_tipo_expo)
+        public static string esTemporal(bool id_tipo_expo)
         {
             string tipo = "Temporal";
 
-            if (id_tipo_expo == 1)
+            if (id_tipo_expo == true)
             {
                 tipo = "Permanente";
             }
             return tipo;
-
         }        
 
         public int Id

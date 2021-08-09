@@ -13,15 +13,14 @@ namespace PPAI.Objetos
         private string descripcion;
         private DateTime fecha_inicio;
         private DateTime fecha_fin;
-        private int id_tipo_expo;
+        private bool id_tipo_expo;
         private int id_guia;
-        private bool temporal;
         private int id_publico;
         private int id_sede;
 
 
 
-        public Exposicion(int idExpo, string nombre, string descripcion, DateTime fechainicio, DateTime fechafin, int idTipoExpo, int idGuia, bool temporal, int idpublico, int idsede)
+        public Exposicion(int idExpo, string nombre, string descripcion, DateTime fechainicio, DateTime fechafin, bool idTipoExpo, int idGuia, int idpublico, int idsede)
         {
             this.id_expo = idExpo;
             this.nombre = nombre;
@@ -30,7 +29,6 @@ namespace PPAI.Objetos
             this.fecha_fin = fechafin;
             this.id_tipo_expo = idTipoExpo;
             this.id_guia = idGuia;
-            this.temporal = temporal;
             this.id_publico = idpublico;
             this.id_sede = idsede;
     }
@@ -61,7 +59,7 @@ namespace PPAI.Objetos
             get => fecha_fin;
             set => fecha_fin = value;
         }
-        public int idTipoExpo
+        public bool idTipoExpo
         {
             get => id_tipo_expo;
             set => id_tipo_expo = value;
@@ -72,11 +70,6 @@ namespace PPAI.Objetos
             set => id_guia = value;
         }
 
-        public bool Temporal
-        {
-            get => temporal;
-            set => temporal = value;
-        }
         public int Publico
         {
             get => id_publico;
