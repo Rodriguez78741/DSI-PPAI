@@ -311,6 +311,7 @@ namespace PPAI.Pantallas
         {
             DateTime hi = DateTime.Parse(txtHorarioInicio.Text);
             DateTime hf = DateTime.Parse(txtHorarioFin.Text);
+            DateTime today = DateTime.Today.Date;
 
             int segundoi = hi.Second;
             int minutoi = hi.Minute;
@@ -322,16 +323,20 @@ namespace PPAI.Pantallas
             int mes = int.Parse(txtMes.Text);
             int año = int.Parse(txtAño.Text);
 
-
-            DateTime horaInicio = new DateTime(año, mes, dia, horai, minutoi, segundoi);
-            DateTime horaFin = new DateTime(año, mes, dia, horaf, minutof, segundof);
+            DateTime fecha_reserva = new DateTime(año, mes, dia);
+            TimeSpan horaInicio = new TimeSpan(horai, minutoi, segundoi);
+            TimeSpan horaFin = new TimeSpan(horaf, minutof, segundof);
 
             List<int> Exposiciones = tomarSelecExposicion();
             int idSede = tomarSelecSede2();
             int cantVisitas = int.Parse(txtCantidad.Text);
 
-            (bool, int, DataTable) tupla = GestorReservaVisita.tomarFechaHoraRes(horaInicio, horaFin, Exposiciones, idSede, cantVisitas);
-            if (tupla.Item1)
+            (int, int, DataTable) tupla = GestorReservaVisita.tomarFechaHoraRes(fecha_reserva, horaInicio, horaFin, Exposiciones, idSede, cantVisitas);
+            if (fecha_reserva == today || fecha_reserva <= today)
+            {
+                MessageBox.Show("No se puede reservar para el mismo dia o un dia anterior");
+            }
+            else if (tupla.Item1 == 0)
             {
                 panelFechaYHora.Enabled = false;
                 panelGuias.Enabled = true;
@@ -343,11 +348,39 @@ namespace PPAI.Pantallas
                 cmdGuia.ValueMember = "Id";
                 cmdGuia.SelectedValue = -1;
                 panelGuias.Visible = true;
-
+            }
+            else if (tupla.Item1 == 1)
+            {
+                MessageBox.Show("El tiempo seleccionado es menor a la cantidad de tiempo necesaria para poder ver todas las obras");
+            }
+            else if (tupla.Item1 == 2)
+            {
+                MessageBox.Show("En el horario seleccionado no hay espacio disponible para la cantidad de visitantes prevista");
+            }
+            else if (tupla.Item1 == 4)
+            {
+                MessageBox.Show("No hay guias disponibles en el horario designado");
+            }
+            else if (tupla.Item1 == 3)
+            {
+                MessageBox.Show("El tiempo seleccionado es menor a la cantidad de tiempo necesaria para poder ver todas las obras " +
+                                 "y el horario seleccionado no hay espacio disponible para la cantidad de visitantes prevista ");
+            }
+            else if (tupla.Item1 == 5)
+            {
+                MessageBox.Show("El tiempo seleccionado es menor a la cantidad de tiempo necesaria para poder ver todas las obras " +
+                                 "y no hay guias disponibles");
+            }
+            else if (tupla.Item1 == 6)
+            {
+                MessageBox.Show("El horario seleccionado no hay espacio disponible para la cantidad de visitantes prevista " +
+                                 "y el horario seleccionado no hay espacio disponible para la cantidad de visitantes prevista ");
             }
             else
             {
-                MessageBox.Show("Imposible registrar ese horario");
+                MessageBox.Show("El tiempo seleccionado es menor a la cantidad de tiempo necesaria para poder ver todas las obras " +
+                                 ", el horario seleccionado no hay espacio disponible para la cantidad de visitantes prevista y " +
+                                 "no hay guias disponibles");
             }
         }
 
@@ -436,7 +469,11 @@ namespace PPAI.Pantallas
                     win_obrasXexpo.ShowDialog();
                 }
             }
-        
+
+        private void cantid_Click(object sender, EventArgs e)
+        {
+
+        }
     } 
 }
 

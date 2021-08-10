@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PPAI.Objetos
 {
@@ -98,9 +99,9 @@ namespace PPAI.Objetos
             
         }
 
-        public static bool buscarReservasParaFechaHora(int idSede, DateTime horaainicio, DateTime horafin, int cantAl)
+        public static bool buscarReservasParaFechaHora(int idSede, DateTime fecha_reserva, TimeSpan horaainicio, TimeSpan horafin, int cantVisitantes)
         {
-            DataTable tabla = Datos.BuuscarReservasXSede(idSede);
+            DataTable tabla = Datos.BuuscarReservasXSede(idSede, fecha_reserva);
             List<ReservaVisita> reservas = new List<ReservaVisita>();
             DataTable sede = Datos.BuuscarSedeId(idSede);
 
@@ -111,41 +112,47 @@ namespace PPAI.Objetos
             }
 
             bool res = true;
-
+            int sumaVisitantesHorario = 0;
             foreach (var r in reservas)
             {
-                (DateTime, TimeSpan, TimeSpan) tupla = r.getFechaHoraReserva();
+                (TimeSpan, TimeSpan) tupla = r.getFechaHoraReserva();
                             
-                    DateTime fecha = tupla.Item1;
-                    TimeSpan hie = tupla.Item2;
-                    TimeSpan hfe = tupla.Item3;
+                TimeSpan horaInicioReservado = tupla.Item1;
+                TimeSpan horaFinReservado = tupla.Item2;
 
-                    int horaini = hie.Hours;
-                    int minutosini = hie.Minutes;
-                    int segundosini = hie.Seconds;
+                /*
+                int horaini = hie.Hours;
+                int minutosini = hie.Minutes;
+                int segundosini = hie.Seconds;
 
-                    int horasfin = hfe.Hours;
-                    int minutosfin = hfe.Minutes;
-                    int segundosfin = hfe.Seconds;
+                int horasfin = hfe.Hours;
+                int minutosfin = hfe.Minutes;
+                int segundosfin = hfe.Seconds;
 
-                    int diaExpo = fecha.Day;
-                    int mesExpo = fecha.Month;
-                    int añoExpo = fecha.Year;
+                int diaExpo = fecha.Day;
+                int mesExpo = fecha.Month;
+                int añoExpo = fecha.Year;
+                
 
-                    DateTime horaInicioExpo = new DateTime(añoExpo, mesExpo, diaExpo, horaini, minutosini, segundosini);
-                    DateTime horaFinExpo = new DateTime(añoExpo, mesExpo, diaExpo, horasfin, minutosfin, segundosfin);
+                DateTime horaInicioExpo = new DateTime(añoExpo, mesExpo, diaExpo, horaini, minutosini, segundosini);
+                DateTime horaFinExpo = new DateTime(añoExpo, mesExpo, diaExpo, horasfin, minutosfin, segundosfin);
+                */
 
-                    int primero = DateTime.Compare(horaainicio, horaFinExpo);
-                    int segundo = DateTime.Compare(horafin, horaInicioExpo);
+                int primero = TimeSpan.Compare(horaainicio, horaInicioReservado);
+                int segundo = TimeSpan.Compare(horafin, horaFinReservado);
+                int tercero = TimeSpan.Compare(horaainicio, horaFinReservado);
+                int cuarto = TimeSpan.Compare(horafin, horaInicioReservado);
 
-                    if ((primero > 0 || primero < 0 && segundo < 0) == false)
-                    {
+                if (((primero <= 0 && cuarto >= 0) || (primero >= 0 && tercero <= 0)))
+                {
                     //cantidad de personas en la sede al mismo tiempo
                     int max = (int)sede.Rows[0][2];
-                    if(max < (r.cantAlumnos + cantAl))
-
+                    sumaVisitantesHorario += r.cantAlumnos;
+                    if (max < (sumaVisitantesHorario + cantVisitantes))
+                    {
                         res = false;
-                    }                                
+                    }
+                }                         
             }
 
             return res;

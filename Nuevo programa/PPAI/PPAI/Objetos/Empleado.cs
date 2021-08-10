@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PPAI.Objetos
 {
@@ -45,7 +42,7 @@ namespace PPAI.Objetos
             this.telefono = Telefono;
             this.fecha_nac = fechaNac;
             this.fecha_ingreso = fechaIngreso;
-    }
+        }
 
         public int id
         {
@@ -128,32 +125,39 @@ namespace PPAI.Objetos
             set => fecha_ingreso = value;
         }
 
-        public bool getGuiaDispEnHorario(DateTime horaInicio, DateTime Horafin)
+        public bool getGuiaDispEnHorario(DateTime fecha_reserva, TimeSpan horaInicio, TimeSpan Horafin)
         {
             bool res = true;
-           
+
             DataTable tablaAsignaciones = Datos.BuscarAsignacionEmpleado();
             DataTable tablaHoraEmpleados = Datos.BuscarHorarioEmpleado(id);
             DataTable tablaCargos = Datos.BuscarCargo(this.id_cargo);
-            
+
+            //List<HorarioEmpleado> horarios = new List<HorarioEmpleado>();
             HorarioEmpleado horarios = new HorarioEmpleado((int)tablaHoraEmpleados.Rows[0][0], tablaHoraEmpleados.Rows[0][1].ToString(), (TimeSpan)tablaHoraEmpleados.Rows[0][2], (TimeSpan)tablaHoraEmpleados.Rows[0][3]);
+
+            for (int i = 1; i < tablaHoraEmpleados.Rows.Count; i++)
+            {
+                horarios = new HorarioEmpleado((int)tablaHoraEmpleados.Rows[i][0], tablaHoraEmpleados.Rows[i][1].ToString(), (TimeSpan)tablaHoraEmpleados.Rows[i][2], (TimeSpan)tablaHoraEmpleados.Rows[i][3]);
+            }
             List<AsignacionVisita> visitas = tablaAAsignacion(tablaAsignaciones);
             Cargo cargo = new Cargo((int)tablaCargos.Rows[0][0], tablaCargos.Rows[0][1].ToString());
 
             List<Empleado> guias = new List<Empleado>();
 
+             //horarioEmp = new HorarioEmpleado();
 
-            
+
             if (cargo.esGuia())
             {
-                if (horarios.dispEnFechaHoraReserva(horaInicio,Horafin))
+                if (horarios.dispEnFechaHoraReserva(fecha_reserva, horaInicio, Horafin))
                 {
                     foreach (var a in visitas)
                     {
-                        if ((this.id_empleado == a.idEmpleado) && (a.buscarAsignacion(horaInicio, Horafin) == false))
+                        if ((this.id_empleado == a.idEmpleado) && (a.buscarAsignacion(fecha_reserva, horaInicio, Horafin) == false))
                         {
                             res = false;
-                        }                                                                     
+                        }
                     }
                 }
                 else

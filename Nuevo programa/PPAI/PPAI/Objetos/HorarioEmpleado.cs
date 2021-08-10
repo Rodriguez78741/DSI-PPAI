@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PPAI.Objetos
 {
@@ -42,12 +43,8 @@ namespace PPAI.Objetos
             set => Hora_fin = value;
         }
 
-        public bool dispEnFechaHoraReserva(DateTime horaInicio, DateTime Horafin)
+        public bool dispEnFechaHoraReserva(DateTime fecha_reserva, TimeSpan horaInicio, TimeSpan Horafin)
         {
-            int dia = horaInicio.Day;
-            int mes = horaInicio.Month;
-            int año = horaInicio.Year;
-
             int shiem = this.horaInicio.Seconds;
             int mhiem = this.horaInicio.Minutes;
             int hhiem = this.horaInicio.Hours;
@@ -55,19 +52,95 @@ namespace PPAI.Objetos
             int mhfem = this.horaFin.Minutes;
             int hhfem = this.horaFin.Hours;
 
-            DateTime horaInicioEmpleado = new DateTime(año, mes, dia, hhiem, mhiem, shiem);
-            DateTime horafinEmpleado = new DateTime(año, mes, dia, hhfem, mhfem, shfem);
+            TimeSpan horaInicioEmpleado = new TimeSpan(hhiem, mhiem, shiem);
+            TimeSpan horafinEmpleado = new TimeSpan(hhfem, mhfem, shfem);
 
-            if (horaInicioEmpleado < horaInicio && horafinEmpleado > Horafin)
+            int primero = TimeSpan.Compare(horaInicio, horaInicioEmpleado);
+            int segundo = TimeSpan.Compare(Horafin, horafinEmpleado);
+
+
+            if (fecha_reserva.DayOfWeek == DayOfWeek.Monday && this.Dia == "L")
             {
-                return true;
+                if (primero >= 0 && segundo <= 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (fecha_reserva.DayOfWeek == DayOfWeek.Tuesday && this.dia == "M")
+            {
+                if (primero >= 0 && segundo <= 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (fecha_reserva.DayOfWeek == DayOfWeek.Wednesday && this.dia == "X")
+            {
+                if (primero >= 0 && segundo <= 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (fecha_reserva.DayOfWeek == DayOfWeek.Thursday && this.dia == "J")
+            {
+                if (primero >= 0 && segundo <= 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (fecha_reserva.DayOfWeek == DayOfWeek.Friday && this.dia == "V")
+            {
+                
+                if (primero >= 0 && segundo <= 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (fecha_reserva.DayOfWeek == DayOfWeek.Saturday && this.dia == "S")
+            {
+                if (primero >= 0 && segundo <= 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (fecha_reserva.DayOfWeek == DayOfWeek.Sunday && this.dia == "D")
+            {
+                if (primero >= 0 && segundo <= 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
                 return false;
             }
-
-
         }
     }
 }

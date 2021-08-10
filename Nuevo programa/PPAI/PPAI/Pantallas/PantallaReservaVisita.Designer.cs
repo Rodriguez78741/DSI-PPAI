@@ -80,6 +80,7 @@ namespace PPAI.Pantallas
             this.btnSeleccionarHorario = new System.Windows.Forms.Button();
             this.panelGuias = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.cantid = new System.Windows.Forms.Label();
             this.labelCant = new System.Windows.Forms.Label();
             this.btnBuscarGuia = new System.Windows.Forms.Button();
             this.txtIdGuia = new System.Windows.Forms.TextBox();
@@ -99,7 +100,6 @@ namespace PPAI.Pantallas
             this.CuitGuia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmdGuia = new System.Windows.Forms.ComboBox();
             this.dataSet1 = new System.Data.DataSet();
-            this.cantid = new System.Windows.Forms.Label();
             this.panelEscuelas.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panelCantidadDeVisitantes.SuspendLayout();
@@ -614,6 +614,17 @@ namespace PPAI.Pantallas
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Seleccionar guias";
             // 
+            // cantid
+            // 
+            this.cantid.AutoSize = true;
+            this.cantid.Location = new System.Drawing.Point(176, 26);
+            this.cantid.Name = "cantid";
+            this.cantid.Size = new System.Drawing.Size(41, 13);
+            this.cantid.TabIndex = 29;
+            this.cantid.Text = "label11";
+            this.cantid.Visible = false;
+            this.cantid.Click += new System.EventHandler(this.cantid_Click);
+            // 
             // labelCant
             // 
             this.labelCant.AutoSize = true;
@@ -772,16 +783,6 @@ namespace PPAI.Pantallas
             // dataSet1
             // 
             this.dataSet1.DataSetName = "NewDataSet";
-            // 
-            // cantid
-            // 
-            this.cantid.AutoSize = true;
-            this.cantid.Location = new System.Drawing.Point(176, 26);
-            this.cantid.Name = "cantid";
-            this.cantid.Size = new System.Drawing.Size(41, 13);
-            this.cantid.TabIndex = 29;
-            this.cantid.Text = "label11";
-            this.cantid.Visible = false;
             // 
             // PantallaReservaVisita
             // 

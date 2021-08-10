@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PPAI.AccesoADatos;
 using PPAI.Objetos;
+using System.Windows.Forms;
 
 namespace PPAI.Gestores
 {
@@ -155,40 +156,47 @@ namespace PPAI.Gestores
         }
 
         //Tomar fecha y hora Reserva
-        public static (bool, int, DataTable) tomarFechaHoraRes(DateTime horainicio, DateTime horafin, List<int> idExpos, int idSede, int cantVisitas)
+        public static (int, int, DataTable) tomarFechaHoraRes(DateTime fecha_reserva, TimeSpan horainicio, TimeSpan horafin, List<int> idExpos, int idSede, int cantVisitas)
         {
-            bool posible = true;
-            int cantidadDeGuiasNecesarios = 0;
+            int posible = 0;
+            int cantidadDeGuiasNecesarios = 1;
             DataTable guias = new DataTable();
 
             TimeSpan duracion = calcularDuracionEst(horainicio, horafin);
-            TimeSpan duracionObras = Sede.buscarDuracionExp(idExpos);
-            bool cumpleCapacidadTiempo = calcularSobrepasoCapMax(duracion, duracionObras);
-            if(cumpleCapacidadTiempo == false)
+            TimeSpan duracionObras = new TimeSpan();
+            for (int i = 0; i < cantVisitas; i++)
             {
-                posible = false;
-                return (posible, cantidadDeGuiasNecesarios,guias);
+                duracionObras += Sede.buscarDuracionExp(idExpos);
+            }
+            
+            bool cumpleCapacidadTiempo = calcularSobrepasoCapMax(duracion, duracionObras);
+            bool cumpleCapacidadVisita = Sede.buscarReservasParaFechaHora(idSede, fecha_reserva, horainicio, horafin, cantVisitas);
+            cantidadDeGuiasNecesarios = calcularCantGuiasNecesarios(cantVisitas, idSede);
+            guias = buscarGuiasDispFechaReserva(idSede, fecha_reserva, horainicio, horafin);
+            if (cumpleCapacidadTiempo == true && cumpleCapacidadVisita == true && guias.Rows.Count != 0)
+            {
+                return (posible, cantidadDeGuiasNecesarios, guias);
             }
             else
             {
-                bool correcto = Sede.buscarReservasParaFechaHora(idSede,horainicio,horafin,cantVisitas);
-                if (correcto == false)
+                if (cumpleCapacidadTiempo == false)
                 {
-                    posible = false;
-                    return (posible, cantidadDeGuiasNecesarios, guias);
+                    posible += 1;
                 }
-                else
+                if (cumpleCapacidadVisita == false)
                 {
-                    cantidadDeGuiasNecesarios = calcularCantGuiasNecesarios(cantVisitas,idSede);
-                    guias = buscarGuiasDispFechaReserva(idSede, horainicio, horafin);
-
-                    return (posible, cantidadDeGuiasNecesarios, guias);
-                }               
+                    posible += 2;
+                }
+                if (guias.Rows.Count == 0)
+                {
+                    posible += 4;
+                }
+                return (posible, cantidadDeGuiasNecesarios, guias);
             }
         }
 
         //calcular duracion
-        private static TimeSpan calcularDuracionEst(DateTime inicio, DateTime fin)
+        private static TimeSpan calcularDuracionEst(TimeSpan inicio, TimeSpan fin)
         {
             TimeSpan duracion = (fin - inicio);
             return duracion;
@@ -314,7 +322,7 @@ namespace PPAI.Gestores
         */
 
         //Buscar guias disponibles en la fecha(Que sea guia, que este disponible y devolver su id junto con su nombre y asignacion
-        private static DataTable buscarGuiasDispFechaReserva(int idSede, DateTime horaInicio, DateTime Horafin)
+        private static DataTable buscarGuiasDispFechaReserva(int idSede, DateTime fecha_reserva, TimeSpan horaInicio, TimeSpan Horafin)
         {
             DataTable tablaEmpleados = Datos.BuscarEmpleadoGuia(idSede);
             List<Empleado> empleados = tablaAEmpleado(tablaEmpleados);
@@ -323,9 +331,10 @@ namespace PPAI.Gestores
 
             foreach(var e in empleados)
             {
-                if (e.getGuiaDispEnHorario(horaInicio, Horafin))
+                if (e.getGuiaDispEnHorario(fecha_reserva, horaInicio, Horafin))
                 {
                     guias.Add(e);
+ 
                 }
             }
 

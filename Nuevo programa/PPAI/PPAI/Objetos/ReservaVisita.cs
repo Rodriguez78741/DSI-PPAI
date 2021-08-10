@@ -91,12 +91,11 @@ namespace PPAI.Objetos
             set => id_Sede = value;
         }
 
-        public (DateTime, TimeSpan, TimeSpan) getFechaHoraReserva()
+        public (TimeSpan, TimeSpan) getFechaHoraReserva()
         {
-            DateTime fecha = this.fecha_reserva;
             TimeSpan inicio = this.hora_inicio;
             TimeSpan fin = this.hora_fin;
-            return (fecha, inicio, fin);
+            return (inicio, fin);
         }
     }
 }

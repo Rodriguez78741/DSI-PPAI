@@ -51,12 +51,8 @@ namespace PPAI.Objetos
             set => fecha = value;
         }
 
-        public bool buscarAsignacion(DateTime inicio, DateTime fin)
+        public bool buscarAsignacion(DateTime fecha_reserva, TimeSpan inicio, TimeSpan fin)
         {
-
-            int diaa = this.dia.Day;
-            int mesa = this.dia.Month;
-            int añoa = this.dia.Year;
 
             int shia = this.horainicio.Seconds;
             int mhia = this.horainicio.Minutes;
@@ -65,17 +61,19 @@ namespace PPAI.Objetos
             int mhfa = this.horafin.Minutes;
             int hhfa = this.horafin.Hours;
 
-            DateTime horaInicioAsignacion = new DateTime(añoa, mesa, diaa, hhia, mhia, shia);
-            DateTime horafinAsignacion = new DateTime(añoa, mesa, diaa, hhfa, mhfa, shfa);
+            TimeSpan horaInicioAsignacion = new TimeSpan(hhia, mhia, shia);
+            TimeSpan horafinAsignacion = new TimeSpan(hhfa, mhfa, shfa);
 
+            int primero = TimeSpan.Compare(inicio, horaInicioAsignacion);
+            int segundo = TimeSpan.Compare(fin, horafinAsignacion);
 
-            if ((horaInicioAsignacion < fin | horafinAsignacion > inicio) == false)
+            if (( primero >= 0 && segundo <= 0) == true && dia == fecha_reserva)
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
     }
