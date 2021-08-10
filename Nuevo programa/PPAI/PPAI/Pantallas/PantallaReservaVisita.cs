@@ -340,7 +340,7 @@ namespace PPAI.Pantallas
             {
                 panelFechaYHora.Enabled = false;
                 panelGuias.Enabled = true;
-                labelCant.Text = "minimo: " + tupla.Item2.ToString();
+                labelCant.Text = "minimo: " + (tupla.Item2 + 1).ToString();
                 cantid.Text = tupla.Item2.ToString();
                 cmdGuia.DataSource = tupla.Item3;
                 dataSet1.Tables.Add(tupla.Item3);
@@ -394,7 +394,7 @@ namespace PPAI.Pantallas
                 idGuias.Add(int.Parse(dataGridViewGuias.Rows[i].Cells[0].Value.ToString()));
             }
 
-            int cant = int.Parse(cantid.Text);
+            int cant = int.Parse(cantid.Text) + 1;
             if (cant > idGuias.Count)
             {
                 MessageBox.Show("Se necesitan al menos " + cant + " guias");

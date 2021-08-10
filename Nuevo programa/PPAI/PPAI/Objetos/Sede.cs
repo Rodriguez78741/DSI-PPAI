@@ -91,7 +91,7 @@ namespace PPAI.Objetos
             {
                 DataTable tabla = Datos.BuscarExpoid(i);
                 Exposicion expos = new Exposicion((int)tabla.Rows[0][0], tabla.Rows[0][1].ToString(), tabla.Rows[0][2].ToString(), (DateTime)tabla.Rows[0][3], (DateTime)tabla.Rows[0][4], (int)tabla.Rows[0][5], (int)tabla.Rows[0][6], (int)tabla.Rows[0][7], (int)tabla.Rows[0][8], (bool)tabla.Rows[0][9]);
-                TimeSpan durac = expos.buscarDurExtendidaObras();
+                TimeSpan durac = expos.buscarDurExtendidaObras(i);
                 duracion += durac;
             }
            

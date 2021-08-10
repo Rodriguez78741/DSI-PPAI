@@ -101,7 +101,7 @@ namespace PPAI.Objetos
             return (ID, TIPO, publico, detalle);
         }
 
-        public TimeSpan buscarDurExtendidaObras()
+        public TimeSpan buscarDurExtendidaObras(int id)
         {
             DataTable tabla = Datos.BuscarDetalleExpoidBD(this.id_expo);
             List<DetalleExposicion> DE = new List<DetalleExposicion>();
@@ -114,8 +114,13 @@ namespace PPAI.Objetos
             
             foreach(var d in DE)
             {
-                TimeSpan dur = d.buscarDuracExObra();
-                durac += dur;
+                if (d.IdExposicion == id)
+                {
+
+
+                    TimeSpan dur = d.buscarDuracExObra();
+                    durac += dur;
+                }
             }
 
             return durac;
